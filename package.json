@@ -10,6 +10,7 @@
     "dev": "pnpm -F lib dev",
     "test": "pnpm -F lib test",
     "test:watch": "pnpm -F lib test:watch",
+    "readme:g": "npx @appnest/readme generate",
     "coverage": "pnpm -F lib coverage",
     "size": "size-limit",
     "lint": "eslint ./lib",

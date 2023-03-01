@@ -1,5 +1,4 @@
-import type { BlackprintControllersModules, BlackprintModelsModules, BlackprintModules, BlackprintViewsModules } from "@typings/Blackprint";
-
+import controllers from "@controllers/index"
 
 export const blackprint = () => {
 
