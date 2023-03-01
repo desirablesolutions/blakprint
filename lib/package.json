@@ -1,10 +1,13 @@
 {
-  "name": "@desirtech/blackprint",
-  "version": "0.0.1",
+  "name": "@desirablesolutions/blackprint",
+  "version": "2.0.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blackprint#readme",
   "description": "an opionated model-view-controller library for building serverless applications",
-  "repository": "github:desirablesolutions/blackprint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desirablesolutions/blackprint.git"
+  },
   "license": "MIT",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
   "main": "./dist/index.js",
@@ -13,7 +16,7 @@
   "funding": [
     {
       "type": "kofi",
-      "url": "http://kofi.com/desirablesolutions"
+      "url": "https://kofi.com/desirablesolutions"
     }
   ],
   "files": [
@@ -27,6 +30,7 @@
     "build": "tsup src -- --dts-resolve",
     "build:fast": "tsup src",
     "dev": "tsup src --watch",
+    "publish": "npm publish --access=public",
     "test": "vitest",
     "test:watch": "vitest watch",
     "coverage": "vitest run --coverage"

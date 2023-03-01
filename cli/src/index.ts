@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import controllers from "@blackprint/controllers";
 import models from "@blackprint/models";
 import views from "@blackprint/views";

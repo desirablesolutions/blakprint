@@ -9,6 +9,9 @@
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "bin": {
+    "blackprint": "./lib/index.js"
+  },
   "types": "./dist/index.d.ts",
   "funding": [
     {
