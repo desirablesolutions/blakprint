@@ -1,5 +1,5 @@
 {
-  "name": "blackprint",
+  "name": "blackprint-master",
   "version": "1.0.0",
   "main": "index.js",
   "private": false,
@@ -31,9 +31,6 @@
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "size-limit": "^8.1.0",
     "tsup": "^6.5.0",
