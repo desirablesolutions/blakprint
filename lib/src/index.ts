@@ -1,7 +1,7 @@
 import type { BlackprintControllersModules, BlackprintModelsModules, BlackprintModules, BlackprintViewsModules } from "@typings/Blackprint";
 
 
-export const blackprint = (): BlackprintModules => {
+export const blackprint = () => {
 
     const lib: BlackprintModules = {
         _root: {
