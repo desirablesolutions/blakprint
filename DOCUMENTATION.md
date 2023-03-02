@@ -1,1 +1,1 @@
-(load:docs/TITLE.mdF)
+(load:docs/TITLE.md)

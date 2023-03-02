@@ -1,0 +1,13 @@
+---
+import Meta from "@includes/static/Meta/Meta.astro";
+import NavBar from "@includes/dynamic/NavBar";
+---
+
+<!DOCTYPE html>
+<html>
+  <Meta />
+  <body>
+    <NavBar client:load />
+    <slot />
+  </body>
+</html>
