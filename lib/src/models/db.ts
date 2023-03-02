@@ -1,5 +1,8 @@
-const db = () => {
-    return {
+import { define } from "../build/index"
+
+const db = define(() => {
+
+    const lib = {
         defineViewStore: ({ layout, pages }) => {
             return {
                 layout, pages, meta: {
@@ -42,6 +45,8 @@ const db = () => {
             }
         },
     }
-}
+
+    return lib
+})
 
 export default db

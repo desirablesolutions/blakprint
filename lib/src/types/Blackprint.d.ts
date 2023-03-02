@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-
 export interface IBlackprintConfiguration {
     version?: string;
     name?: string;
@@ -7,10 +5,9 @@ export interface IBlackprintConfiguration {
     author?: string;
     views?: any;
     models?: any;
+    plugins?: any;
     controllers?: any;
 }
-
-export type BlackprintModule = {}
 
 export interface IBlackprintService {
     methods?: {};
@@ -22,6 +19,14 @@ export interface IBlackprintViewStore {
     pages?: any;
 }
 
+export type ClosureModeProps = "debug" | "default"
+export interface IBlackprintBootstrapModules {
+    define?: Function
+}
+export interface IBlackprintModule {
+    
+}
+
 export interface IBlackrpintUtility { }
 
 export interface IBlackprintAPIRoute {
@@ -29,8 +34,14 @@ export interface IBlackprintAPIRoute {
     post?: Function;
 }
 
-export interface IBlackprintLibrary {
-    plugins?: any
+export interface IBlackprintCoreLibrary {
+    _meta?: any;
+    controllers?: any;
+    models?: any;
+    views?: any;
+    tests?: any;
+    plugins?: any;
+    utils?: any;
 }
 
 
@@ -46,7 +57,7 @@ export type AbstractRootIndexedObject = {
     _root?: any
 }
 
-export type BlackprintViewsModules = BlackprintModule & AbstractRootIndexedObject & {
+export type BlackprintViewsModules = IBlackprintModule & AbstractRootIndexedObject & {
     layouts?: any;
     libs?: any;
     styles?: any;
@@ -54,7 +65,7 @@ export type BlackprintViewsModules = BlackprintModule & AbstractRootIndexedObjec
     includes?: any;
 }
 
-export type BlackprintModelsModules = BlackprintModule & AbstractRootIndexedObject & {
+export type BlackprintModelsModules = IBlackprintModule & AbstractRootIndexedObject & {
     configs?: any;
     data?: {
         db?: any,
@@ -70,9 +81,3 @@ export type BlackprintControllersModules = AbstractRootIndexedObject & {
     utils?: any;
 }
 
-
-export type BlackprintModules = AbstractRootIndexedObject & {
-    views?: BlackprintViewsModules
-    controllers?: BlackprintControllersModules,
-    models?: BlackprintModelsModules
-}

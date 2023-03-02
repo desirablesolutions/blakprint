@@ -13,6 +13,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./lib/",
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json",
     "cm": "cz",
     "lint": "eslint ./src/ --fix",
     "start": "TS_NODE_FILES=true ts-node ./src/cli.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@desirablesolutions/blackprint",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blackprint#readme",
   "description": "an opionated model-view-controller library for building serverless applications",
@@ -30,6 +30,7 @@
     "build": "tsup src -- --dts-resolve",
     "build:fast": "tsup src",
     "dev": "tsup src --watch",
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json",
     "publish": "npm publish --access=public",
     "test": "vitest",
     "test:watch": "vitest watch",
