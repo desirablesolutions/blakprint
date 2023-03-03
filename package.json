@@ -1,6 +1,6 @@
 {
   "name": "blackprint-master",
-  "version": "1.0.0",
+  "version": "9.0.1",
   "main": "index.js",
   "private": false,
   "scripts": {
@@ -11,6 +11,18 @@
     "test": "pnpm -F lib test",
     "test:watch": "pnpm -F lib test:watch",
     "readme:g": "npx @appnest/readme generate",
+    "readme:g:all": "npm run readme:g:app && npm run readme:g:cli && npm run readme:g:cli && npm run readme:g:integration && npm run readme:g:lib",
+    "readme:g:app": "cd app && npm run readme:g",
+
+    "readme:g:cli": "cd cli && npm run readme:g",
+
+    "readme:g:intergration": "cd intergration && npm run readme:g",
+
+    "readme:g:lib": "cd lib && npm run readme:g",
+
+    "readme:g:plugins": "cd plugins && npm run readme:g:lib && npm run readme:g:app",
+    "readme:g:templates": "cd templates && npm run readme:g:lib && npm run readme:g:app",
+
     "coverage": "pnpm -F lib coverage",
     "size": "size-limit",
     "lint": "eslint ./lib",

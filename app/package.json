@@ -6,6 +6,7 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
+		"readme:g": "npx @appnest/readme generate --config=doc.config.json",
 		"preview": "astro preview",
 		"astro": "astro"
 	},

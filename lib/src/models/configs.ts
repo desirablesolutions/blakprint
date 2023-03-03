@@ -1,8 +1,13 @@
-import { define } from "../build/index"
+import { define } from "build/index"
 
-const configs = define(() => {
-    
-    const lib = {
+export interface IBlackprintConfigsLibrary {
+    defineDatabaseConfiguration: Function
+}
+
+
+const configs: IBlackprintConfigsLibrary = define(() => {
+
+    const lib: IBlackprintConfigsLibrary = {
         defineDatabaseConfiguration: ({ params, init, ...rest }) => {
             return async function () {
                 return {
@@ -13,7 +18,7 @@ const configs = define(() => {
             }
         }
     }
-    return lib
+    return lib as IBlackprintConfigsLibrary
 })
 
 

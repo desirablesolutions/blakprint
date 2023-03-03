@@ -1,5 +1,11 @@
 import { define } from "../build/index"
 
+export interface IBlackprintModule { }
+export interface IBlackprintDatabaseModule<T> extends IBlackprintModule {
+    T
+}
+
+
 const db = define(() => {
 
     const lib = {

@@ -8,7 +8,6 @@ import tests from "tests/index"
 import utils from "utils/index"
 import views from "views/index"
 
-
 export const blackprint: IBlackprintCoreLibrary = define(() => {
 
     const lib: IBlackprintCoreLibrary = {
@@ -25,3 +24,6 @@ export const blackprint: IBlackprintCoreLibrary = define(() => {
 
     return lib as IBlackprintCoreLibrary
 })
+
+
+export { views, utils, tests, plugins, models, controllers, define, IBlackprintCoreLibrary }
