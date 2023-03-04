@@ -35,6 +35,7 @@ export interface IBlackprintAPIRoute {
 }
 
 export interface IBlackprintCoreLibrary {
+    (): any;
     _meta?: any;
     controllers?: any;
     models?: any;

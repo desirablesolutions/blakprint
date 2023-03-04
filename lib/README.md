@@ -2,7 +2,8 @@
 <h4 align="center">TypeScript Library</h4>
 
 (load:docs/DESCRIPTION.md)
-(load:docs/LOGO.md)
+<img src="/logo.png" height="77" width="77" alt="blackprint-logo-desirable-solutions"/>
+
 
 
 <h2>License</h2>

@@ -10,7 +10,7 @@ import views from "views/index"
 
 export const blackprint: IBlackprintCoreLibrary = define(() => {
 
-    const lib: IBlackprintCoreLibrary = {
+    const lib = {
         _meta: {
             version: Date.now(),
         },
@@ -24,6 +24,7 @@ export const blackprint: IBlackprintCoreLibrary = define(() => {
 
     return lib as IBlackprintCoreLibrary
 })
+
 
 
 export { views, utils, tests, plugins, models, controllers, define, IBlackprintCoreLibrary }

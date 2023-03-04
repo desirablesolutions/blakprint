@@ -9,7 +9,11 @@ export const defineComponent = define(() => {
 const components = define(() => {
 
     const lib = {
-        defineComponent,
+        methods: {
+            defineComponent: define(() => {
+                
+            })
+        },
     }
     
     return lib

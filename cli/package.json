@@ -1,6 +1,6 @@
 {
-  "name": "blackprint-cli",
-  "version": "0.0.0-development",
+  "name": "@desirablesolutions/blackprint-cli",
+  "version": "0.0.0",
   "description": "A template for creating npm CLI tools using TypeScript and VSCode",
   "files": [
     "!lib/__tests__/**/*",
@@ -8,11 +8,12 @@
     "bin/**/*"
   ],
   "bin": {
-    "blackprint": "./bin/index.js"
+    "blackprint": "bin/index.js"
   },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./lib/",
+    "publish": "npm publish --access=public",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
     "cm": "cz",
     "lint": "eslint ./src/ --fix",
@@ -27,11 +28,7 @@
     "url": "git+https://github.com/ryansonshine/typescript-npm-cli-template.git"
   },
   "license": "MIT",
-  "author": {
-    "name": "Jeffrey Desir",
-    "email": "jeffrey@desir.tech",
-    "url": "https://github.com/ryansonshine"
-  },
+  "author": "Jeffrey Desir <jeffrey@desir.tech> (https://github.com/ryansonshine)",
   "engines": {
     "node": ">=16.0"
   },
@@ -127,5 +124,6 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
-  }
+  },
+  "main": "bin/index.js"
 }
