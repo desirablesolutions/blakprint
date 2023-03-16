@@ -1,5 +1,12 @@
 import { define } from "build/index"
 
+export const defineServices = define(() => {
+
+})
+
+export const defineService = define(() => {
+
+})
 
 const services = define(() => {
 
