@@ -1,18 +1,21 @@
 {
-  "name": "@desirablesolutions/blackprint",
-  "version": "9.0.1",
+  "name": "blakprint",
+  "version": "9.9.1",
   "private": false,
-  "homepage": "https://github.com/desirablesolutions/blackprint#readme",
+  "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "an opionated model-view-controller library for building serverless applications",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/desirablesolutions/blackprint.git"
+    "url": "git+https://github.com/desirablesolutions/blakprint.git"
   },
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "funding": [
     {
       "type": "kofi",
@@ -23,7 +26,7 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/desirablesolutions/blackprint/issues",
+    "url": "https://github.com/desirablesolutions/blakprint/issues",
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
@@ -46,5 +49,8 @@
   "devDependencies": {
     "@vitest/coverage-c8": "^0.24.5",
     "happy-dom": "^6.0.4"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

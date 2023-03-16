@@ -1,4 +1,4 @@
-import type { IBlackprintCoreLibrary } from "types/Blackprint"
+import type { IBlakprintCoreLibrary } from "types/Blakprint"
 
 import { define } from "build/index"
 import controllers from "controllers/index"
@@ -8,7 +8,7 @@ import tests from "tests/index"
 import utils from "utils/index"
 import views from "views/index"
 
-export const blackprint: IBlackprintCoreLibrary = define(() => {
+const blakprint: IBlakprintCoreLibrary = define(() => {
 
     const lib = {
         _meta: {
@@ -22,9 +22,9 @@ export const blackprint: IBlackprintCoreLibrary = define(() => {
         plugins
     }
 
-    return lib as IBlackprintCoreLibrary
+    return lib as IBlakprintCoreLibrary
 })
 
+export default blakprint
+export { views, utils, tests, plugins, models, controllers, define, IBlakprintCoreLibrary }
 
-
-export { views, utils, tests, plugins, models, controllers, define, IBlackprintCoreLibrary }

@@ -1,4 +1,4 @@
-export interface IBlackprintConfiguration {
+export interface IBlakprintConfiguration {
     version?: string;
     name?: string;
     type?: string;
@@ -9,32 +9,32 @@ export interface IBlackprintConfiguration {
     controllers?: any;
 }
 
-export interface IBlackprintService {
+export interface IBlakprintService {
     methods?: {};
 }
 
-export interface IBlackprintViewStore {
+export interface IBlakprintViewStore {
     layout?: any;
     meta?: any;
     pages?: any;
 }
 
 export type ClosureModeProps = "debug" | "default"
-export interface IBlackprintBootstrapModules {
+export interface IBlakprintBootstrapModules {
     define?: Function
 }
-export interface IBlackprintModule {
+export interface IBlakprintModule {
     
 }
 
 export interface IBlackrpintUtility { }
 
-export interface IBlackprintAPIRoute {
+export interface IBlakprintAPIRoute {
     get?: Function;
     post?: Function;
 }
 
-export interface IBlackprintCoreLibrary {
+export interface IBlakprintCoreLibrary {
     (): any;
     _meta?: any;
     controllers?: any;
@@ -46,7 +46,7 @@ export interface IBlackprintCoreLibrary {
 }
 
 
-export interface IBlackprintDatabaseConfiguration {
+export interface IBlakprintDatabaseConfiguration {
     init?: Promise<Function> & Function;
     params?: {
         collections?: any;
@@ -58,7 +58,7 @@ export type AbstractRootIndexedObject = {
     _root?: any
 }
 
-export type BlackprintViewsModules = IBlackprintModule & AbstractRootIndexedObject & {
+export type BlakprintViewsModules = IBlakprintModule & AbstractRootIndexedObject & {
     layouts?: any;
     libs?: any;
     styles?: any;
@@ -66,7 +66,7 @@ export type BlackprintViewsModules = IBlackprintModule & AbstractRootIndexedObje
     includes?: any;
 }
 
-export type BlackprintModelsModules = IBlackprintModule & AbstractRootIndexedObject & {
+export type BlakprintModelsModules = IBlakprintModule & AbstractRootIndexedObject & {
     configs?: any;
     data?: {
         db?: any,
@@ -76,7 +76,7 @@ export type BlackprintModelsModules = IBlackprintModule & AbstractRootIndexedObj
 }
 
 
-export type BlackprintControllersModules = AbstractRootIndexedObject & {
+export type BlakprintControllersModules = AbstractRootIndexedObject & {
     hooks?: any;
     services?: any;
     utils?: any;

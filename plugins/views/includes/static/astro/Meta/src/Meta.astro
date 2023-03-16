@@ -1,0 +1,238 @@
+---
+export const defaultProps = {
+  title: "WTFMVMT",
+  pageTitle: "Home",
+  copyright: "[@props]: COPYRIGHT_NOT_FOUND",
+  url: "[@props]: URL_NOT_FOUND",
+  description: "[@props]: DESCRIPTION_NOT_FOUND",
+};
+
+const { pageTitle, title, url, copyright, description } = Astro.props;
+---
+
+<head>
+  <title>
+    {`${pageTitle ?? defaultProps.pageTitle} | ${title ?? defaultProps.title}`}
+  </title>
+  <meta name="theme-color" content="#fcc631" />
+  <meta name="keywords" content="your, tags" />
+  <meta name="description" content="150 words" />
+  <meta name="subject" content={title ?? defaultProps.title} />
+  <meta name="copyright" content={title ?? defaultProps.title} />
+  <meta name="language" content="EN" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revised" content={Date.now()} />
+  <meta name="abstract" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+    rel="stylesheet"
+  />
+  <meta name="topic" content="" />
+  <meta name="summary" content="" />
+  <meta name="Classification" content="Business" />
+  <meta name="author" content="name, email@hotmail.com" />
+  <meta name="designer" content="" />
+  <meta name="copyright" content={copyright ?? defaultProps.copyright} />
+  <meta name="reply-to" content="email@hotmail.com" />
+  <meta name="owner" content="" />
+  <meta name="url" content={url ?? defaultProps.url} />
+  <meta name="identifier-URL" content={url ?? defaultProps.url} />
+  <meta name="directory" content="submission" />
+  <meta name="category" content="" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="revisit-after" content="7 days" />
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="purple" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="og:title" content={title ?? defaultProps.title} />
+  <meta name="og:type" content="movie" />
+  <meta name="og:url" content="http://www.imdb.com/title/tt0117500/" />
+  <meta name="og:image" content="http://ia.media-imdb.com/rock.jpg" />
+  <meta name="og:site_name" content={title ?? defaultProps.title} />
+  <meta
+    name="og:description"
+    content={description ?? defaultProps.description}
+  />
+
+  <meta name="fb:page_id" content="" />
+
+  <meta name="og:email" content="me@example.com" />
+  <meta name="og:phone_number" content="650-123-4567" />
+  <meta name="og:fax_number" content="+1-415-123-4567" />
+
+  <meta name="og:latitude" content="37.416343" />
+  <meta name="og:longitude" content="-122.153013" />
+  <meta name="og:street-address" content="1601 S California Ave" />
+  <meta name="og:locality" content="Orlando" />
+  <meta name="og:region" content="FL" />
+  <meta name="og:postal-code" content="32817" />
+  <meta name="og:country-name" content="USA" />
+
+  <meta property="og:type" content="game.achievement" />
+  <meta property="og:points" content="POINTS_FOR_ACHIEVEMENT" />
+
+  <meta property="og:video" content="http://example.com/awesome.swf" />
+  <meta property="og:video:height" content="640" />
+  <meta property="og:video:width" content="385" />
+  <meta property="og:video:type" content="application/x-shockwave-flash" />
+  <meta property="og:video" content="http://example.com/html5.mp4" />
+  <meta property="og:video:type" content="video/mp4" />
+  <meta property="og:video" content="http://example.com/fallback.vid" />
+  <meta property="og:video:type" content="text/html" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta
+    http-equiv="Page-Enter"
+    content="RevealTrans(Duration=2.0,Transition=2)"
+  />
+  <meta
+    http-equiv="Page-Exit"
+    content="RevealTrans(Duration=3.0,Transition=12)"
+  />
+  <meta name="mssmarttagspreventparsing" content="true" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="blogcatalog" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href="http://feeds.feedburner.com/martini"
+  />
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+  <link rel="fluid-icon" type="image/png" href="/fluid-icon.png" />
+  <link
+    rel="me"
+    type="text/html"
+    href="http://google.com/profiles/naturessecret"
+  />
+  <link rel="shortlink" href="http://blog.unto.net/?p=353" />
+  <link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />
+  <link
+    rel="start"
+    title="Pattern Recognition 1"
+    href="http://blog.unto.net/photos/pattern_recognition_1_about/"
+  />
+  <link
+    rel="prev"
+    title="OpenSearch and OpenID?  A sure way to get my attention."
+    href="http://blog.unto.net/opensearch/opensearch-and-openid-a-sure-way-to-get-my-attention/"
+  />
+  <link
+    rel="next"
+    title="Not blog"
+    href="http://blog.unto.net/meta/not-blog/"
+  />
+  <link
+    rel="search"
+    href="/search.xml"
+    type="application/opensearchdescription+xml"
+    title="Viatropos"
+  />
+
+  <link
+    rel="self"
+    type="application/atom+xml"
+    href="http://www.syfyportal.com/atomFeed.php?page=3"
+  />
+  <link rel="first" href={url ?? defaultProps.url} />
+  <link rel="next" href="http://www.syfyportal.com/atomFeed.php?page=4" />
+  <link rel="previous" href="http://www.syfyportal.com/atomFeed.php?page=2" />
+  <link rel="last" href="http://www.syfyportal.com/atomFeed.php?page=147" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fcc631" />
+  <meta name="format-detection" content="telephone=yes" />
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+  <link
+    rel="android-chrome shortcut"
+    sizes="72x72"
+    href="/assets/icons/72x72.png"
+  />
+  <link
+    rel="android-chrome icon"
+    sizes="72x72"
+    href="/assets/icons/72x72.png"
+  />
+
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+  <link rel="apple-touch-startup-image" href="/startup.png" />
+
+  <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png" />
+
+  <link rel="shortlink" href={url ?? defaultProps.url} />
+  <link rel="canonical" href={url ?? defaultProps.url} />
+  <link
+    rel="EditURI"
+    type="application/rsd+xml"
+    title="RSD"
+    href="http://smallbiztrends.com/xmlrpc.php?rsd"
+  />
+  <link rel="pingback" href="http://smallbiztrends.com/xmlrpc.php" />
+  <link
+    media="only screen and (max-device-width: 480px)"
+    href="http://wordpress.org/style/iphone.css"
+    type="text/css"
+    rel="stylesheet"
+  />
+  <meta name="msapplication-starturl" content={url ?? defaultProps.url} />
+  <meta name="msapplication-window" content="width=800;height=600" />
+  <meta name="msapplication-navbutton-color" content="yellow" />
+  <meta name="application-name" content={title ?? defaultProps.title} />
+  <meta
+    name="msapplication-tooltip"
+    content={description ?? defaultProps.description}
+  />
+  <meta
+    name="msapplication-task"
+    content="name=About;action-uri=/about/;icon-uri=/images/about.ico"
+  />
+  <meta
+    name="msapplication-task"
+    content="name=The Big List;action-uri=/the-big-list-of-javascript-css-and-html-development-tools-libraries-projects-and-books/;icon-uri=/images/list_links.ico"
+  />
+  <meta
+    name="msapplication-task"
+    content="name=jQuery Posts;action-uri=/category/jquery/;icon-uri=/images/jquery.ico"
+  />
+  <meta
+    name="msapplication-task"
+    content="name=Start Developing;action-uri=/category/javascript/;icon-uri=/images/script.ico"
+  />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <meta property="og:audio" content="http://example.com/amazing.mp3" />
+  <meta property="og:audio:title" content="Amazing Song" />
+  <meta property="og:audio:artist" content="Amazing Band" />
+  <meta property="og:audio:album" content="Amazing Album" />
+  <meta property="og:audio:type" content="application/mp3" />
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+  <link rel="apple-touch-startup-image" href="/startup.png" />
+
+  <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png" />
+</head>
