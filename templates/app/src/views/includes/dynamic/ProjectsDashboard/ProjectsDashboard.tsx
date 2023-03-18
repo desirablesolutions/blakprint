@@ -335,7 +335,6 @@ export default function ProjectsDashboards() {
                                                                 <g
                                                                     id="SvgjsG1033"
                                                                     className="apexcharts-radialbar-track apexcharts-track"
-                                                                    rel={1}
                                                                 >
                                                                     <path
                                                                         id="apexcharts-radialbarTrack-0"
@@ -348,7 +347,6 @@ export default function ProjectsDashboards() {
                                                                         strokeWidth="6.62439024390244"
                                                                         strokeDasharray={0}
                                                                         className="apexcharts-radialbar-area"
-                                                                        data:pathorig="M 17.457532418147082 86.37799745528801 A 63.617886178861795 63.617886178861795 0 1 1 144.2091342485196 86.37799745528802"
                                                                     />
                                                                 </g>
                                                             </g>
@@ -356,9 +354,7 @@ export default function ProjectsDashboards() {
                                                                 <g
                                                                     id="SvgjsG1038"
                                                                     className="apexcharts-series apexcharts-radial-series"
-                                                                    seriesname="series-1"
-                                                                    rel={1}
-                                                                    data:realindex={0}
+                                                               
                                                                 >
                                                                     <path
                                                                         id="SvgjsPath1039"
@@ -371,11 +367,6 @@ export default function ProjectsDashboards() {
                                                                         strokeWidth="6.829268292682928"
                                                                         strokeDasharray={0}
                                                                         className="apexcharts-radialbar-area apexcharts-radialbar-slice-0"
-                                                                        data:angle={122}
-                                                                        data:value={64}
-                                                                        index={0}
-                                                                        j={0}
-                                                                        data:pathorig="M 17.457532418147082 86.37799745528801 A 63.617886178861795 63.617886178861795 0 0 1 109.71524927204842 24.149381692894494"
                                                                     />
                                                                 </g>
                                                                 <circle
