@@ -1,9 +1,9 @@
 {
   "name": "blakprint",
-  "version": "9.9.1",
+  "version": "9.9.3",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
-  "description": "an opionated model-view-controller library for building serverless applications",
+  "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/blakprint.git"
@@ -13,8 +13,11 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "blakprint": "./bin/index.js"
+  },
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/*"
   },
   "funding": [
     {
@@ -30,7 +33,7 @@
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
-    "build": "tsup src -- --dts-resolve",
+    "build": "tsup src --dts-resolve",
     "build:fast": "tsup src",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
@@ -47,10 +50,23 @@
     "meta-framework"
   ],
   "devDependencies": {
+    "@types/yargs": "^17.0.22",
     "@vitest/coverage-c8": "^0.24.5",
     "happy-dom": "^6.0.4"
   },
   "directories": {
     "doc": "docs"
+  },
+  "dependencies": {
+    "boxen": "^7.0.2",
+    "chalk": "^5.2.0",
+    "g": "^2.0.1",
+    "listr": "^0.14.3",
+    "make-dir": "^3.1.0",
+    "meta-types": "^2.0.0",
+    "nanostores": "^0.7.4",
+    "ora": "^6.1.2",
+    "path": "^0.12.7",
+    "yargs": "^17.7.1"
   }
 }

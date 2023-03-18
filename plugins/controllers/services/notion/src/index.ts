@@ -1,18 +1,15 @@
-import { Client } from "@notionhq/client"
-import { services as BlackprintServices } from "@utils/blackprint"
-
-export interface INotionPage { }
-export interface INotionPageGetter { cursor?: string | undefined, aggResults?: any[], pageId?: { name?: string, id?: string } }
-
-const { defineService } = BlackprintServices()
+import { Client as NotionHQClient } from "@notionhq/client"
+import services from "blakprint/services"
 
 
-const NotionClient = new Client({
-    auth: import.meta.env.FACADE_API_KEY ?? process.env.FACADE_API_KEY,
-})
-
+const { defineService } = services()
 
 export const NotionService = defineService({
+    init: async (key: string) => {
+        return new Client({
+            auth: key
+        })
+    },
     methods: {
         getNotionPage: async ({ cursor = undefined, aggResults = [], pageId }: INotionPageGetter): Promise<INotionPage> => {
 
