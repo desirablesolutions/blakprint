@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "9.9.3",
+  "version": "9.9.4",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.",

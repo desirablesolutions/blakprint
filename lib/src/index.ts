@@ -18,8 +18,9 @@ export interface BlackprintOptions {
     module?: "views" | "models" | "controllers" | "*";
 }
 
+export type BlackprintModule<T> = T | any
 
-const blakprint = (opts: BlackprintOptions) => {
+const blakprint = (opts: BlackprintOptions): BlackprintModule<any> => {
 
     const lib = {
         views,
