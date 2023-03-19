@@ -7,7 +7,6 @@
 (load:docs/PLUGINS.md)
 
 (load:docs/CHANGELOG.md)
-
 (load:docs/CLI.md)
 (load:docs/APPLICATION.md)
 (load:docs/INTERFACES.md)

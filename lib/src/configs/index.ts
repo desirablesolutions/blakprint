@@ -1,5 +1,9 @@
-import { define } from "build/index"
+import { define } from "build/define"
 
-const styles = {}
+const styles = define(() => {
+    const lib = {}
+
+    return lib
+})
 
 export default styles

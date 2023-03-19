@@ -1,4 +1,4 @@
-import { define } from "build/index"
+import { define } from "build/define"
 
 
 export const defineTest = define(() => {

@@ -1,10 +1,10 @@
-import { define } from "build/index"
-
-import hooks from "./hooks"
-import services from "./services"
+import { define } from "build/define"
+import hooks from "../hooks/index"
+import services from "../services/index"
 
 
 const controllers = define(() => {
+
     const lib = {
         hooks,
         services
@@ -12,7 +12,7 @@ const controllers = define(() => {
 
     return lib
 
-}, { type: "lib" })
+})
 
 export default controllers
 

@@ -2,5 +2,7 @@
 (load:docs/DESCRIPTION.md)
 (load:../docs/LOGO.md)
 (load:docs/USAGE.md)
+(load:docs/CHANGELOG.md)
+(load:docs/ACKNOWLEDGEMENTS.md)
 (load:docs/INSTALLATION.md)
 (load:docs/LICENSE.md)
