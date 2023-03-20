@@ -1,4 +1,6 @@
 ---
+import { define } from "blakprint/build";
+
 export const defaultProps = {
   title: "WTFMVMT",
   pageTitle: "Home",
@@ -7,12 +9,18 @@ export const defaultProps = {
   description: "[@props]: DESCRIPTION_NOT_FOUND",
 };
 
+export const defineAstroComponentProps = define((props) => {
+  return props;
+});
+
 const { pageTitle, title, url, copyright, description } = Astro.props;
+
+export const props = defineAstroComponentProps(Astro.Props);
 ---
 
 <head>
   <title>
-    {`${pageTitle ?? defaultProps.pageTitle} | ${title ?? defaultProps.title}`}
+    {`${props.title as string} | ${pageTitle() as string}`}
   </title>
   <meta name="theme-color" content="#fcc631" />
   <meta name="keywords" content="your, tags" />

@@ -1,3 +1,3 @@
-<h2>Acknowledgements</h2>
+<h2>🙏🏿Acknowledgements</h2>
 
-* > To God be All the Glory. 
+* **_To God be All the Glory_**. 
