@@ -1,8 +1,14 @@
 ---
-import Application from "@layouts/Application.astro"
+import Application from "@layouts/Application.astro";
+import Hero from "@components/dynamic/Hero";
+import MajorSection from "@components/dynamic/MajorSection";
+import ContactSection from "@includes/dynamic/ContactSection";
+import PricingTable from "@components/dynamic/PricingTable";
 ---
 
-
 <Application>
-	
-	</Application>
+  <Hero />
+  <MajorSection />
+  <PricingTable />
+  <ContactSection />
+</Application>
