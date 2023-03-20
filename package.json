@@ -1,7 +1,7 @@
 {
   "name": "blakprint-master",
-  "version": "9.0.1",
-  "main": "index.js",
+  "version": "9.9.5",
+  "main": "bin/index.js",
   "private": false,
   "scripts": {
     "build": "pnpm -F lib build",
@@ -21,6 +21,9 @@
     "lint": "eslint ./lib",
     "lint:fix": "eslint ./lib ./example --fix && yarn format",
     "type-check": "tsc --noEmit"
+  },
+  "bin": {
+    "blakprint-master": "./bin/index.js"
   },
   "description": "PNPM monorepo template",
   "license": "MIT",

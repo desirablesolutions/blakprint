@@ -3,9 +3,7 @@
 (load:docs/FEATURES.md)
 (load:docs/INSTALLATION.md)
 (load:docs/USAGE.md)
-
 (load:docs/PLUGINS.md)
-
 (load:docs/CHANGELOG.md)
 (load:docs/CLI.md)
 (load:docs/APPLICATION.md)
@@ -13,6 +11,5 @@
 (load:docs/INTEGRATIONS.md)
 (load:docs/FEEDBACK.md)
 (load:docs/AUTHORS.md)
-
 (load:docs/ACKNOWLEDGEMENTS.md)
 (load:docs/LICENSE.md)
