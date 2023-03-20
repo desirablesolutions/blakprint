@@ -9,6 +9,14 @@ export interface IBlakprintConfiguration {
     controllers?: any;
 }
 
+
+export interface BlackprintOptions {
+    module?: "views" | "models" | "controllers" | "*";
+}
+
+export type BlackprintModule<T> = T | any
+
+
 export interface IBlakprintService {
     methods?: {};
 }
