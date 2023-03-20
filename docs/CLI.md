@@ -3,5 +3,4 @@
 ```bash
 npx blakprint <command> <opts>
 ```
-
 ---

@@ -4,6 +4,7 @@
 (load:docs/FEATURES.md)
 (load:docs/INSTALLATION.md)
 (load:docs/USAGE.md)
+(load:docs/LIBRARY.md)
 (load:docs/PLUGINS.md)
 (load:docs/CHANGELOG.md)
 (load:docs/CLI.md)
