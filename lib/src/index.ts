@@ -1,22 +1,23 @@
-import views from "views/index"
-import models from "models/index"
-import controllers from "controllers/index"
+import { define } from "build/define"
 import build from "build/index"
 import components from "components/index"
-import tests from "tests/index"
-import plugins from "plugins/index"
-import layouts from "layouts/index"
-import hooks from "hooks/index"
-import utils from "utils/index"
-import styles from "styles/index"
-import db from "db/index"
 import configs from "configs/index"
+import controllers from "controllers/index"
+import db from "db/index"
+import hooks from "hooks/index"
 import includes from "includes/index"
+import layouts from "layouts/index"
+import models from "models/index"
+import plugins from "plugins/index"
+import styles from "styles/index"
+import tests from "tests/index"
+import type { BlackprintModule, BlackprintLibraryOptions } from "types"
 import types from "types/index"
-import type { BlackprintOptions, BlackprintModule } from "types"
+import utils from "utils/index"
+import views from "views/index"
 
-const blakprint = (opts: BlackprintOptions): BlackprintModule<any> => {
 
+const blakprint = define<BlackprintModule, any>(({ module }: BlackprintLibraryOptions) => {
     const lib = {
         views,
         models,
@@ -35,8 +36,10 @@ const blakprint = (opts: BlackprintOptions): BlackprintModule<any> => {
         utils,
     }
 
-    return lib[opts?.module]
-}
+    return lib[module as string | symbol] ?? null
+})
+
+
 
 export {
     views,
