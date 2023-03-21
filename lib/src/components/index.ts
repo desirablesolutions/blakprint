@@ -3,9 +3,9 @@ import { define } from "build/define"
 export interface BlakprintLayoutModule extends BlakprintModule {
 
 }
-const components = define<BlakprintLayoutModule>(() => {
+const components = define<BlakprintLayoutModule, any>(() => {
     const lib = {
-        defineReactComponent: define<(() => {
+        defineReactComponent: define<any, any>(() => {
             return function (props) {
                 return props.children
             }

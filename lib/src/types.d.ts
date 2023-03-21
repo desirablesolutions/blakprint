@@ -11,7 +11,7 @@ export interface IBlakprintConfiguration {
 
 
 export interface BlackprintOptions {
-    module?: "views" | "models" | "controllers" | "*";
+    module?: "views" | "models" | "controllers" | "includes" | "components" | "styles" | "*";
 }
 
 export type BlackprintModule<T> = T | any
@@ -32,7 +32,7 @@ export interface IBlakprintBootstrapModules {
     define?: Function
 }
 export interface IBlakprintModule {
-    
+
 }
 
 export interface IBlackrpintUtility { }

@@ -13,7 +13,7 @@ import db from "db/index"
 import configs from "configs/index"
 import includes from "includes/index"
 import types from "types/index"
-import type { BlackprintOptions, BlackprintModule } from "types.d.ts"
+import type { BlackprintOptions, BlackprintModule } from "types"
 
 const blakprint = (opts: BlackprintOptions): BlackprintModule<any> => {
 
