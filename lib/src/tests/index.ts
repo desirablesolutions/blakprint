@@ -8,10 +8,11 @@ export const defineTest = define(() => {
 
 const tests = define(() => {
 
-    const lib = {
-        defineTest
-    }
-
+    const lib = define(() => ({
+        defineTest: () => {
+            
+        }
+    }))
     return lib
 })
 

@@ -9,3 +9,22 @@ npx blakprint generate <preset>
 
 ---
 
+
+**generating directory structures**
+
+```bash
+npx blakprint generate <preset>
+```
+
+---
+
+
+
+**generating directory structures**
+
+```bash
+npx blakprint generate <preset>
+```
+
+---
+

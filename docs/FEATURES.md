@@ -2,6 +2,5 @@
 
 * **Opinionated Distributed M.V.C inspired by** [_astro_](https://astro.build)
 * **Simple Generic Type Definitions & Helpers.**
-* Plugins artchitecture
+* **Plugins artchitecture**
 * `define` method that helps author coding consistently. 
-* 

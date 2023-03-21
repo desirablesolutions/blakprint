@@ -1,9 +1,10 @@
 {
   "name": "bp-tesseract-template",
-  "version": "1.0.0",
-  "description": "",
+  "version": "10.0.0",
+  "description": "A parametric MVC plugin for Blakprint",
   "main": "index.js",
   "scripts": {
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
