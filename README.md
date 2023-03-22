@@ -1,20 +1,19 @@
-<!-- ⚠️ This README has been generated from the file(s) "DOCUMENTATION.md" ⚠️--><h1>📐Blakprint</h1>
+<!-- ⚠️ This README has been generated from the file(s) "DOCUMENTATION.md" ⚠️--><h1 align="center">📐Blakprint</h1>
 <h2>📝Description</h2>
 
 > 📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.
 
 <h1 align="center">
 
-<img src="./docs/logo.png" height="260" width="260" alt="blackprint-logo-desirable-solutions"/>
+<img src="https://github.com/blakprint/blakprint/blob/main/docs/logo.png" height="260" width="260" alt="blackprint-logo-desirable-solutions"/>
 
 </h1>
 <h2>✨Features</h2>
 
 * **Opinionated Distributed M.V.C inspired by** [_astro_](https://astro.build)
 * **Simple Generic Type Definitions & Helpers.**
-* Plugins artchitecture
+* **Plugins artchitecture**
 * `define` method that helps author coding consistently. 
-* 
 <h2>⚒️Installation</h2>
 
 
@@ -38,6 +37,25 @@ npx blakprint generate <preset>
 ---
 
 
+**generating directory structures**
+
+```bash
+npx blakprint generate <preset>
+```
+
+---
+
+
+
+**generating directory structures**
+
+```bash
+npx blakprint generate <preset>
+```
+
+---
+
+
 <h2>Library</h2>
 
 * [**Read our library documentation here**]
@@ -45,9 +63,10 @@ npx blakprint generate <preset>
 ---
 <h2>🧩Plugins</h2>
 
-* [**Read our plugins documentation here..**]/
+- [**Read our plugins documentation here...**](https://github.com/blakprint/blakprint/plugins/#readme)
 
 ---
+
 <h2>⏳Changelog</h2>
 
 ### 🎉v10.0.0
