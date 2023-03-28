@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <section className="fixed top-0 w-full z-50">
+        <section className="fixed backdrop-blur-lg bg-black bg-opacity-30 top-0 w-full z-50 text-white font-mono">
             <nav className="py-10" data-config-="">
                 <div className="container px-4 mx-auto">
                     <div className="flex items-center justify-between relative">
