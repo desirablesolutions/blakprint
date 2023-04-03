@@ -1,9 +1,12 @@
 import { define } from "build/define"
 
-const plugins = define(() => {
-    const lib = {}
 
-    return lib
+
+const definePlugin = define(() => {
+    return null
 })
 
-export default plugins
+
+export default {
+    definePlugin
+}

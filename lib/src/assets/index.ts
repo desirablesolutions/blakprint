@@ -1,13 +1,15 @@
 import { define } from "build/define"
 
-export const defineAsset = define(() => {}, {})
 
-
-export const defineAssets = define([
-    defineAsset()
-
-], {
-    process: () => {
-
-    }
+const defineAsset = define((props) => {
+    return props
 })
+
+const defineVideoAsset = define((props) => {
+    return defineAsset({
+        type: "video",
+        ...props
+    })
+})
+
+export default { defineAsset, defineVideoAsset }

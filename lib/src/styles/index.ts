@@ -1,14 +1,9 @@
 import { define } from "build/define"
 
-const styles = define(() => {
-    
-    const lib = define(() => ({
-        methods: {
+const defineStylizer = define(() => {
 
-        }
-    }))
-
-    return styles
 })
 
-export default styles
+export default {
+    defineStylizer
+}

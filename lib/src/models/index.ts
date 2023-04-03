@@ -1,13 +1,10 @@
 import { define } from "build/define"
 
 
-const models = define(() => {
-    const lib = {
-        data, configs
-    }
+const defineModel = define(() => {
 
-    return lib
 })
 
-
-export default models
+export default {
+    defineModel
+}

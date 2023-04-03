@@ -1,4 +1,4 @@
-import build from "build/index"
+import * as build from "build/index"
 import components from "components/index"
 import configs from "configs/index"
 import controllers from "controllers/index"
@@ -13,23 +13,24 @@ import tests from "tests/index"
 import types from "types/index"
 import utils from "utils/index"
 import views from "views/index"
-
+import assets from "assets/index"
 
 export default {
-    views,
-    models,
-    controllers,
     build,
     components,
     configs,
+    controllers,
     db,
     hooks,
-    tests,
     includes,
     layouts,
+    models,
     plugins,
     styles,
-    types,
+    tests,
     utils,
+    views,
+    types,
+    assets
 }
 

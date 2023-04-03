@@ -1,12 +1,9 @@
 import { define } from "build/define"
 
 
-const includes = define(() => {
-    const lib = {
+const defineInclude = define(() => { })
 
-    }
 
-    return lib
-})
-
-export default includes
+export default {
+    defineInclude
+}

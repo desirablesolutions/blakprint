@@ -1,9 +1,8 @@
 import { define } from "build/define"
 
-const styles = define(() => {
-    const lib = {}
-
-    return lib
+const defineStylizer = define((props) => {
+    return props
 })
 
-export default styles
+
+export default { defineStylizer }

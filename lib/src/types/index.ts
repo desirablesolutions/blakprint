@@ -1,13 +1,7 @@
 import { define } from "build/define";
 
-
-const types = define(() => {
-
-    const lib = {
-
-    }
-
-    return lib
+const defineType = define(() => {
+    return null
 })
 
-export default types
+export default { defineType }

@@ -1,5 +1,7 @@
 import { define } from "build/define"
 
-const styles = {}
+const defineDatabase = define(() => {
+    return null
+})
 
-export default styles
+export default { defineDatabase }
