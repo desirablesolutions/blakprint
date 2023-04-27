@@ -19,7 +19,7 @@ export default function Hero(props: HeroProps): JSXComponentType<HeroProps, any>
                             alt=""
                         />
                         <h2 className="text-5xl md:text-6xl font-heading mb-6 text-white text-center">
-                            Unique Templates
+                            Blakprint
                         </h2>
                         <p className="mb-6 leading-8 text-white text-center">
                             If you have ever wondered how to develop your brand, this is the place for you. Take a big step forward in growing your business with this great tool.
