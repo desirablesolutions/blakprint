@@ -1,9 +1,1 @@
-import { define } from "build/define"
-
-const defineStylizer = define(() => {
-
-})
-
-export default {
-    defineStylizer
-}
+export * from "./styles"

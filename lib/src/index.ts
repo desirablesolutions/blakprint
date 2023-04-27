@@ -1,36 +1,17 @@
-import * as build from "build/index"
-import components from "components/index"
-import configs from "configs/index"
-import controllers from "controllers/index"
-import db from "db/index"
-import hooks from "hooks/index"
-import includes from "includes/index"
-import layouts from "layouts/index"
-import models from "models/index"
-import plugins from "plugins/index"
-import styles from "styles/index"
-import tests from "tests/index"
-import types from "types/index"
-import utils from "utils/index"
-import views from "views/index"
-import assets from "assets/index"
+require('module-alias/register')
 
-export default {
-    build,
-    components,
-    configs,
-    controllers,
-    db,
-    hooks,
-    includes,
-    layouts,
-    models,
-    plugins,
-    styles,
-    tests,
-    utils,
-    views,
-    types,
-    assets
-}
+import 'module-alias/register'
+import * as moduleAlias from 'module-alias';
 
+moduleAlias.addAliases({
+  'blakprint': __dirname
+});
+
+export * as build from "./build/index"
+export * as components from "./components/index"
+export * as services from "./services/index"
+export * as pages from "./pages/index"
+export * as styles from "./styles/index"
+export * as tests from "./tests/index"
+
+export type * as typings from "./typings/index"

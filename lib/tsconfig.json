@@ -1,8 +1,22 @@
 {
-
   "compilerOptions": {
-
-    "baseUrl": "./src/",
-  
-  }
+    "jsx": "react-jsx",
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "rootDir": "./",
+    "paths": {
+      "blakprint/*": [
+        "./dist/*"
+      ]
+    },
+  },
+ 
 }

@@ -1,14 +1,12 @@
-export interface DynamicComponent extends JSX.Element { }
+import type { JSXComponentType, ComponentProps, ImageProps } from "blakprint/dist/typings/index.d"
 
-export type ImageProps = {
-    src?: string;
-}
-export type HeroProps = {
+
+export type HeroProps = ComponentProps<{
     title?: string,
     cover?: ImageProps;
-}
+}>
 
-export default function Hero(props: HeroProps): DynamicComponent {
+export default function Hero(props: HeroProps): JSXComponentType<HeroProps, any> {
     return (
         <section className="pt-24 md:py-0 relative bg-black font-mono">
             <div className="container px-6 mx-auto flex flex-wrap justify-center items-center">

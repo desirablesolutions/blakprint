@@ -1,7 +1,4 @@
 
-export type BlackprintModuleNames = "views" | "models" | "controllers" | "includes" | "components" |
-    "styles" | "libs" | "services" | "controllers" | "configs"
-    | "db" | "build" | "utils" | "plugins" | "hooks" | "*";
 
 export type BlakprintParametersType<T> = {
     id?: string | symbol,
@@ -12,8 +9,7 @@ export type ParamsType = BlakprintParametersType<{
     params?: any
 }>
 
-
-export type ValidClosure = Function | Object | number | string | null | undefined;
+export type ValidClosure = Function | Promise<any> | Object | number | string | null | undefined;
 
 export type FunctorType = {
   (...args: any[]): any;

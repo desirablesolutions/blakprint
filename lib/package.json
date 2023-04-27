@@ -1,23 +1,38 @@
 {
   "name": "blakprint",
-  "version": "9.9.6",
+  "version": "10.2.1",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
-  "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.",
+  "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting web projects.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/blakprint.git"
   },
+  "paths":{
+    "*": [
+      "./dist"
+    ]
+   
+  },
   "license": "GPL-3.0-or-later",
+  "outDir": "dist",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./typings": "./dist/typings/index.d.ts"
+  },
   "bin": {
     "blakprint": "./bin/index.js"
   },
-  "exports": {
-    ".": "./dist/*"
+  
+  "_moduleAliases": {
+    "blakprint": "dist/*"
   },
   "funding": [
     {
@@ -33,11 +48,13 @@
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
-    "build": "npx tsup src --dts-resolve",
+    "build": "npx tsup src --dts-resolve  && npx shx cp package.json dist && npx shx cp tsconfig.json dist",
     "build:fast": "tsup src",
+    "link" : "tsc && copy /Y package.json dist && copy /Y readme.md dist && copy /Y * dist && cd dist && npm link",
+    "publish": "tsc && copy /Y package.json dist && copy /Y readme.md dist && cd dist && npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
-    "publish": "npm publish --access=public",
+    "node:publish": "npm publish --access=public",
     "test": "vitest",
     "test:watch": "vitest watch",
     "coverage": "vitest run --coverage"
@@ -50,9 +67,11 @@
     "meta-framework"
   ],
   "devDependencies": {
+    "@rollup/plugin-alias": "^5.0.0",
     "@types/yargs": "^17.0.22",
     "@vitest/coverage-c8": "^0.24.5",
     "happy-dom": "^6.0.4",
+    "shx": "^0.3.4",
     "tsup": "^6.7.0",
     "typescript": "^5.0.2",
     "vitest": "^0.29.8"
@@ -61,15 +80,20 @@
     "doc": "docs"
   },
   "dependencies": {
+    "@types/react": "^18.0.37",
     "boxen": "^7.0.2",
     "chalk": "^5.2.0",
     "g": "^2.0.1",
+    "link-module-alias": "^1.2.0",
     "listr": "^0.14.3",
     "make-dir": "^3.1.0",
     "meta-types": "^2.0.0",
+    "module-alias": "^2.2.2",
     "nanostores": "^0.7.4",
     "ora": "^6.1.2",
     "path": "^0.12.7",
+    "react": "^18.2.0",
+    "tsconfig-paths": "^4.2.0",
     "yargs": "^17.7.1"
   }
 }

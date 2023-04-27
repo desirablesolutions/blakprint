@@ -9,11 +9,9 @@
 
 </h1>
 <h2>✨Features</h2>
-
-* **Opinionated Distributed M.V.C inspired by** [_astro_](https://astro.build)
-* **Simple Generic Type Definitions & Helpers.**
-* **Plugins artchitecture**
-* `define` method that helps author coding consistently. 
+  
+* **Typescript Library of MVC model-view-controller Types, Functors, Utilities, & Methods.**
+* **Free, Intelligent, Canva-like App for making Creative Web Projects.**
 <h2>⚒️Installation</h2>
 
 
