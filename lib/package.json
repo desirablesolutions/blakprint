@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "10.2.1",
+  "version": "10.0.3",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting web projects.",
@@ -8,12 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/blakprint.git"
   },
-  "paths":{
-    "*": [
-      "./dist"
-    ]
-   
-  },
+
   "license": "GPL-3.0-or-later",
   "outDir": "dist",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
@@ -31,9 +26,7 @@
     "blakprint": "./bin/index.js"
   },
   
-  "_moduleAliases": {
-    "blakprint": "dist/*"
-  },
+
   "funding": [
     {
       "type": "kofi",
@@ -51,7 +44,7 @@
     "build": "npx tsup src --dts-resolve  && npx shx cp package.json dist && npx shx cp tsconfig.json dist",
     "build:fast": "tsup src",
     "link" : "tsc && copy /Y package.json dist && copy /Y readme.md dist && copy /Y * dist && cd dist && npm link",
-    "publish": "tsc && copy /Y package.json dist && copy /Y readme.md dist && cd dist && npm run node:publish",
+    "publish": "npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
     "node:publish": "npm publish --access=public",

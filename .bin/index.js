@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const blakprint = require('./src/index.ts')
 const path = require('path');
 const yargs = require('yargs');
 const makeDir = require('make-dir');
@@ -8,9 +7,7 @@ const makeDir = require('make-dir');
 const presets = {
   basic: {
     models: {
-      configs: {
-        "index": "index.ts"
-      },
+      configs: {},
       data: {
         db: {},
         pages: {},

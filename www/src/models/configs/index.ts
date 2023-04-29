@@ -1,2 +1,1 @@
-import type { JSXComponentType, ComponentProps } from "blakprint/typings"
-
+import type { ViewType } from "blakprint/dist/typings"

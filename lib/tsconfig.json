@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "target": "es6",
     "module": "commonjs",
-    "declaration": true,
+    "declaration": false,
     "moduleResolution": "node",
     "outDir": "dist",
     "esModuleInterop": true,
@@ -12,11 +12,6 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "rootDir": "./",
-    "paths": {
-      "blakprint/*": [
-        "./dist/*"
-      ]
-    },
   },
  
 }

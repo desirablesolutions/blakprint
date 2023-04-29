@@ -14,4 +14,4 @@ export * as pages from "./pages/index"
 export * as styles from "./styles/index"
 export * as tests from "./tests/index"
 
-export type * as typings from "./typings/index"
+export * as typings from "./typings/index"
