@@ -1,11 +1,3 @@
-require('module-alias/register')
-
-import 'module-alias/register'
-import * as moduleAlias from 'module-alias';
-
-moduleAlias.addAliases({
-  'blakprint': __dirname
-});
 
 export * as build from "./build/index"
 export * as components from "./components/index"

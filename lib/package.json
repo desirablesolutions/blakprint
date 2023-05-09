@@ -8,7 +8,6 @@
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/blakprint.git"
   },
-
   "license": "GPL-3.0-or-later",
   "outDir": "dist",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
@@ -25,8 +24,6 @@
   "bin": {
     "blakprint": "./bin/index.js"
   },
-  
-
   "funding": [
     {
       "type": "kofi",
@@ -41,9 +38,9 @@
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
-    "build": "npx tsup src --dts-resolve  && npx shx cp package.json dist && npx shx cp tsconfig.json dist",
+    "build": "vite build && npx shx cp package.json dist && npx shx cp tsconfig.json dist",
     "build:fast": "tsup src",
-    "link" : "tsc && copy /Y package.json dist && copy /Y readme.md dist && copy /Y * dist && cd dist && npm link",
+    "link": "tsc && copy /Y package.json dist && copy /Y readme.md dist && copy /Y * dist && cd dist && npm link",
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
@@ -74,6 +71,7 @@
   },
   "dependencies": {
     "@types/react": "^18.0.37",
+    "@vitejs/plugin-react": "^4.0.0",
     "boxen": "^7.0.2",
     "chalk": "^5.2.0",
     "g": "^2.0.1",
@@ -87,6 +85,10 @@
     "path": "^0.12.7",
     "react": "^18.2.0",
     "tsconfig-paths": "^4.2.0",
+    "vite": "^4.3.4",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-dynamic-import": "^1.3.2",
+    "vite-plugin-tsconfig-paths": "^1.3.0",
     "yargs": "^17.7.1"
   }
 }
