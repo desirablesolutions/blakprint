@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "10.0.3",
+  "version": "11.0.3",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting web projects.",
@@ -11,15 +11,15 @@
   "license": "GPL-3.0-or-later",
   "outDir": "dist",
   "author": "Jeffrey Desir <jeffrey@desir.tech>",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.es.js",
+  "module": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
     },
-    "./typings": "./dist/typings/index.d.ts"
+    "./typings": "./dist/index.d.ts"
   },
   "bin": {
     "blakprint": "./bin/index.js"
@@ -38,9 +38,8 @@
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
-    "build": "vite build && npx shx cp package.json dist && npx shx cp tsconfig.json dist",
-    "build:fast": "tsup src",
-    "link": "tsc && copy /Y package.json dist && copy /Y readme.md dist && copy /Y * dist && cd dist && npm link",
+    "build": "vite build",
+    "prepublishOnly": "npm run build",
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
