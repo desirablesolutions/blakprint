@@ -10,7 +10,7 @@ export type ImageProps<ExtensionProps = unknown> = ComponentProps<{
     className?: string
 }, ExtensionProps,
     {
-    variant?: "default" | "custom"
+        variant?: "default" | "custom"
     }>
 
 export type FaviconProps<ExtensionProps = unknown> = ComponentProps<{
@@ -39,3 +39,4 @@ export type SectionProps<ExtensionProps = unknown> = ComponentProps<{
     title?: string | Element | Node,
     banner?: ImageProps,
 }, ExtensionProps>
+

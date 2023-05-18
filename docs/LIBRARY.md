@@ -1,5 +1,5 @@
-<h2>Library</h2>
+<h2>🔮Library</h2>
 
-* [**Read our library documentation here**]()
+* [**Read our library documentation here**](#lib)
 
 ---

@@ -3,4 +3,12 @@
 ```bash
 npx blakprint <command> <opts>
 ```
+
+
+**commands**
+```bash
+generate | jarveis | document | define | help
+```
+
+
 ---

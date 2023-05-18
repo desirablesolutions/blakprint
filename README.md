@@ -1,7 +1,6 @@
-<!-- ⚠️ This README has been generated from the file(s) "DOCUMENTATION.md" ⚠️--><h1 align="center">📐Blakprint</h1>
-<h2>📝Description</h2>
+<!-- ⚠️ This README has been generated from the file(s) "DOCUMENTATION.md" ⚠️--><h1 align="center">Blakprint</h1>
 
-> 📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.
+<h4 align="center">an editor & workbox of reusable, composable, model, view, and controller modules for architecting creative projects.</h4>
 
 <h1 align="center">
 
@@ -10,15 +9,15 @@
 </h1>
 <h2>✨Features</h2>
   
-* **Typescript Library of MVC model-view-controller Types, Functors, Utilities, & Methods.**
-* **Free, Intelligent, Canva-like App for making Creative Web Projects.**
-<h2>⚒️Installation</h2>
+* **Typescript library of MVC model-view-controller Types, Functors, Utilities, & Methods.**
+* **Grpah-based editor for architecturing using `definitions`**
 
+<h2>⚒️Installation</h2>
 
 **node**
 
 ```bash
-npm i blakprint
+npm i blakprint@latest
 ```
 ---
 
@@ -54,41 +53,26 @@ npx blakprint generate <preset>
 ---
 
 
-<h2>Library</h2>
+<h2>🔮Library</h2>
 
-* [**Read our library documentation here**]
-
----
-<h2>🧩Plugins</h2>
-
-- [**Read our plugins documentation here...**](https://github.com/blakprint/blakprint/plugins/#readme)
+* [**Read our library documentation here**]#lib
 
 ---
-
 <h2>⏳Changelog</h2>
 
-### 🎉v10.0.0
+### 🎉v13.0.0
 
 **@lib**
-* Stable `define` function with parameterized type defintions and single responsibility.
-* GPT-4 Integration for Intelligent Terminal Assitance
----
-**@lib**
-* Stable `define` function with parameterized type defintions and single responsibility.
-* GPT-4 Integration for Intelligent Terminal Assitance
+
+- Stable `define` function with parameterized type defintions and single responsibility.
+- GPT-4 Integration for Intelligent Terminal Assitance
 
 ---
+
 **@lib**
-* Stable `define` function with parameterized type defintions and single responsibility.
-* GPT-4 Integration for Intelligent Terminal Assitance
 
----
-**@lib**
-* Stable `define` function with parameterized type defintions and single responsibility.
-* GPT-4 Integration for Intelligent Terminal Assitance
-
-
-### v9.9.X
+- Stable `define` function with parameterized type defintions and single responsibility.
+- GPT-4 Integration for Intelligent Terminal Assitance
 
 ### v9.0.X
 
@@ -103,27 +87,39 @@ npx blakprint generate <preset>
 ```bash
 npx blakprint <command> <opts>
 ```
+
+
+**commands**
+```bash
+generate | jarveis | document | define | help
+```
+
+
 ---
 
 <h2>🍎Application</h2>
 
-[**You can read our editor documentation here...**](https://github.com/desirablesolutions/blakprint/blakprint/app/#readme)
+[**You can read our editor documentation here**](https://github.com/desirablesolutions/blakprint/blakprint/app/#readme)
+
+---
 
 <h2>➰Feedback</h2>
 
-* [Email us | dev@desirable.solutions](mailto:dev@desirable.solutions)
-<h2>✒️Authors</h2>
-
-* [**👩🏿‍💻Jeffrey Desir**](https://desir.tech)
-* [**🤖Open A.I GPT-3.5**](https://chat.openai.com)
+**[Email us | dev@desirable.solutions](mailto:dev@desirable.solutions)**
 <h2>🙏🏿Acknowledgements</h2>
 
-* **_✝️To God be All the Glory_**. 
+1. **✝️To God be All the Glory**. 
+2. **Microsoft**. 
+3. 
+<h2>Copyright</h2>
+
+> Desirable Solutions 2023. All Rights Reserved. 
+<h2>✒️Authors</h2>
+
+* [**👩🏿‍💻Jeffrey Desir**](https://desirable.solutions/team/jeffrey)
+* [**🤖Open A.I GPT-4**](https://chat.openai.com)
 <h2>📜License</h2>
 
 > **This project is under the GPL version 3.0 (the "License").** ☂️
-
-
----
 
 

@@ -15,6 +15,9 @@
     "strict": false,
     "outDir": "dist",
     "rootDir": "src",
+    "paths": {
+      "@blakprint/*": ["./dist/*"]
+    },
     "baseUrl": ".",
   },
   "include": [

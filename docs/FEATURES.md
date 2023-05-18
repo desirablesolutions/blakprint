@@ -1,4 +1,4 @@
 <h2>✨Features</h2>
   
-* **Typescript Library of MVC (model-view-controller) Types, Functors, Utilities, & Methods.**
-* **Free, Intelligent, Canva-like App for making Creative Web Projects.**
+* **Typescript library of MVC (model-view-controller) Types, Functors, Utilities, & Methods.**
+* **Grpah-based editor for architecturing using `definitions`**
