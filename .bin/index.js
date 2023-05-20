@@ -87,6 +87,15 @@ createCLICommand(
   async (argv) => { await makeDir(path.join(argv.path, '/test/')); }
 );
 
+createCLICommand(
+  options,
+  'bootstrap <framework>',
+  'Create a directory for tests',
+  { name: 'test', config: { describe: 'Create test directory', choices: Object.keys(presets), demandOption: true } },
+  { name: 'path', config: { describe: 'Starting path for the directory structure', type: 'string', default: '.' } },
+  async (argv) => { await makeDir(path.join(argv.path, '/test/')); }
+);
+
 options
   .help('h')
   .alias('h', 'help')

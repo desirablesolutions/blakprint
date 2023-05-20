@@ -1,7 +1,7 @@
 /**
  * Generates a string based on a template and data provided.
  *
- * @param {string} strTemplate - The string template.
+ * @param {string} format - The string template.
  * @param {Record<string, any>} data - The data to use to fill the template.
  * @param {string} delimiter - The delimiter to use for the template values.
  *
