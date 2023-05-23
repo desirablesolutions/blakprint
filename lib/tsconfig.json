@@ -16,7 +16,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
-      "./*": ["./dist/*"],
+      "/*": ["./dist/*"],
       "@build/*": ["./build/*"],
       "@assets/*": ["./assets/*"],
     },

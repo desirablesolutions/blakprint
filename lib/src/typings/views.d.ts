@@ -1,6 +1,16 @@
 
 import type { MetaProps } from "./includes"
 
+export type Colors = 'red' | 'blue' | 'yellow' | 'green' | 'black' | 'white';
+
+export type BaseOneLevels = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+
+export type BaseThreeLevels = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+export type PaddingLevel = readonly BaseOneLevels
+
+export type ColorLevel = BaseThreeLevels
+
 export type JSXViewType<PropTypes, MetaTypes> = JSX.Element & {
     props: PropTypes;
     meta?: MetaTypes;

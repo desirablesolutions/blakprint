@@ -15,6 +15,8 @@ export type ParamsType = BlakprintParametersType<{
 }>
 
 export type ValidClosure = Function | Promise<any> | Object | number | string | null | undefined;
+//^? 
+
 
 export type FunctorType = {
     (...args: any[]): any;
