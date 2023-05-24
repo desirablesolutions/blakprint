@@ -25,10 +25,6 @@
       "@assets/*": [
         "./src/assets/*"
       ],
-      "@components/*": [
-        "./src/components/*",
-  
-      ]
     },
     "baseUrl": ".",
   },

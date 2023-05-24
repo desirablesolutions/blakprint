@@ -1,27 +1,25 @@
 {
-	"name": "blackprint-app",
-	"type": "module",
-	"version": "9.9.3",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"readme:g": "npx @appnest/readme generate --config=doc.config.json",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/react": "^2.0.2",
-		"@astrojs/tailwind": "^3.0.1",
-		"@desirablesolutions/blackprint": "^2.0.0",
-		"@excalidraw/excalidraw": "^0.14.2",
-		"@types/react": "^18.0.28",
-		"@types/react-dom": "^18.0.11",
-		"astro": "^2.0.16",
-		"blakprint": "^9.9.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"reactflow": "^11.7.2",
-		"tailwindcss": "^3.2.7"
-	}
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "next": "13.4.3",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  }
 }
