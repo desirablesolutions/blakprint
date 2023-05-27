@@ -10,12 +10,17 @@ export type BlakprintParametersType<T> = {
     T
 }
 
+export interface RegistryEntry<MetaTypes> {
+    instance: Definition<any, MetaTypes>,
+    meta: MetaTypes,
+}
+
 export type ParamsType = BlakprintParametersType<{
     params?: any
 }>
 
 export type ValidClosure = Function | Promise<any> | Object | number | string | null | undefined;
-//^? 
+
 
 
 export type FunctorType = {
@@ -24,6 +29,6 @@ export type FunctorType = {
     name?: string | symbol | null | undefined | Object;
 };
 
-export type Define<T, G> = {
-    (...args: any[]): T & G
+export type Definition<TypeParams, GeneratorParams> = {
+    (...args: any[]): TypeParams & GeneratorParams
 }

@@ -1,6 +1,6 @@
 {
-  "name": "blakprint",
-  "version": "12.0.0",
+  "name": "blakprint-utils-ts",
+  "version": "2.0.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting web projects.",
