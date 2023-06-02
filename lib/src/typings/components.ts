@@ -1,6 +1,6 @@
-import type { ComponentProps } from "./views"
+import type { ComponentType } from "./views"
 
-export type ImageProps<ExtensionProps = unknown> = ComponentProps<{
+export type ImageType<ExtensionType = unknown> = ComponentType<{
     src?: string,
     alt?: string,
     height?: string,
@@ -8,35 +8,35 @@ export type ImageProps<ExtensionProps = unknown> = ComponentProps<{
     loading?: "lazy" | "eager",
     class?: string,
     className?: string
-}, ExtensionProps,
+}, ExtensionType,
     {
         variant?: "default" | "custom"
     }>
 
-export type FaviconProps<ExtensionProps = unknown> = ComponentProps<{
-    image?: ImageProps,
+export type FaviconType<ExtensionType = unknown> = ComponentType<{
+    image?: ImageType,
     url?: string,
-}, ExtensionProps>
+}, ExtensionType>
 
-export type SocialProps<ExtensionProps = unknown> = ComponentProps<{
+export type SocialType<ExtensionType = unknown> = ComponentType<{
     url?: string,
     icon?: string,
     name?: string,
-}, ExtensionProps>
+}, ExtensionType>
 
-export type LinkProps<ExtensionProps = unknown> = ComponentProps<{
+export type LinkType<ExtensionType = unknown> = ComponentType<{
     url?: string,
     name?: string,
-}, ExtensionProps>
+}, ExtensionType>
 
-export type CallToActionProps<ExtensionProps = unknown> = ComponentProps<{
+export type CallToActionType<ExtensionType = unknown> = ComponentType<{
     url?: string,
     name?: string,
     type?: string
-}, ExtensionProps>
+}, ExtensionType>
 
-export type SectionProps<ExtensionProps = unknown> = ComponentProps<{
+export type SectionType<ExtensionType = unknown> = ComponentType<{
     title?: string | Element | Node,
-    banner?: ImageProps,
-}, ExtensionProps>
+    banner?: ImageType,
+}, ExtensionType>
 

@@ -11,10 +11,10 @@ import type { Definition, ValidClosure, FunctorType } from "./types"
  * @returns {Define<ClosureType, MetaTypes>} A function that evaluates the closure and returns its result.
  */
 
-const define = function <ClosureType, MetaTypes>(closure?: ValidClosure, meta?: MetaTypes): Definition<ClosureType, MetaTypes> {
+const define = function <ClosureType, MetaTypes>(closure?: ValidClosure, meta?: MetaTypes): Definition<ClosureType> {
 
-  const instance: Definition<ClosureType, MetaTypes> = function (args: any): FunctorType {
-    const Evaluator: FunctorType = function (...args: any[]) {
+  const instance: Definition<ClosureType> = function (args: any): FunctorType<ClosureType> {
+    const Evaluator: FunctorType<ClosureType> = function (...args: any[]) {
       if (isFunction(closure)) {
         return closure(...args) as ClosureType;
       } else {
@@ -32,8 +32,7 @@ const define = function <ClosureType, MetaTypes>(closure?: ValidClosure, meta?: 
   });
 
   GlobalRegistry.add({
-    instance,
-    meta
+    instance
   });
 
   return instance;

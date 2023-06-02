@@ -1,6 +1,6 @@
+import * as React from "react"
 
 import type { MetaProps } from "./includes"
-import * as React from "react"
 
 export type Colors = 'red' | 'blue' | 'yellow' | 'green' | 'black' | 'white';
 
@@ -17,17 +17,17 @@ export type JSXViewType<PropTypes, MetaTypes> = JSX.Element & {
     meta?: MetaTypes;
 }
 
-export type ViewType<A, B> = { A, B }
+export type ViewType<PropTypes> = {}
 
-export type ViewCreatorType<PropTypes, MetaTypes> = (props: PropTypes) => ViewType<PropTypes, MetaTypes>
+export type ViewCreatorType<PropTypes, MetaTypes> = (props: PropTypes) => ViewType<PropTypes>
 
 
-export type ComponentProps<PropTypes, ExtensionProps = undefined, MetaTypes = unknown> = PropTypes & (ExtensionProps | PropTypes) & {
+export type ComponentType<PropTypes, ExtensionProps = undefined, MetaTypes = unknown> = PropTypes & (ExtensionProps | PropTypes) & {
     meta?: MetaTypes;
 };
 
 export type LayoutProps<ChildrenType> = {
-    children: ChildrenType
+    children?: ChildrenType
 }
 
 export type JSXLayoutProps = LayoutProps<React.ReactNode>

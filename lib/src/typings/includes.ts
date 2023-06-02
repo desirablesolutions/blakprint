@@ -1,43 +1,46 @@
-import type { ComponentProps } from "./views"
-import type { FaviconProps, SocialProps, LinkProps, ImageProps } from "./components"
+import type { ComponentType } from "./views"
+import type { FaviconType, SocialType, LinkType, ImageType } from "./components"
 
 
-export type NavBarProps<ExtensionProps = unknown> = ComponentProps<{
-    favicon?: FaviconProps
-}, ExtensionProps>
+export type NavBarType<ExtensionType = unknown> = ComponentType<{
+    favicon?: FaviconType
+}, ExtensionType>
 
 
-export type FooterProps<ExtensionProps = unknown> = ComponentProps<{
-    favicon?: FaviconProps,
+//generamte meta ttypes
+
+
+export type FooterType<ExtensionType = unknown> = ComponentType<{
+    favicon?: FaviconType,
     copyright?: string,
-    navLinks?: LinkProps[]
-}, ExtensionProps>
+    navLinks?: LinkType[]
+}, ExtensionType>
 
-export type OpenGraphProps = {
+export type OpenGraphType = {
 
 }
 
-export type MenuProps<ExtensionProps = unknown> = ComponentProps<{
-    favicon?: FaviconProps,
+export type MenuType<ExtensionType = unknown> = ComponentType<{
+    favicon?: FaviconType,
 
 }>
 
-export type MetaProps<ExtensionProps = unknown> = ComponentProps<{
+export type MetaType<ExtensionType = unknown> = ComponentType<{
     title?: string,
     pageTitle?: string,
     description?: string
     author?: string,
     topic?: string,
     summary?: string,
-    og?: OpenGraphProps,
+    og?: OpenGraphType,
     email?: string,
     themeColor?: string,
     keywords?: string | string[]
-}, ExtensionProps>
+}, ExtensionType>
 
-export type ContactProps<ExtensionProps = unknown> = ComponentProps<{
+export type ContactType<ExtensionType = unknown> = ComponentType<{
     email?: string,
     phone?: string,
-    socials?: SocialProps[],
-    banner?: ImageProps
-}, ExtensionProps>
+    socials?: SocialType[],
+    banner?: ImageType
+}, ExtensionType>

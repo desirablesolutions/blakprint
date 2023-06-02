@@ -5,30 +5,18 @@ export type ResultCase<ValueType = unknown, ErrorType = unknown> =
 export type Result<TruthyCaseType, ErrorCaseType = unknown> =
     ResultCase<TruthyCaseType, ErrorCaseType>;
 
-export type BlakprintParametersType<T> = {
-    id?: string | symbol,
-    T
+export interface RegistryEntry<TypeParams = unknown> {
+    instance: Definition<TypeParams>,
+    meta?: TypeParams,
 }
-
-export interface RegistryEntry<MetaTypes> {
-    instance: Definition<any, MetaTypes>,
-    meta: MetaTypes,
-}
-
-export type ParamsType = BlakprintParametersType<{
-    params?: any
-}>
 
 export type ValidClosure = Function | Promise<any> | Object | number | string | null | undefined;
 
-
-
-export type FunctorType = {
-    (...args: any[]): any;
+export type FunctorType<TypeParams> = Definition<TypeParams> & {
     [key: string]: any;
-    name?: string | symbol | null | undefined | Object;
+    name?: string | symbol;
 };
 
-export type Definition<TypeParams, GeneratorParams> = {
-    (...args: any[]): TypeParams & GeneratorParams
+export type Definition<TypeParams> = {
+    (...args: unknown[]): TypeParams
 }
