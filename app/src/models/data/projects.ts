@@ -1,3 +1,9 @@
+export type NodeType<ParamsType> = {
+    id: string,
+    params: ParamsType,
+    edges: NodeType<ParamsType>[],
+    children: NodeType<ParamsType>[],
+}
 export type DefineType = Partial<{
     assets: {},
     controllers: {},
