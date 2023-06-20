@@ -15,7 +15,13 @@ const isUser = tg.isOfShape({
   name: tg.isString,
   age: tg.isNumber,
 })
-
+``
 const is_a = (x: unknown) => {
   
+}
+
+const createPredicate = (x: unknown) => {
+  return function(y: unknown) {
+    return typeof x === typeof y
+  }
 }

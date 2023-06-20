@@ -10,12 +10,7 @@ export interface RegistryEntry<TypeParams = unknown> {
     meta?: TypeParams,
 }
 
-export type ValidClosure = Function | Promise<any> | Object | number | string | null | undefined;
-
-export type FunctorType<TypeParams> = Definition<TypeParams> & {
-    [key: string]: any;
-    name?: string | symbol;
-};
+export type ValidClosure = Function | Promise<any> | Object | number | string ;
 
 export type Definition<TypeParams> = {
     (...args: unknown[]): TypeParams

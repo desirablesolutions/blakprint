@@ -1,6 +1,6 @@
 {
   "name": "blakprint-utils-ts",
-  "version": "9.9.0",
+  "version": "10.0.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "Required dependencies for Blakprint to that generalize to similar projects.",

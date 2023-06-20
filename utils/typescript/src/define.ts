@@ -1,6 +1,6 @@
 import { GlobalRegistry } from './registry';
 import { isFunction } from "./predicates"
-import type { Definition, ValidClosure, FunctorType } from "./types"
+import type { Definition, ValidClosure } from "./types"
 
 /**
  * Returns a higher-order method that acts as an evaluator for a closure.
@@ -13,8 +13,8 @@ import type { Definition, ValidClosure, FunctorType } from "./types"
 
 const define = function <ClosureType, MetaTypes>(closure?: ValidClosure, meta?: MetaTypes): Definition<ClosureType> {
 
-  const instance: Definition<ClosureType> = function (args: any): FunctorType<ClosureType> {
-    const Evaluator: FunctorType<ClosureType> = function (...args: any[]) {
+  const instance: Definition<ClosureType> = function (args: any) {
+    const Evaluator = function (...args: any[]) {
       if (isFunction(closure)) {
         return closure(...args) as ClosureType;
       } else {
@@ -38,6 +38,7 @@ const define = function <ClosureType, MetaTypes>(closure?: ValidClosure, meta?: 
   return instance;
 };
 
+const data = define({p: 0 })
 
 
 export default define
