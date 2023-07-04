@@ -1,17 +1,11 @@
-export type ResultCase<ValueType = unknown, ErrorType = unknown> =
-    { ok: true, value: ValueType } |
-    { ok: false, error: ErrorType };
 
-export type Result<TruthyCaseType, ErrorCaseType = unknown> =
-    ResultCase<TruthyCaseType, ErrorCaseType>;
+export type ValidClosure = (...args: unknown[]) => unknown | Promise<unknown> | Object | number | string;
 
-export interface RegistryEntry<TypeParams = unknown> {
-    instance: Definition<TypeParams>,
-    meta?: TypeParams,
-}
+export type MethodType<ReturnType = unknown> = (...args: unknown[]) => ReturnType | Promise<ReturnType>;
 
-export type ValidClosure = Function | Promise<any> | Object | number | string ;
+export type Definition<TypeParams, MetaParams = unknown> = {
+  readonly value: MethodType<TypeParams>
+  readonly meta?: MethodType<MetaParams>,
+  closure: MethodType<ValidClosure>
+};
 
-export type Definition<TypeParams> = {
-    (...args: unknown[]): TypeParams
-}

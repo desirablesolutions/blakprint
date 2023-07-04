@@ -1,5 +1,2 @@
-import define from "@build/define";
+import { define, MethodType } from "blakprint-utils-ts"
 
-export const defineHooks = define("hooks", {
-
-})

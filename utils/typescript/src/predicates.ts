@@ -1,27 +1,13 @@
+import { isBoolean as TypeGuardsIsBoolean, isFunction as TypeGuardsIsFunction, isNull as TypeGuardsIsNull } from "type-guards";
+
 export function isFunction(x: unknown): x is Function {
-  return typeof x === 'function';
+  return TypeGuardsIsFunction(x);
 }
 
-export function isString(x: unknown): x is string {
-  return typeof x === 'string';
+export function isBoolean(x: unknown): x is boolean {
+  return TypeGuardsIsBoolean(x);
 }
 
-export function isNumber(x: unknown): x is number {
-  return typeof x === 'string';
-}
-
-import * as tg from 'type-guards'
-const isUser = tg.isOfShape({
-  name: tg.isString,
-  age: tg.isNumber,
-})
-``
-const is_a = (x: unknown) => {
-  
-}
-
-const createPredicate = (x: unknown) => {
-  return function(y: unknown) {
-    return typeof x === typeof y
-  }
+export function isNull(x: unknown): x is null {
+  return TypeGuardsIsNull(x);
 }

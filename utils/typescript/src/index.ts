@@ -1,5 +1,3 @@
-export { default as define } from "./define"
+export { define } from "./define"
 export * as predicates from "./predicates"
-export * as utils from "./utils"
 export type * from "./types"
-export * from "./registry"

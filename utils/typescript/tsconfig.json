@@ -15,17 +15,7 @@
     "strict": false,
     "outDir": "dist",
     "rootDir": "src",
-    "paths": {
-      "/*": [
-        "./dist/*"
-      ],
-      "@build/*": [
-        "./src/build/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-    },
+   
     "baseUrl": ".",
   },
   "include": [

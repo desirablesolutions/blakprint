@@ -1,4 +1,4 @@
-import { default as definition } from '@build/define';
+import definition from "blakprint-utils-ts"
 
 export const defineUtility = definition(() => {
 
