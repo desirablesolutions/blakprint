@@ -1,3 +1,3 @@
 export { define } from "./define"
-export * as predicates from "./predicates"
+export * from "./predicates"
 export type * from "./types"

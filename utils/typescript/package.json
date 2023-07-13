@@ -1,9 +1,9 @@
 {
   "name": "blakprint-utils-ts",
-  "version": "11.0.1",
+  "version": "11.0.3",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
-  "description": "Required dependencies for Blakprint to that generalize to similar projects.",
+  "description": "A tiny, extensible module for authoring arbituary closures through Definitions, implemented for TypeScript",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/blakprint.git"
@@ -34,7 +34,7 @@
   ],
   "bugs": {
     "url": "https://github.com/desirablesolutions/blakprint/issues",
-    "email": "jeffrey@desir.tech"
+    "email": "jeffrey@desirable.solutions"
   },
   "scripts": {
     "build": "vite build",
@@ -50,7 +50,9 @@
   "keywords": [
     "desirable-solutions",
     "mvc",
+    "desirtech",
     "typescript",
+    "declarative",
     "library",
     "meta-framework"
   ],
@@ -82,11 +84,11 @@
     "make-dir": "^3.1.0",
     "meta-types": "^2.0.0",
     "module-alias": "^2.2.2",
-    "nanostores": "^0.7.4",
+
     "ora": "^6.1.2",
     "path": "^0.12.7",
-    "react": "^18.2.0",
-    "ts-toolbelt": "^9.6.0",
+
+
     "tsconfig-paths": "^4.2.0",
     "type-guards": "^0.15.0",
     "vite": "^4.3.4",

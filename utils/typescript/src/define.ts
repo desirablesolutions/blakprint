@@ -1,19 +1,43 @@
-import { Definition, ValidClosure } from "./types"
+import { Definition, ValidClosure, DEFAULT_META_PARAMS_TYPES } from "./types"
+import { isFunction } from "./predicates"
 
-export function define<TypeParams, MetaParams = unknown>(closure: TypeParams, meta?: MetaParams): Definition<TypeParams, MetaParams> {
+
+/**
+ * Create a definition with optional metadata.
+ *
+ * @param {ValidClosure} closure - The closure to be stored in the definition.
+ * @param {MetaParams} meta - Optional metadata for the definition.
+ * @returns {Definition<TypeParams, MetaParams>} The created definition.
+ */
+
+export function define<TypeParams, MetaParams = DEFAULT_META_PARAMS_TYPES>
+  (closure: ValidClosure, meta?: MetaParams):
+  Definition<TypeParams, MetaParams> {
 
   const instance: Definition<TypeParams, MetaParams> = {
-    meta: (...args: unknown[]): MetaParams => {
-      return meta as MetaParams
+    meta: () => {
+      return meta
     },
-    closure: (...args: unknown[]) => {
-      return closure as ValidClosure
+    redefine: (newClosure: ValidClosure) => {
+      return newClosure || closure
     },
-    value: (...args: unknown[]): TypeParams => {
-      return closure as TypeParams
+    closure: () => {
+      return `${closure}`
+    },
+    value: (...args) => {
+      if (isFunction(closure)) {
+        return closure(...args) as TypeParams
+      } else {
+        return closure as TypeParams
+      }
+    },
+    log: () => {
+      console.log(`${closure}`)
     }
   }
 
   return instance
 }
+
+
 

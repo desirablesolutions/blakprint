@@ -1,7 +1,5 @@
 import * as React from "react"
 
-import type { MetaProps } from "./includes"
-
 export type Colors = 'red' | 'blue' | 'yellow' | 'green' | 'black' | 'white';
 
 export type BaseOneLevels = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10

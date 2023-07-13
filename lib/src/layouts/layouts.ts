@@ -6,9 +6,15 @@ const defineLayoutMeta = {
     version: 1
 }
 
-export const defineAsync = define<MethodType<Promise<any>>, typeof defineLayoutMeta>(async (layout: number) => {
-    return { layout }
+export type LayoutProps = {
+    children: React.ReactNode
+}
+
+export const defineLayout = define<MethodType<any>, typeof defineLayoutMeta>((children: unknown) => {
+    return children
 }, defineLayoutMeta)
 
 
-const callMe = defineAsync
+const callMe = defineLayout.value({
+    data: []
+})
