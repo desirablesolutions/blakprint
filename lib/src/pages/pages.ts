@@ -10,12 +10,25 @@ export type PageStoreType<DataType, T> = {
     metaData?: PageStoreMetaProps<T>
 }
 
-export const definePages = <T, Meta>(factory: () => T | T) => {
-    return define<PageStoreType<T, Meta>, PageStoreMetaProps<Meta>>((() => {
-        return factory
-    }));
+export function definePage() {
+    return define(() => {
+        return (
+            
+        )
+    })
 }
 
 
 
 
+export function definePages() {
+
+    const instance: any = {
+        data: [
+            definePage(),
+            definePage(),
+        ]
+    }
+
+    return define(instance)
+}

@@ -1,7 +1,7 @@
-export function defineModels = define({
-    name: "models",
-})
+import { define } from "blakprint-utils-ts"
 
-export function defineModel = define({
-    
-})
+
+
+export function defineModel() {
+    return define<number>()
+}

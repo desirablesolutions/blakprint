@@ -1,0 +1,2 @@
+(defn define [ & closure ]
+(closure))

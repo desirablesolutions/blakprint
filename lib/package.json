@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 an editor & workbox of reusable, composable, model, view, and controller modules for architecting web projects.",
@@ -72,7 +72,7 @@
     "@dao-xyz/borsh": "^5.1.5",
     "@types/react": "^18.0.37",
     "@vitejs/plugin-react": "^4.0.0",
-    "blakprint-utils-ts": "^11.0.1",
+    "blakprint-utils-ts": "^11.0.4",
     "boxen": "^7.0.2",
     "chalk": "^5.2.0",
     "cli-table3": "^0.6.3",

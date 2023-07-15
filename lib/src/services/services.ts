@@ -1,6 +1,18 @@
-import { define } from "blakprint-utils-ts"
+import { MethodType, define } from "blakprint-utils-ts"
+import { ServiceType } from "src/typings"
 
 
-export const defineService = define(() => {
-    
-})
+export type ServiceTypeProps = {
+    name?: string,
+    version?: string | number,
+    methods?: MethodType,
+    store?: any
+}
+
+
+export function defineService(params: ServiceTypeProps) {
+
+    const { name, version, methods } = params
+
+    return define(methods)
+}

@@ -1,5 +1,7 @@
-import definition from "blakprint-utils-ts"
+import { define, Definition, ValidClosure } from "blakprint-utils-ts"
 
-export const defineUtility = definition(() => {
+export type UtilityType<TypeParams, ReturnParams, MetaParams = {}> = Definition<TypeParams, ReturnParams, MetaParams>
 
-})
+export function defineUtility<TypeParams, ReturnParams>(closure: ValidClosure): UtilityType<TypeParams, ReturnParams> {
+    return define<TypeParams, ReturnParams>(closure)
+}

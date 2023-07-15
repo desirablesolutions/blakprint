@@ -1,1 +1,1 @@
-export { default as template } from "./template"
+export { defineTemplate } from "./template"

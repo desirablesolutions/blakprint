@@ -1,20 +1,15 @@
 import { define, MethodType } from "blakprint-utils-ts"
-
+import { LayoutProps } from "src/typings"
 
 const defineLayoutMeta = {
     type: "layout",
     version: 1
-}
+} as const
 
-export type LayoutProps = {
-    children: React.ReactNode
-}
 
-export const defineLayout = define<MethodType<any>, typeof defineLayoutMeta>((children: unknown) => {
+
+export const defineLayout = define<MethodType<LayoutProps<React.ReactNode>>, typeof defineLayoutMeta>((children: unknown) => {
     return children
 }, defineLayoutMeta)
 
 
-const callMe = defineLayout.value({
-    data: []
-})
