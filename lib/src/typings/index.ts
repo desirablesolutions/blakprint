@@ -1,5 +1,4 @@
 export type * from "./views"
-export type * from "./components"
-export type * from "./includes"
-export type * from "./services"
-export type * from "./controller"
+export type * from "./models"
+export type * from "./controllers"
+export type * from "./meta"

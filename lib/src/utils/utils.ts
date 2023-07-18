@@ -1,7 +1,22 @@
-import { define, Definition, ValidClosure } from "blakprint-utils-ts"
+import { UtilityType } from "src/typings/controllers"
+import { defineController } from "src/controllers"
+import { MetaDataType } from "src/typings/meta"
 
-export type UtilityType<TypeParams, ReturnParams, MetaParams = {}> = Definition<TypeParams, ReturnParams, MetaParams>
 
-export function defineUtility<TypeParams, ReturnParams>(closure: ValidClosure): UtilityType<TypeParams, ReturnParams> {
-    return define<TypeParams, ReturnParams>(closure)
+export function defineUtility<ReturnParams = {}, ExtensionParams = {},>
+    (closure: ReturnParams,
+        meta?: unknown):
+    UtilityType<ExtensionParams, ReturnParams> {
+
+    const metaData: MetaDataType<typeof meta> = {
+        ...meta as any,
+        version: 1,
+        type: "utility",
+        primary: "controller",
+        hierachy: "secondary"
+    } as const
+
+    return defineController<ReturnParams, typeof metaData>
+        (closure, metaData)
 }
+

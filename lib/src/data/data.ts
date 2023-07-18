@@ -1,8 +1,9 @@
 import { ValidClosure, define } from "blakprint-utils-ts"
 import { ModelType } from "src/typings/models"
 
+import { defineModel } from "src/models"
 
-export function defineModel<ReturnParams = {}, ExtensionParams = {},>
+export function defineData<ReturnParams = {}, ExtensionParams = {}, MetaParams = {}>
     (closure: ReturnParams,
         meta?: any):
     ModelType<ExtensionParams, ReturnParams> {
@@ -14,7 +15,7 @@ export function defineModel<ReturnParams = {}, ExtensionParams = {},>
         hierachy: "primary"
     } as const
 
-    return define<ExtensionParams, ReturnParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+    return defineModel<ReturnParams, typeof metaData>
+        (closure, metaData)
 }
 

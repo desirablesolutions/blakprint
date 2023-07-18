@@ -1,18 +1,22 @@
-import { MethodType, define } from "blakprint-utils-ts"
-import { ServiceType } from "src/typings"
+import { ModelType } from "src/typings/models"
+import { MetaDataType } from "src/typings/meta"
+import { defineController } from "src/controllers"
 
 
-export type ServiceTypeProps = {
-    name?: string,
-    version?: string | number,
-    methods?: MethodType,
-    store?: any
+export function defineService<ReturnParams = {}, ExtensionParams = {}>
+    (closure: ReturnParams,
+        meta?: unknown):
+    ModelType<ExtensionParams, ReturnParams> {
+
+    const metaData: MetaDataType<typeof meta> = {
+        ...meta as any,
+        type: "service",
+        version: 1,
+        primary: "controller",
+        hierachy: "secondary"
+    } as const
+
+    return defineController<ReturnParams, typeof metaData>
+        (closure, metaData)
 }
 
-
-export function defineService(params: ServiceTypeProps) {
-
-    const { name, version, methods } = params
-
-    return define(methods)
-}

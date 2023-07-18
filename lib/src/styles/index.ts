@@ -1,1 +1,1 @@
-export * from "./sx"
+export * from "./styles"

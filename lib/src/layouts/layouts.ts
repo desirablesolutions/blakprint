@@ -1,15 +1,22 @@
-import { define, MethodType } from "blakprint-utils-ts"
-import { LayoutProps } from "src/typings"
-
-const defineLayoutMeta = {
-    type: "layout",
-    version: 1
-} as const
+import { ValidClosure, define } from "blakprint-utils-ts"
+import { ViewType } from "src/typings/views"
 
 
+import { defineView } from "src/views"
 
-export const defineLayout = define<MethodType<LayoutProps<React.ReactNode>>, typeof defineLayoutMeta>((children: unknown) => {
-    return children
-}, defineLayoutMeta)
+export function defineLayout<ReturnParams = {}, ExtensionParams = {},>
+    (closure: ReturnParams,
+        meta?: any):
+    ViewType<ExtensionParams, ReturnParams> {
 
+    const metaData = {
+        ...meta,
+        type: "model",
+        version: 1,
+        hierachy: "primary"
+    } as const
+
+    return defineView<ReturnParams, typeof metaData>
+        (closure, metaData)
+}
 

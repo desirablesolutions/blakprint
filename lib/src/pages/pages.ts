@@ -1,34 +1,21 @@
-import { define } from "blakprint-utils-ts"
+import { ModelType } from "src/typings/models"
+import { defineData } from "src/data"
+import { MetaDataType } from "src/typings/meta"
 
-export type PageStoreMetaProps<T> = {
-    name?: string,
-    version?: number | string,
+
+export function definePages<ReturnParams = {}, ExtensionParams = {},>
+    (closure: ReturnParams,
+        meta?: any):
+    ModelType<ExtensionParams, ReturnParams> {
+
+    const metaData: MetaDataType<typeof meta> = {
+        ...meta,
+        type: "model",
+        version: 1,
+        hierachy: "primary"
+    } as const
+
+    return defineData<ReturnParams, typeof metaData>
+        (closure, metaData)
 }
 
-export type PageStoreType<DataType, T> = {
-    data?: Array<DataType>,
-    metaData?: PageStoreMetaProps<T>
-}
-
-export function definePage() {
-    return define(() => {
-        return (
-            
-        )
-    })
-}
-
-
-
-
-export function definePages() {
-
-    const instance: any = {
-        data: [
-            definePage(),
-            definePage(),
-        ]
-    }
-
-    return define(instance)
-}

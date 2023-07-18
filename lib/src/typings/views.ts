@@ -1,22 +1,31 @@
+import { Definition } from "blakprint-utils-ts";
+
 export type Colors = 'red' | 'blue' | 'yellow' | 'green' | 'black' | 'white';
 
 export type BaseOneLevels = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
+export type BaseTwoLevels = 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90;
+
 export type BaseThreeLevels = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-export type PaddingLevel = BaseOneLevels
+export type ViewType<ExtensionParams = {}, ReturnParams = Element | React.ReactElement, MetaParams = {}> =
+    Definition<ExtensionParams, ReturnParams, MetaParams>
 
-export type ColorLevel = BaseThreeLevels
+export type ComponentType<PropTypes, ExtensionProps = {}> = ViewType<PropTypes, ExtensionProps>
 
-export type ViewType<PropTypes> = {}
-
-export type ViewCreatorType<PropTypes, MetaTypes> = (props: PropTypes) => ViewType<PropTypes>
-
-export type ComponentType<PropTypes, ExtensionProps = undefined, MetaTypes = unknown> = PropTypes & (ExtensionProps | PropTypes) & {
-    meta?: MetaTypes;
-};
-
-export type LayoutProps<ChildrenType> = {
+export type LayoutProps<ChildrenType> = ViewType<{
     children?: ChildrenType
-}
+}>
+
+
+export type ImageType<ExtensionProps = {}> = ComponentType<{
+    src?: string,
+    alt?: string,
+    height?: string,
+    width?: string,
+    loading?: "lazy" | "eager",
+    class?: string,
+    className?: string
+}, ExtensionProps>
+
 

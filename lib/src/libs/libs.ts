@@ -1,16 +1,15 @@
 import { ValidClosure, define } from "blakprint-utils-ts"
 import { ModelType } from "src/typings/models"
-import { MetaDataType } from "src/typings/meta"
 
 
-export function defineController<ReturnParams = {}, ExtensionParams = {},>
+export function defineLibrary<ReturnParams = {}, ExtensionParams = {},>
     (closure: ReturnParams,
         meta?: any):
     ModelType<ExtensionParams, ReturnParams> {
 
-    const metaData: MetaDataType<typeof meta> = {
+    const metaData = {
         ...meta,
-        type: "controller",
+        type: "library",
         version: 1,
         hierachy: "primary"
     } as const

@@ -3,7 +3,7 @@ import { ModelType } from "src/typings/models"
 import { MetaDataType } from "src/typings/meta"
 
 
-export function defineController<ReturnParams = {}, ExtensionParams = {},>
+export function defineStyles<ReturnParams = {}, ExtensionParams = {},>
     (closure: ReturnParams,
         meta?: any):
     ModelType<ExtensionParams, ReturnParams> {
