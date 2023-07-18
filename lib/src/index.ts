@@ -1,4 +1,3 @@
-
 export * from "./assets/"
 export * from "./components/"
 export * from "./configs/"
@@ -6,6 +5,7 @@ export * from "./controllers"
 export * from "./hooks"
 export * from "./db"
 export * from "./build"
+export * from "./routes"
 export * from "./layouts"
 export * from "./models"
 export * from "./includes"

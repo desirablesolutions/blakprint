@@ -12,6 +12,8 @@ export type ViewType<ExtensionParams = {}, ReturnParams = Element | React.ReactE
     Definition<ExtensionParams, ReturnParams, MetaParams>
 
 export type ComponentType<PropTypes, ExtensionProps = {}> = ViewType<PropTypes, ExtensionProps>
+export type LayoutType<PropTypes, ExtensionProps = {}> = ViewType<PropTypes, ExtensionProps>
+export type IncludeType<PropTypes, ExtensionProps = {}> = ViewType<PropTypes, ExtensionProps>
 
 export type LayoutProps<ChildrenType> = ViewType<{
     children?: ChildrenType

@@ -1,13 +1,22 @@
 import { ValidClosure, define } from "blakprint-utils-ts"
-import { ModelType } from "src/typings/models"
+import type { LibraryType } from "src/typings/library"
+import type { MetaDataType } from "src/typings/meta"
 
 
-export function defineLibrary<ReturnParams = {}, ExtensionParams = {},>
+/**
+ * Defines a library and returns a model of a specified type.
+ *
+ * @param {ReturnParams} closure - The closure that defines the library.
+ * @param {any} meta - Optional metadata for the library.
+ * @return {ModelType<ExtensionParams, ReturnParams>} The model of the specified type.
+ */
+
+export function defineLibrary<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
         meta?: any):
-    ModelType<ExtensionParams, ReturnParams> {
+    LibraryType<ExtensionParams, ReturnParams> {
 
-    const metaData = {
+    const metaData: MetaDataType<typeof meta> = {
         ...meta,
         type: "library",
         version: 1,

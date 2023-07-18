@@ -1,12 +1,21 @@
 import { ValidClosure, define } from "blakprint-utils-ts"
-import { ModelType } from "src/typings/models"
-import { MetaDataType } from "src/typings/meta"
+import type { ControllerType } from "src/typings/controllers"
+import type { MetaDataType } from "src/typings/meta"
+
+
+/**
+ * Defines a controller function.
+ *
+ * @param {ReturnParams} closure - The closure parameter for the controller function.
+ * @param {any} meta - Optional metadata parameter.
+ * @return {ModelType<ExtensionParams, ReturnParams>} The model type object.
+ */
 
 
 export function defineController<ReturnParams = {}, ExtensionParams = {},>
     (closure: ReturnParams,
         meta?: any):
-    ModelType<ExtensionParams, ReturnParams> {
+    ControllerType<ExtensionParams, ReturnParams> {
 
     const metaData: MetaDataType<typeof meta> = {
         ...meta,

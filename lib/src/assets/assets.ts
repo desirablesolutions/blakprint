@@ -27,7 +27,7 @@ export function defineAsset<ReturnParams = {}, ExtensionParams = {}>
         hierachy: "tertiary"
     } as const
 
-    return defineData<ReturnParams, ExtensionParams, typeof metaData>
+    return defineData<ReturnParams, typeof metaData>
         (closure, metaData)
 }
 

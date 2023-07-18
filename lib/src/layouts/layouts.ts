@@ -1,19 +1,26 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
-import { ViewType } from "src/typings/views"
-
-
+import type { MetaDataType } from "src/typings/meta"
+import type { LayoutType } from "src/typings/views"
 import { defineView } from "src/views"
+
+/**
+ * Defines a layout.
+ *
+ * @param {ReturnParams} closure - The closure parameter.
+ * @param {any} meta - Optional metadata.
+ * @return {ViewType<ExtensionParams, ReturnParams>} The defined view.
+ */
 
 export function defineLayout<ReturnParams = {}, ExtensionParams = {},>
     (closure: ReturnParams,
         meta?: any):
-    ViewType<ExtensionParams, ReturnParams> {
+    LayoutType<ExtensionParams, ReturnParams> {
 
-    const metaData = {
+    const metaData: MetaDataType<typeof meta> = {
         ...meta,
-        type: "model",
+        type: "layouts",
         version: 1,
-        hierachy: "primary"
+        primary:"views",
+        hierachy: "secondary"
     } as const
 
     return defineView<ReturnParams, typeof metaData>

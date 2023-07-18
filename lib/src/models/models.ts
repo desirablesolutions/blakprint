@@ -12,7 +12,7 @@ import type { MetaDataType } from "src/typings/meta"
  */
 
 
-export function defineModel<ReturnParams = {}, ExtensionParams = {},>
+export function defineModel<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
         meta?: unknown):
     ModelType<ExtensionParams, ReturnParams> {

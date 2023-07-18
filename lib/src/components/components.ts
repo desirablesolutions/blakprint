@@ -1,7 +1,7 @@
 
-import { ComponentType } from "src/typings/views"
+import type { MetaDataType } from "src/typings/meta"
+import type { ComponentType } from "src/typings/views"
 import { defineView } from "src/views/views"
-import { MetaDataType } from "src/typings/meta"
 
 
 /**

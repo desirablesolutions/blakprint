@@ -1,12 +1,21 @@
-import { ModelType } from "src/typings/models"
+import { ServiceType } from "src/typings/models"
 import { MetaDataType } from "src/typings/meta"
 import { defineController } from "src/controllers/controllers"
+
+
+/**
+ * Defines a service function that returns a ServiceType object.
+ *
+ * @param {ReturnParams} closure - The closure parameter.
+ * @param {unknown} meta - Optional meta parameter.
+ * @return {ServiceType<ExtensionParams, ReturnParams>} The ServiceType object.
+ */
 
 
 export function defineService<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
         meta?: unknown):
-    ModelType<ExtensionParams, ReturnParams> {
+    ServiceType<ExtensionParams, ReturnParams> {
 
     const metaData: MetaDataType<typeof meta> = {
         ...meta as any,

@@ -1,21 +1,29 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
 import { ModelType } from "src/typings/models"
 import { MetaDataType } from "src/typings/meta"
+import { defineView } from "src/views"
 
+/**
+ * Define a test with optional metadata.
+ *
+ * @param {ReturnParams} closure - The closure to define the test.
+ * @param {any} meta - Optional metadata for the test.
+ * @return {TestType<ExtensionParams, ReturnParams>} The defined test.
+ */
 
-export function defineStyles<ReturnParams = {}, ExtensionParams = {},>
+export function defineStyles<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
-        meta?: any):
+        meta?: unknown):
     ModelType<ExtensionParams, ReturnParams> {
 
     const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "controller",
+        ...meta as any,
+        type: "styles",
         version: 1,
-        hierachy: "primary"
+        primary: "views",
+        hierachy: "secondary"
     } as const
 
-    return define<ExtensionParams, ReturnParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+    return defineView<ReturnParams, typeof metaData>
+        (closure, metaData)
 }
 
