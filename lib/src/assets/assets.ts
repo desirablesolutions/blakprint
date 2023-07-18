@@ -1,7 +1,8 @@
 
-import { AssetType } from "src/typings/models"
+import type { AssetType } from "src/typings/models"
+import type { MetaDataType } from "src/typings/meta"
 import { defineData } from "src/data/data"
-import { MetaDataType } from "src/typings/meta"
+
 
 /**
  * Defines an asset with optional metadata.

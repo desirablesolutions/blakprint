@@ -3,6 +3,15 @@ import { defineController } from "src/controllers"
 import { MetaDataType } from "src/typings/meta"
 
 
+/**
+ * Defines a utility function.
+ *
+ * @param {ReturnParams} closure - The closure parameter.
+ * @param {unknown} meta - Optional meta parameter.
+ * @return {UtilityType<ExtensionParams, ReturnParams>} The utility type.
+ */
+
+
 export function defineUtility<ReturnParams = {}, ExtensionParams = {},>
     (closure: ReturnParams,
         meta?: unknown):

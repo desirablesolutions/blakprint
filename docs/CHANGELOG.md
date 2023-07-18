@@ -3,16 +3,34 @@
 
 
 
-### 🎉v13.0.0
+### 🎉v12.1.0
 
 **@lib**
 
 - Stable `define` function with parameterized type defintions and single responsibility.
 - GPT-4 Integration for Intelligent Terminal Assitance
 
+**@app**
+
+- Stable `define` function with parameterized type defintions and single responsibility.
+- GPT-4 Integration for Intelligent Terminal Assitance
+
+**@cli**
+
+- Stable `define` function with parameterized type defintions and single responsibility.
+- GPT-4 Integration for Intelligent Terminal Assitance
+
+**@cli**
+
+- Stable `define` function with parameterized type defintions and single responsibility.
+- GPT-4 Integration for Intelligent Terminal Assitance
+
+---
 
 
-### 🎉v13.0.0
+
+
+### 🎉v12.0.1
 
 **@lib**
 
@@ -21,15 +39,4 @@
 
 ---
 
-**@lib**
 
-- Stable `define` function with parameterized type defintions and single responsibility.
-- GPT-4 Integration for Intelligent Terminal Assitance
-
-### v9.0.X
-
-### v9.0.X
-
-### v9.0.X
-
----

@@ -1,6 +1,6 @@
 import { ModelType } from "src/typings/models"
 import { MetaDataType } from "src/typings/meta"
-import { defineController } from "src/controllers"
+import { defineController } from "src/controllers/controllers"
 
 
 export function defineService<ReturnParams = {}, ExtensionParams = {}>

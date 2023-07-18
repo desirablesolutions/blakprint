@@ -1,6 +1,6 @@
 import { ModelType } from "src/typings/models"
-import { MetaDataType } from "src/typings"
-import { defineView } from "src/views"
+import { MetaDataType } from "src/typings/meta"
+import { defineView } from "src/views/views"
 
 
 

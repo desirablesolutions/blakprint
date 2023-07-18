@@ -9,38 +9,36 @@ export type TemplateUtilityProps<ExtensionProps = {}> = {
 
 export function defineTemplate<ExtensionProps>() {
 
-    return defineUtility<TemplateUtilityProps<ExtensionProps>, string>((params?: TemplateUtilityProps<ExtensionProps>): string => {
+    return defineUtility<any, any>(
 
-        let { strTemplate, data, delimiter } = params
+        (params?: any): string => {
 
-        const startDelimiter = delimiter.slice(0, delimiter.length / 2);
-        const endDelimiter = delimiter.slice(delimiter.length / 2);
+            let { strTemplate, data, delimiter } = params
 
-        let result = "";
-        let startDelimiterIndex = strTemplate.indexOf(startDelimiter);
+            const startDelimiter = delimiter.slice(0, delimiter.length / 2);
+            const endDelimiter = delimiter.slice(delimiter.length / 2);
 
-        while (startDelimiterIndex !== -1) {
-            let endDelimiterIndex = strTemplate.indexOf(endDelimiter, startDelimiterIndex + startDelimiter.length);
-            if (endDelimiterIndex === -1) {
-                throw new Error(`No matching end delimiter for start delimiter at index ${startDelimiterIndex}`);
+            let result = "";
+            let startDelimiterIndex = strTemplate.indexOf(startDelimiter);
+
+            while (startDelimiterIndex !== -1) {
+                let endDelimiterIndex = strTemplate.indexOf(endDelimiter, startDelimiterIndex + startDelimiter.length);
+                if (endDelimiterIndex === -1) {
+                    throw new Error(`No matching end delimiter for start delimiter at index ${startDelimiterIndex}`);
+                }
+
+                result += strTemplate.slice(0, startDelimiterIndex);
+                const templateKey: string = strTemplate.slice(startDelimiterIndex + startDelimiter.length, endDelimiterIndex);
+                const templateValue: string = templateKey.split('.').reduce((value, key) => value ? value[key] : '', data);
+                result += templateValue;
+
+                strTemplate = strTemplate.slice(endDelimiterIndex + endDelimiter.length);
+                startDelimiterIndex = strTemplate.indexOf(startDelimiter);
             }
 
-            result += strTemplate.slice(0, startDelimiterIndex);
-            const templateKey: string = strTemplate.slice(startDelimiterIndex + startDelimiter.length, endDelimiterIndex);
-            const templateValue: string = templateKey.split('.').reduce((value, key) => value ? value[key] : '', data);
-            result += templateValue;
-
-            strTemplate = strTemplate.slice(endDelimiterIndex + endDelimiter.length);
-            startDelimiterIndex = strTemplate.indexOf(startDelimiter);
+            return result + strTemplate;
         }
-
-        return result + strTemplate;
-    }
 
     )
 }
 
-const mTemplate = defineTemplate()
-
-
-const data = mTemplate.value({ strTemplate: "", data: {}, delimiter: "" }) as string

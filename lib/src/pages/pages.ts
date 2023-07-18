@@ -1,5 +1,5 @@
 import { ModelType } from "src/typings/models"
-import { defineData } from "src/data"
+import { defineData } from "src/data/data"
 import { MetaDataType } from "src/typings/meta"
 
 

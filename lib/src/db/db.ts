@@ -1,18 +1,20 @@
 
 import { DatabaseType } from "src/typings/models"
+import { MetaDataType } from "src/typings/meta"
+import { defineData } from "src/data/data"
 
-import { defineData } from "src/data"
-
-export function defineDatabase<ReturnParams = {}, ExtensionParams = {},>
+export function defineDatabase<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
-        meta?: any):
-        DatabaseType<ExtensionParams, ReturnParams> {
+        meta?: unknown):
+    DatabaseType<ExtensionParams, ReturnParams> {
 
-    const metaData = {
-        ...meta,
-        type: "model",
+    const metaData: MetaDataType<typeof meta> = {
+        ...meta as any,
+        type: "database",
         version: 1,
-        hierachy: "primary"
+        primary: "models",
+        secondary: "data",
+        hierachy: "tertiary"
     } as const
 
     return defineData<ReturnParams, typeof metaData>

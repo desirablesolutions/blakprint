@@ -9,7 +9,7 @@ export function defineConfig<ReturnParams = {}, ExtensionParams = {},>
 
     const metaData = {
         ...meta,
-        type: "model",
+        type: "config",
         version: 1,
         hierachy: "primary"
     } as const
