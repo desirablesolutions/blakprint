@@ -1,34 +1,26 @@
 <h2>⏳Changelog</h2>
 
-### 🎉v12.1.0
+### 🎉v12.2.0
+
+**@lib**
+- **corrected** type query definition errors with `Definition`
+- **stable:** base definition functors and some plugins.
+- **stable:** base typings system and unwrapping API.
+
+
+---
+
+### v12.1.0
 
 **@lib**
 
 - **stable:** base definition functors and some plugins.
 - **stable:** base typings system and unwrapping API.
-- **added:**
-  - **build:**
-  - **assets:**
-  - **views:**
-  - **models:**
-  - **controllers:**
-  - **hooks:**
 
-**@app**
-
-- **unstable!**
-
-**@cli**
-
-- **unstable!**
-
-**@cli**
-
-- **unstable!**
 
 ---
 
-### vX.0.1
+### v11.0.1
 
 **@lib**
 

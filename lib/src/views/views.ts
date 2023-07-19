@@ -1,6 +1,6 @@
 import { ValidClosure, define } from "blakprint-utils-ts"
-import { ViewType } from "src/typings/views"
-import { MetaDataType } from "src/typings/meta"
+import { ViewType } from "../typings/views"
+import { MetaDataType } from "../typings/meta"
 
 
 /**
