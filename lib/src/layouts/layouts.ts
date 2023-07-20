@@ -5,21 +5,21 @@ import { defineView } from "src/views"
 /**
  * Defines a layout.
  *
- * @param {ReturnParams} closure - The closure parameter.
+ * @param {TypeParams} closure - The closure parameter.
  * @param {any} meta - Optional metadata.
- * @return {ViewType<ExtensionParams, ReturnParams>} The defined view.
+ * @return {ViewType<TypeParams>} The defined view.
  */
 
-export function defineLayout<ReturnParams = {}, ExtensionParams = {},>
+export function defineLayout<TypeParams = {}>
     (closure: ReturnParams,
         meta?: any):
-    LayoutType<ExtensionParams, ReturnParams> {
+    LayoutType<TypeParams> {
 
     const metaData: MetaDataType<typeof meta> = {
         ...meta,
         type: "layouts",
         version: 1,
-        primary:"views",
+        primary: "views",
         hierachy: "secondary"
     } as const
 

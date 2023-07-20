@@ -11,11 +11,11 @@ export type BaseThreeLevels = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 90
 export type ViewType<TypeParams = {}, ReturnParams = Element | React.ReactElement, MetaParams = {}> =
     Definition<TypeParams, ReturnParams, MetaParams>
 
+
 export type ComponentType<PropTypes> = ViewType<PropTypes, any, any>['value']
 
-
-export type LayoutType<PropTypes> = ViewType<PropTypes>;
-
+export type LayoutType<PropTypes> = ComponentType<PropTypes>;
+export type IncludeType<PropTypes> = ComponentType<PropTypes>;
 export type ImageType<PropTypes> = ComponentType<{
     src?: string,
     alt?: string,

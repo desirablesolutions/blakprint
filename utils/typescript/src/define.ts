@@ -9,11 +9,11 @@ import { isFunction } from "./predicates"
  * @returns {Definition<TypeParams, ReturnParams,  MetaParams>} The created definition.
  */
 
-export function define<TypeParams, ReturnParams, MetaParams = DEFAULT_META_PARAMS_TYPES>
+export function define<TypeParams, ReturnParams, MetaParams>
   (closure: ValidClosure, meta?: MetaParams):
   Definition<TypeParams, MetaParams> {
 
-  const instance: Definition<TypeParams, MetaParams> = {
+  const instance: Definition<TypeParams, ReturnParams, MetaParams> = {
     meta: (): MetaParams => {
       return meta
     },
@@ -23,11 +23,11 @@ export function define<TypeParams, ReturnParams, MetaParams = DEFAULT_META_PARAM
     closure: (): string => {
       return `${closure}`
     },
-    value: (...args: unknown[]): ReturnParams | TypeParams => {
+    value: (...args: unknown[]): ReturnParams => {
       if (isFunction(closure)) {
         return closure(...args) as ReturnParams
       } else {
-        return closure as TypeParams
+        return closure as ReturnParams
       }
     },
     log: (): void => {
@@ -40,3 +40,4 @@ export function define<TypeParams, ReturnParams, MetaParams = DEFAULT_META_PARAM
 
 
 
+const myData = define<any>(0)
