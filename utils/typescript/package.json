@@ -1,6 +1,6 @@
 {
   "name": "blakprint-utils-ts",
-  "version": "11.0.4",
+  "version": "11.0.5",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "A tiny, extensible module for authoring arbituary closures through Definitions, implemented for TypeScript",
@@ -77,6 +77,7 @@
     "boxen": "^7.0.2",
     "chalk": "^5.2.0",
     "cli-table3": "^0.6.3",
+    "effect": "^2.0.0-next.19",
     "g": "^2.0.1",
     "interface-forge": "^1.5.1",
     "link-module-alias": "^1.2.0",
@@ -84,11 +85,8 @@
     "make-dir": "^3.1.0",
     "meta-types": "^2.0.0",
     "module-alias": "^2.2.2",
-
     "ora": "^6.1.2",
     "path": "^0.12.7",
-
-
     "tsconfig-paths": "^4.2.0",
     "type-guards": "^0.15.0",
     "vite": "^4.3.4",

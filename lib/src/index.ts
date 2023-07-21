@@ -1,5 +1,4 @@
 export * from "./assets/"
-export * from "./components/"
 export * from "./configs/"
 export * from "./controllers"
 export * from "./hooks"
