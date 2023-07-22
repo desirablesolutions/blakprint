@@ -1,8 +1,9 @@
-import { Definition, ValidClosure, DEFAULT_META_PARAMS_TYPES } from "./types"
+import { Definition, } from "./types"
 import { isFunction } from "./predicates"
-import { Effector } from "./effector"
-import { TypeFactory } from 'interface-forge';
+import { ValidClosure, DEFAULT_RETURN_PARAMS_TYPES, DEFAULT_TYPE_PARAMS_TYPES, DEFAULT_META_PARAMS_TYPES, DEFAULT_ERROR_PARAMS_TYPES } from "./utils"
+import { success, execute, failure } from "./effector"
 import { Factory } from "./factory";
+
 /**
  * Create a definition with optional metadata.
  *
@@ -11,31 +12,39 @@ import { Factory } from "./factory";
  * @returns {Definition<TypeParams, ReturnParams,  MetaParams>} The created definition.
  */
 
-export function define<TypeParams = unknown, ReturnParams = unknown, MetaParams = DEFAULT_META_PARAMS_TYPES>
-  (closure: ValidClosure | number | string | any, meta?: MetaParams):
-  Definition<TypeParams, MetaParams> {
+
+export function define<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
+  ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
+  MetaParams = DEFAULT_META_PARAMS_TYPES>
+  (closure: ValidClosure, meta?: MetaParams):
+  Definition<TypeParams, ReturnParams, MetaParams> {
 
   const instance: Definition<TypeParams, ReturnParams, MetaParams> = {
     meta: (): MetaParams => {
-      return Effector().succeed(meta)
+      return meta
     },
-    redefine: (newClosure: ValidClosure, newMeta?: MetaParams) => {
+    redefine: (newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure, newMeta?: MetaParams) => {
       return define(newClosure, newMeta)
     },
     closure: (): string => {
       return `${closure}`
     },
     value: (...args: any[]): ReturnParams => {
+
       if (isFunction(closure)) {
-        return closure(...args) as ReturnParams
+
+        const result = success(closure(...args)) as ReturnParams
+
+        return execute(result) 
       } else {
         return closure as ReturnParams
       }
     },
     generate: () => {
-       return Factory<TypeParams>(() => {})
+      return Factory<TypeParams>(() => { })
     },
-    log: (): void => {
+    log: () => {
+      return 0
       console.log(`Meta: ${meta}, Closure:${closure}`)
     }
   }
@@ -43,6 +52,3 @@ export function define<TypeParams = unknown, ReturnParams = unknown, MetaParams 
   return instance
 }
 
-
-
-const myData = define<any>(0)

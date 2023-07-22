@@ -1,6 +1,6 @@
 {
   "name": "blakprint-utils-ts",
-  "version": "11.0.5",
+  "version": "12.5.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "A tiny, extensible module for authoring arbituary closures through Definitions, implemented for TypeScript",

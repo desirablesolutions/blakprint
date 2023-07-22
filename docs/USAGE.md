@@ -1,95 +1,31 @@
 <h2>🔨Usage</h2>
 
 
-<h3>defining arbituary closures</h3>
+<h3>extending semnatic view, model, or controller types.</h3>
 
 ```ts
 
+import { ImageType, NavBarType, FooterType, HeroType } from "blakprint"
 
-import { defineComponent, defineStyles } from "blakprint"
-
-
-const NavBar = defineComponent(() => {
-    return (<header>
-    
-          </header>)
-}).value()
-
-
-
+export type PageImageProps = ImageType<{
+    isFullscreen?: boolean
+}>
 ```
+---
 
+<h3>extending semnatic view, model, or controller types.</h3>
 
+```ts
+
+import { ImageType, NavBarType, FooterType, HeroType } from "blakprint"
+
+export type PageImageProps = ImageType<{
+    isFullscreen?: boolean
+}>
+```
 
 ---
 
 
-<h3>defining arbituary closures</h3>
-
-```ts
-
-
-import { defineComponent, defineStyles } from "blakprint"
-
-
-const NavBar = defineComponent(() => {
-    return (<header>
-    
-          </header>)
-}).value()
-
-
-
-```
-
-
-
----
-
-
-<h3>defining arbituary closures</h3>
-
-```ts
-
-
-import { defineComponent, defineStyles } from "blakprint"
-
-
-const NavBar = defineComponent(() => {
-    return (<header>
-    
-          </header>)
-}).value()
-
-
-
-```
-
-
-
----
-
-
-<h3>defining arbituary closures</h3>
-
-```ts
-
-
-import { defineComponent, defineStyles } from "blakprint"
-
-
-const NavBar = defineComponent(() => {
-    return (<header>
-    
-          </header>)
-}).value()
-
-
-
-```
-
-
-
----
 
 

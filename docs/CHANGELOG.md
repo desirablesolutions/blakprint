@@ -1,5 +1,23 @@
 <h2>⏳Changelog</h2>
 
+
+### 🎉v12.5.0
+
+**@lib**
+- **corrected** type query definition errors with `Definition`
+- **stable:** base definition functors and some plugins.
+- **stable:** base typings system and unwrapping API.
+
+
+
+### 🎉v12.3.0
+
+**@lib**
+- **corrected** type query definition errors with `Definition`
+- **stable:** base definition functors and some plugins.
+- **stable:** base typings system and unwrapping API.
+
+
 ### 🎉v12.2.0
 
 **@lib**

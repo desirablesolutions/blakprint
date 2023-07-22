@@ -36,8 +36,7 @@ type Effector<TypeParams=DEFAULT_TYPE_PARAMS_TYPES,
               ReturnParams=DEFAULT_RETURN_PARAMS_TYPES,
               ErrorParams=DEFAULT_ERROR_PARAMS_TYPES> {
 
-    (...args: any[]): TypeParams => ReturnParams | ErrorParams,
-    meta?: MetaParams
+    (...args: TypeParams[]) => ReturnParams | ErrorParams & MetaParams
 }
 
 
@@ -47,7 +46,9 @@ type Definition<TypeParams=DEFAULT_TYPE_PARAMS_TYPES,
    value: Effector<TypeParams, ReturnParams, ErrorParams, MetaParams>,
    log: Effector<MetaParams>,
    closure: ValidClosure,
+   
    meta: Effector<MetaParams>,
+   generate: Effecto<MetaParams>,
    redefine: Effector<Definition<TypeParams, ReturnParams, MetaParams>>
 }
 
