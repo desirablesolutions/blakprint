@@ -1,13 +1,24 @@
 import { Effect, pipe } from "effect"
 
-export function Effector(module = Effect) {
+export const Effectorator = [
+    {
+        success: <TypeParams>(value: TypeParams | unknown) => { return value }
+    }
+]
+
+export function Effector(module = Effectorator) {
     return module
 }
+
+export const EFFECTOR_ADAM = {
+    success: Effector()[0]
+} as const
+
 
 export function success(value: unknown) {
 
     const config = {
-        success: Effector().succeed
+        success: Effector()[0]
     } as const
 
     return config.success(value)

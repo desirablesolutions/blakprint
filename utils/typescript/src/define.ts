@@ -4,6 +4,8 @@ import { ValidClosure, DEFAULT_RETURN_PARAMS_TYPES, DEFAULT_TYPE_PARAMS_TYPES, D
 import { success, execute, failure } from "./effector"
 import { Factory } from "./factory";
 
+
+export type DefinitionValueType = {}
 /**
  * Create a definition with optional metadata.
  *
@@ -35,17 +37,17 @@ export function define<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
 
         const result = success(closure(...args)) as ReturnParams
 
-        return execute(result) 
+        return execute(result)
       } else {
         return closure as ReturnParams
       }
     },
-    generate: () => {
-      return Factory<TypeParams>(() => { })
+    generate: (blakprint?: DefinitionValueType): TypeParams => {
+      return Factory<TypeParams>(blakprint) ?? {} as TypeParams
     },
-    log: () => {
-      return 0
-      console.log(`Meta: ${meta}, Closure:${closure}`)
+    log: (): TypeParams | void => {
+      const Effector = success([closure, meta])
+      return console.log(execute(Effector) ?? failure(Effector))
     }
   }
 
