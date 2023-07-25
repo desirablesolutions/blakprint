@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { ControllerType } from "src/typings/controllers";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,7 +17,7 @@ export function defineController<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): ControllerType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {

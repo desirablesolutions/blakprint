@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { ComponentType } from "src/typings/views";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,7 +17,7 @@ export function defineComponent<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): ComponentType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {

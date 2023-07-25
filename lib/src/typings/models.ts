@@ -11,6 +11,8 @@ export type ConfigType<T, R, M> = ModelType<T, R, M>
 
 export type ServiceType<T, R, M> = ModelType<T, R, M>
 
+export type BuildType<T, R, M> = ModelType<T, R, M>
+
 export type PageType<T, R, M> = ModelType<T, R, M>
 
 export type RouteType<T, R, M> = ModelType<T, R, M>
