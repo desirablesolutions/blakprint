@@ -37,7 +37,7 @@
     "email": "jeffrey@desir.tech"
   },
   "scripts": {
-    "build": "vite build && cp -R src dist",
+    "build": "vite build",
     "prepublishOnly": "npm run build",
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",

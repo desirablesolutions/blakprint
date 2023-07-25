@@ -5,3 +5,8 @@ export type ControllerType<ExtensionParams = {}, ReturnParams = {}, MetaParams =
 
 export type UtilityType<ExtensionParams = {}, ReturnParams = {}, MetaParams = {}> =
     ControllerType<ExtensionParams, ReturnParams, MetaParams>
+
+
+
+export type ServiceType<ExtensionParams = {}, ReturnParams = {}, MetaParams = {}> =
+    ControllerType<ExtensionParams, ReturnParams, MetaParams>
