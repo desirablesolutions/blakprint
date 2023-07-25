@@ -78,7 +78,6 @@
     "class-variance-authority": "^0.6.1",
     "cli-table3": "^0.6.3",
     "cva": "npm:class-variance-authority@^0.6.1",
-    "g": "^2.0.1",
     "interface-forge": "^1.5.1",
     "link-module-alias": "^1.2.0",
     "listr": "^0.14.3",

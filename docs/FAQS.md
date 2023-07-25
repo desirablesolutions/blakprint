@@ -1,4 +1,4 @@
-<h2>Frequently Asked Questions</h2>
+<h2>❓Frequently Asked Questions</h2>
 
 <details>
 <summary><em>Who in their right mind would write software like this?</em></summary>
@@ -10,33 +10,16 @@
 <details>
 <summary><em>Is this stable to use in production?</em></summary>
 
-<em>It depends.</em> The library is just a collection of small typescript modules, types, and plugins. 
+<em>Yes && No.</em> The library is just a collection of small typescript modules, types, and plugins commonly used for making M.V.C and generalized for.
 It is very extensible, and is extremely high-level. There is no fancy-shmancy engine or compiler (technically,
-the default effector functor uses <a href="">Effect</a> but its not required, the simplified option uses a generically typed identity function to abstract definition methods. 
+the default effector functor uses <a href="">Effect</a> but its not required, the simplified option uses a generically typed identity function to abstract definition methods.
 
 </details>
 
 
 <details>
-<summary><em>Who in their right mind would write software like this?</em></summary>
+<summary><em>Is this able to be contributed to?</em></summary>
 
-<em>Engineers who love to generalize.</em>
-
-</details>
-
-
-<details>
-<summary><em>Who in their right mind would write software like this?</em></summary>
-
-<em>Engineers who love to generalize.</em>
+<em>Not yet! - but we'd love that.</em> The idea is simple, without bloating the end-developer memory space, load and define as many computations and data-sets as humanly possible while another contributing team generalize the build process for other lower interfaces (WebAssembly, Rust, DeviceScript, etc...). 
 
 </details>
-
-
-<details>
-<summary><em>Who in their right mind would write software like this?</em></summary>
-
-<em>Engineers who love to generalize.</em>
-
-</details>
-

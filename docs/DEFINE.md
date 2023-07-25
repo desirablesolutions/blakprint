@@ -1,33 +1,33 @@
 
-<h3>Definition & Effector</h3>
+<h3>✒️Definition & Effector</h3>
 
-> An extensible meta-module for authoring arbituary closures through Definitions, implemented for any syntax.
+> An extensible meta-module for authoring arbituary closures through Definitions.
 
 
 <h3>TL;DR</h3>
 
 
-<h3>Definition & define</h3>
+<h4>Definition & define</h4>
 
-**Definitions** describe an extensible, light-weight encapsulation for closures, or syntactic energy, that provide a 
-consistency & terseness 
+**Definitions** is an attempt to describe an extensible, light-weight encapsulation for closures, or syntactic quanta, that provide a transparent & functional abstraction for every kind of datam. Though the paradigm doesn't have a language syntax (yet), this library was made from the growing need to standarize mixed-paradigmed computational solutions that was 
 
-* Read
-* Evaluate
-* Mutate
+**A closure must be able to be either:**
+
+* Read //given memory space
+* Evaluated //given execution space 
+* Mutated //change either spaces
   
 
+<h4>EffectorType & Effector</h4>
 
-<h4>Effector</h4>
-
-**Effectors** are high-level descriptions of synchrnous & asynchronous actions.
+**Effectors** are complementary and neccesary to **Definitions** in order to describe Evaluations & Mutations on datams. Basically, high-level descriptions of synchrnous & asynchronous actions.
 
 <h4>Technical</h4>
+
 
 ```bash
 
 # in-fix psudocode 
-
 
 type TypeParams = null
 type MetaParams = null
@@ -61,6 +61,5 @@ type Definition<TypeParams=DEFAULT_TYPE_PARAMS_TYPES,
    generate: Effector<TypeParams>,
    redefine: Effector<Definition<TypeParams, ReturnParams, MetaParams>>
 }
-
 
 ```

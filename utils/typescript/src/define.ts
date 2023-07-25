@@ -1,11 +1,16 @@
-import { Definition, } from "./types"
-import { isFunction } from "./predicates"
-import { ValidClosure, DEFAULT_RETURN_PARAMS_TYPES, DEFAULT_TYPE_PARAMS_TYPES, DEFAULT_META_PARAMS_TYPES, DEFAULT_ERROR_PARAMS_TYPES } from "./utils"
-import { success, execute, failure } from "./effector"
-import { Factory } from "./factory";
+import { TypeFactory } from "interface-forge";
+import { Factory, FactoryInterface } from "./factory";
+import { isFunction } from "./predicates";
+import { Definition, EffectorType } from "./types";
+import {
+  DEFAULT_META_PARAMS_TYPES,
+  DEFAULT_RETURN_PARAMS_TYPES,
+  DEFAULT_TYPE_PARAMS_TYPES,
+  ValidClosure
+} from "./utils";
 
 
-export type DefinitionValueType = {}
+
 /**
  * Create a definition with optional metadata.
  *
@@ -14,43 +19,57 @@ export type DefinitionValueType = {}
  * @returns {Definition<TypeParams, ReturnParams,  MetaParams>} The created definition.
  */
 
-
-export function define<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
+export function define<
+  TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
   ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
-  MetaParams = DEFAULT_META_PARAMS_TYPES>
-  (closure: ValidClosure, meta?: MetaParams):
-  Definition<TypeParams, ReturnParams, MetaParams> {
+  MetaParams = DEFAULT_META_PARAMS_TYPES
+>(
+  closure: ValidClosure,
+  meta?: MetaParams
+): Definition<TypeParams, ReturnParams, MetaParams> {
+
 
   const instance: Definition<TypeParams, ReturnParams, MetaParams> = {
     meta: (): MetaParams => {
-      return meta
+      return meta ?? null;
     },
-    redefine: (newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure, newMeta?: MetaParams) => {
-      return define(newClosure, newMeta)
+    redefine: (
+      newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure,
+      newMeta?: MetaParams
+    ) => {
+      return define(newClosure, newMeta);
     },
     closure: (): string => {
-      return `${closure}`
+      return `${closure}`;
     },
     value: (...args: any[]): ReturnParams => {
-
       if (isFunction(closure)) {
+        const result = closure(...args) as ReturnParams;
 
-        const result = success(closure(...args)) as ReturnParams
-
-        return execute(result)
+        return result;
       } else {
-        return closure as ReturnParams
+        return closure as ReturnParams;
       }
     },
-    generate: (blakprint?: DefinitionValueType): TypeParams => {
-      return Factory<TypeParams>(blakprint) ?? {} as TypeParams
+    generate: (blakprint?: EffectorType<TypeParams> | TypeParams): FactoryInterface<TypeParams> => {
+      if (!isFunction(blakprint)) {
+        return Factory<TypeParams>(TypeFactory, blakprint);
+      } else {
+        return Factory<TypeParams>(TypeFactory, blakprint());
+      }
     },
-    log: (): TypeParams | void => {
-      const Effector = success([closure, meta])
-      return console.log(execute(Effector) ?? failure(Effector))
-    }
-  }
+    log: (): void => {
+      console.log(`${closure}::${meta} `)
+    },
+  } as const
 
-  return instance
+  return instance;
 }
+
+//[to-do]: implement useEffect hook for adding third party parameters.
+export function useEffect<TypeParams = unknown>() {
+  return null
+}
+
+
 

@@ -1,31 +1,39 @@
-import { Effect, pipe } from "effect"
+import type { EffectorType } from "./types"
+import { Weak } from "./utils"
 
-export const Effectorator = [
-    {
-        success: <TypeParams>(value: TypeParams | unknown) => { return value }
-    }
-]
 
-export function Effector(module = Effectorator) {
-    return module
+export type EffectorInterface<TypeParams = unknown> = {
+    readonly success: EffectorType<TypeParams, unknown>,
+    readonly failure: EffectorType<any, any>,
+    readonly sync: EffectorType<any, any>,
+    readonly execute: EffectorType<any, any>,
+    readonly compose: EffectorType<any, any>,
 }
 
-export const EFFECTOR_ADAM = {
-    success: Effector()[0]
+export function SELF<TypeParams>(a: Weak<TypeParams>): TypeParams {
+    return a
+}
+
+const DEFAULT_EFFECTOR_INTERFACE_DEFINITION: EffectorInterface = {
+    success: SELF,
+    failure: SELF,
+    sync: SELF,
+    execute: SELF,
+    compose: SELF
 } as const
 
 
-export function success(value: unknown) {
+export function Effector<TypeParams = unknown>(module = DEFAULT_EFFECTOR_INTERFACE_DEFINITION):
+    EffectorInterface {
+    return module
+}
 
-    const config = {
-        success: Effector()[0]
-    } as const
-
-    return config.success(value)
+export function success<TypeParams>(value: Weak<TypeParams>) {
+    return Effector().success(value)
 }
 
 export function failure(value: unknown) {
-    return Effector()?.fail(value)
+    return Effector()?.failure(value)
 }
 
 export function sync(value: any) {
@@ -33,16 +41,10 @@ export function sync(value: any) {
 }
 
 export function execute<ReturnParams>(value: any): ReturnParams {
-    return Effector()?.runSync<never, ReturnParams>(value)
+    return Effector().execute(value)
 }
 
 export function compose(a, b) {
 
-    const config = {
-        EFFECT_PIPE_OPERATOR: pipe
-    } as const
-
-    const result = config.EFFECT_PIPE_OPERATOR(a, b)
-
-    return result
+    return [a, b]
 }

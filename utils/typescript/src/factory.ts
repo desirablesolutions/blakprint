@@ -1,4 +1,4 @@
-import { TypeFactory } from 'interface-forge';
+import type { TypeFactory } from 'interface-forge';
 
 /**
  * Create a new instance of a TypeParams object based on the provided blueprint.
@@ -7,6 +7,14 @@ import { TypeFactory } from 'interface-forge';
  * @return {TypeParams} The newly created TypeParams object.
  */
 
-export function Factory<TypeParams>(blakprint: any): TypeParams {
-    return new TypeFactory<TypeParams>(blakprint) as TypeParams
+
+export type FactoryInterface<TypeParams> = TypeFactory<TypeParams> | TypeFactory<Array<TypeParams>>
+
+export function Factory<TypeParams>(factory: typeof TypeFactory<TypeParams>, blakprint: any): FactoryInterface<TypeParams> {
+    try {
+        return new factory(blakprint) as FactoryInterface<TypeParams>
+    } catch (e) {
+        return e as FactoryInterface<TypeParams>
+    }
 }
+

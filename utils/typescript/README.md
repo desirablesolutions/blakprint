@@ -2,6 +2,65 @@
 
 <h4 align="center">our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.</h4>
 
+<h2>🔨Usage</h2>
+
+
+<h3>creating a definition of a closure.</h3>
+
+```ts
+import { define } from "blakprint";
+
+export const myProgram = define<any, Array, Error>( => {
+
+    return [
+        0,0,0
+    ]
+})
+
+const programResults = myProgram.value
+
+```
+
+
+
+<h3>extending semnatic view, model, or controller types.</h3>
+
+```ts
+import { ImageType, NavBarType, FooterType } from "blakprint";
+
+export type MyImageProps = ImageType<{
+  isFullscreen?: boolean;
+}>;
+```
+
+---
+
+<h3>creating semnatic view types.</h3>
+
+```ts
+import { definePage, defineComponent } from "blakprint";
+
+const HomePage = definePage({
+  metaData: {
+    title: "Home",
+  },
+  data: {
+    hero: async  => await {},
+  },
+});
+
+const Header = defineComponent({
+  render: (props: any, inner: any) => {
+    return `<header>
+                 ${inner}
+               </header>`;
+  },
+});
+
+```
+
+---
+
 <h2>⚒️Installation</h2>
 
 **node**
@@ -40,86 +99,31 @@ lein install blakprint
 
 
 
-<h2>🔨Usage</h2>
-
-<h3>creating a definition of a closure.</h3>
-
-```ts
-import { define } from "blakprint";
-
-export const myProgram = define<any, Array, Error>( => {
-  const dataCall = await useDatasource;
-  store.savedataCall;
-  return dataCall;
-});
-
-const programResults = myProgram.value;
-
-```
-
-<h3>extending semnatic view, model, or controller types.</h3>
-
-```ts
-import { ImageType, NavBarType, FooterType } from "blakprint";
-
-export type MyImageProps = ImageType<{
-  isFullscreen?: boolean;
-}>;
-```
-
----
-
-<h3>creating semnatic view types.</h3>
-
-```ts
-import { definePage, defineComponent } from "blakprint";
-
-const HomePage = definePage({
-  metaData: {
-    title: "Home",
-  },
-  data: {
-    hero: async  => await {},
-  },
-});
-
-const Header = defineComponent({
-  render: (props: any, inner: any) => {
-    return `<header>
-                 ${inner}
-               </header>`;
-  },
-});
-```
-
----
-
 
 <h3>✒️Definition & Effector</h3>
 
-> An extensible meta-module for authoring arbituary closures through Definitions.
+> An extensible meta-module for authoring arbituary closures through Definitions, implemented for any syntax.
 
 
 <h3>TL;DR</h3>
 
 
-<h4>Definition & define</h4>
+<h3>Definition & define</h3>
 
-**Definitions** is an attempt to describe an extensible, light-weight encapsulation for closures, or syntactic quanta, that provide a transparent & functional abstraction for every kind of datam. Though the paradigm doesn't have a language syntax yet, this library was made from the growing need to standarize mixed-paradigmed computational solutions that was 
+**Definitions** describe an extensible, light-weight encapsulation for closures, or syntactic energy, that provide a 
+consistency & terseness 
 
-**A closure must be able to be either:**
-
-* Read //given memory space
-* Evaluated //given execution space 
-* Mutated //change either spaces
+* Read
+* Evaluate
+* Mutate
   
 
-<h4>EffectorType & Effector</h4>
 
-**Effectors** are complementary and neccesary to **Definitions** in order to describe Evaluations & Mutations on datams. Basically, high-level descriptions of synchrnous & asynchronous actions.
+<h4>Effector</h4>
+
+**Effectors** are high-level descriptions of synchrnous & asynchronous actions.
 
 <h4>Technical</h4>
-
 
 ```bash
 
@@ -127,6 +131,7 @@ const Header = defineComponent({
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#in-fix-psudocode-
 
 # in-fix psudocode 
+
 
 type TypeParams = null
 type MetaParams = null
@@ -180,14 +185,6 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 </details>
 
-
-<details>
-<summary><em>Is this able to be contributed to?</em></summary>
-
-<em>Not yet! - but we'd love that.</em> The idea is simple, without bloating the end-developer memory space, load and define as many computations and data-sets as humanly possible while another contributing team generalize the build process for other lower interfaces (WebAssembly, Rust, DeviceScript, etc...). 
-
-</details>
-
 <h2>➰Feedback</h2>
 
 [Email us | dev@desirable.solutions](mailto:dev@desirable.solutions)
@@ -212,18 +209,14 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 **lib**
 - **corrected** type query definition errors with `Definition`
-- **stable:** base definition functor.
-- **stable:** base typings system.
-- **stable:** base effector functor.
-- **stable:** base effector type.
-- **to-do:** create hook functor for plugins.
-- **to-do:** use hook functor to create [**Effect**](https://effect.website) Effector hook.
-- **to-do** integrate generative test suite.
--  
+- **stable:** base definition functors and some plugins.
+- **stable:** base typings system and unwrapping API.
+
+
 
 ### v12.3.0
 
-**lib**
+**@lib**
 - **corrected** type query definition errors with `Definition`
 - **stable:** base definition functors and some plugins.
 - **stable:** base typings system and unwrapping API.
@@ -231,7 +224,7 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 ### v12.2.0
 
-**lib**
+**@lib**
 - **corrected** type query definition errors with `Definition`
 - **stable:** base definition functors and some plugins.
 - **stable:** base typings system and unwrapping API.
@@ -241,7 +234,7 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 ### v12.1.0
 
-**lib**
+**@lib**
 
 - **stable:** base definition functors and some plugins.
 - **stable:** base typings system and unwrapping API.
@@ -251,10 +244,10 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 ### v11.0.1
 
-**lib**
+**@lib**
 
 - **testing** `define` function with parameterized type defintions and single responsibility.
-- **testing** GPT-4 Integration for Intelligent Terminal Assitance  [_failed_]
+- **testing** GPT-4 Integration for Intelligent Terminal Assitance
 
 ---
 

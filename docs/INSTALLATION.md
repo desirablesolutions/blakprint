@@ -7,7 +7,7 @@ npm i blakprint@latest
 ```
 ---
 
-##### coming soon...
+_coming soon..._
 
 **python**
 
@@ -18,11 +18,20 @@ pip install blakprint
 
 
 
-**crate**
+**rust**
 
 ```bash
 cargo install blakprint
 ```
 ---
+
+**clojure**
+
+```bash
+lein install blakprint
+```
+---
+
+
 
 

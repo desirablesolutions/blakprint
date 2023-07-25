@@ -1,6 +1,6 @@
 (load:docs/TITLE.md)
-(load:docs/USAGE.md)
 (load:docs/INSTALLATION.md)
+(load:docs/USAGE.md)
 (load:docs/DEFINE.md)
 (load:docs/FAQS.md)
 (load:docs/FEEDBACK.md)
