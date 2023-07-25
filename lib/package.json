@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "12.5.0",
+  "version": "12.5.1",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.",
