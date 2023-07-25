@@ -167,14 +167,14 @@ const Navbar = () => {
 
   return (
     <header
-      className={`absolute top-0 left-0 z-20 flex items-center w-full bg-white`}
+      className={`absolute top-0 left-0 z-20 flex items-center w-full bg-black text-white`}
     >
       <div className="container">
         <div className="relative flex items-center justify-between -mx-4">
           <div className="max-w-full px-4 w-60">
             <a href="/#" className="block w-full py-5">
               <img
-                src="https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg"
+                src=""
                 alt="logo"
                 className="w-full"
               />
