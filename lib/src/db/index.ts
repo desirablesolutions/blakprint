@@ -1,1 +1,1 @@
-export * from "./db"
+export { defineDatabase } from "./db"

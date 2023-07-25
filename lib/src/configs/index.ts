@@ -1,2 +1,2 @@
-export * from "./configs"
-export * from "./meta"
+export { defineConfiguration } from "./configs"
+export { defineMetaConfiguration } from "./meta"

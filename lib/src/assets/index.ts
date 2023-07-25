@@ -1,1 +1,1 @@
-export * from "./assets"
+export { defineAsset } from "./assets"

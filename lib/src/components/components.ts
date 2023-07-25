@@ -22,12 +22,13 @@ export function defineComponent<
     
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
-    version: 1,
-    primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
+    type: "component",
+    version: Math.round(Date.now() / 1000000) + 1,
+    primary: "view",
+    hierachy: "secondary",
   } as const;
+
+  
 
   return define<TypeParams, ReturnParams, MetaParams>(
     closure as ValidClosure,

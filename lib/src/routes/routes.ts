@@ -1,31 +1,36 @@
-import { RouteType } from "src/typings/models"
-import { defineData } from "src/data/data"
-import { MetaDataType } from "src/typings/meta"
-
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Defines a route with optional return and extension parameters.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure to be executed when the route is accessed.
- * @param {any} [meta] - Additional metadata for the route.
- * @returns {RouteType<ExtensionParams, ReturnParams>} The defined route.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
+export function defineRoute<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-export function defineRoute<ReturnParams = {}, ExtensionParams = {}>
-    (closure: ReturnParams,
-        meta?: any):
-    RouteType<ExtensionParams, ReturnParams> {
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "route",
-        version: 1,
-        primary: "data",
-        hierachy: "secondary"
-    } as const
-
-    return defineData<ReturnParams, typeof metaData>
-        (closure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-

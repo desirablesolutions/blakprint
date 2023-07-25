@@ -1,31 +1,36 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
-import type { TestType } from "src/typings/models"
-import type { MetaDataType } from "src/typings/meta"
-
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Define a test with optional metadata.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure to define the test.
- * @param {any} meta - Optional metadata for the test.
- * @return {TestType<ExtensionParams, ReturnParams>} The defined test.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
+export function defineTest<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-export function defineTest<ReturnParams = {}, ExtensionParams = {},>
-    (closure: ReturnParams,
-        meta?: any):
-    TestType<ExtensionParams, ReturnParams> {
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "test",
-        version: 1,
-        primary: "model",
-        hierachy: "secondary"
-    } as const
-
-    return define<ExtensionParams, ReturnParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-

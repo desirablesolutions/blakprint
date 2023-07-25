@@ -1,1 +1,1 @@
-export * from "./pages"
+export { definePage, definePages } from "./pages"

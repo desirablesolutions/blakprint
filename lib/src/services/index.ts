@@ -1,2 +1,2 @@
-export * from "./services"
-export * from "./page"
+export { defineService } from "./services"
+export { definePageService } from "./page"

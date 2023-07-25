@@ -1,30 +1,36 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
-import type { ControllerType } from "src/typings/controllers"
-import type { MetaDataType } from "src/typings/meta"
-
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Defines a controller function.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure parameter for the controller function.
- * @param {any} meta - Optional metadata parameter.
- * @return {ModelType<ExtensionParams, ReturnParams>} The model type object.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
+export function defineController<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-export function defineController<ReturnParams = {}, ExtensionParams = {},>
-    (closure: ReturnParams,
-        meta?: any):
-    ControllerType<ExtensionParams, ReturnParams> {
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "controller",
-        version: 1,
-        hierachy: "primary"
-    } as const
-
-    return define<ExtensionParams, ReturnParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-

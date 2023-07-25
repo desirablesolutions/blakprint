@@ -1,11 +1,8 @@
-import { define } from "blakprint-utils-ts"
 
-import { defineConfig } from "./configs"
-
+import { defineConfiguration } from "./configs";
 
 
-export function defineMetaConfig() {
-    return defineConfig({
 
-    })
+export function defineMetaConfiguration() {
+  return defineConfiguration({});
 }

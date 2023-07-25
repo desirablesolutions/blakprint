@@ -10,7 +10,7 @@ import { ValidClosure, define } from "blakprint-utils-ts";
  * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
-export function defineAsset<
+export function defineConfiguration<
   TypeParams = any,
   ReturnParams = any,
   MetaParams = unknown
@@ -18,6 +18,8 @@ export function defineAsset<
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
 ): AssetType<TypeParams, ReturnParams, MetaParams> {
+
+    
   const metaData: MetaParams = {
     ...(meta as any),
     type: "asset",

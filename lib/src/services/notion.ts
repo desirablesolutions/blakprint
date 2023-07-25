@@ -2,6 +2,6 @@ import { defineService } from "./services"
 
 
 
-export function defineNotionService() {
-  return null
+export function defineNotionService(params: any) {
+  return defineService(params)
 }

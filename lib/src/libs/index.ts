@@ -1,1 +1,1 @@
-export * from "./libs"
+export { defineLibrary } from "./libs"

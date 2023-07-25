@@ -1,30 +1,36 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
-import { ViewType } from "../typings/views"
-import { MetaDataType } from "../typings/meta"
-
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Defines a view with optional metadata.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure for the view.
- * @param {unknown} meta - Optional metadata for the view.
- * @return {ViewType<ExtensionParams, ReturnParams>} The defined view.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
+export function defineView<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-export function defineView<ReturnParams = {}, ExtensionParams = {}>
-    (closure: ReturnParams,
-        meta?: unknown):
-    ViewType<ExtensionParams, ReturnParams> {
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta as any,
-        type: "view",
-        version: 1,
-        hierachy: "primary"
-    } as const
-
-    return define<ReturnParams, ExtensionParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-

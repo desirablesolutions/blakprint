@@ -1,30 +1,69 @@
-import { PageType } from "src/typings/models"
-import { defineData } from "src/data/data"
-import { MetaDataType } from "src/typings/meta"
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Define Pages.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure parameter.
- * @param {any} meta - The optional meta parameter.
- * @return {PageType<ExtensionParams, ReturnParams>} The return value of the function.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
+export function definePage<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-export function definePages<ReturnParams = {}, ExtensionParams = {},>
-    (closure: ReturnParams,
-        meta?: any):
-        PageType<ExtensionParams, ReturnParams> {
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "page",
-        version: 1,
-        primary: "data",
-        hierachy: "secondary"
-    } as const
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    return defineData<ReturnParams, typeof metaData>
-        (closure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
 
+/**
+ * Defines an asset with optional metadata.
+ *
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
+ */
+
+export function definePages<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
+
+
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
+
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
+}

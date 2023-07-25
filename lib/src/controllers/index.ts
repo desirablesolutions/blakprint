@@ -1,1 +1,1 @@
-export * from "./controllers"
+export { defineController } from "./controllers"

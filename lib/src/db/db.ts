@@ -1,23 +1,36 @@
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
-import { DatabaseType } from "src/typings/models"
-import { MetaDataType } from "src/typings/meta"
-import { defineData } from "src/data/data"
+/**
+ * Defines an asset with optional metadata.
+ *
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
+ */
 
-export function defineDatabase<ReturnParams = {}, ExtensionParams = {}>
-    (closure: ReturnParams,
-        meta?: unknown):
-    DatabaseType<ExtensionParams, ReturnParams> {
+export function defineDatabase<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta as any,
-        type: "database",
-        version: 1,
-        primary: "models",
-        secondary: "data",
-        hierachy: "tertiary"
-    } as const
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    return defineData<ReturnParams, typeof metaData>
-        (closure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-

@@ -7,6 +7,7 @@
 - **corrected** type query definition errors with `Definition`
 - **stable:** base definition functor.
 - **stable:** base typings system.
+- **stable:** simple class definitions, mostly identity functions.
 - **stable:** base effector functor.
 - **stable:** base effector type.
 - **to-do:** create hook functor for plugins.

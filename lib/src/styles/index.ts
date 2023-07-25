@@ -1,1 +1,1 @@
-export * from "./styles"
+export { defineStyle } from "./styles"

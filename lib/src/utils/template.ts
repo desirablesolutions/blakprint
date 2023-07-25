@@ -1,4 +1,5 @@
 import { defineUtility } from "./utils"
+import type { EffectorType } from "blakprint-utils-ts"
 
 export type TemplateUtilityProps<ExtensionProps = {}> = {
     strTemplate: string,
@@ -7,21 +8,21 @@ export type TemplateUtilityProps<ExtensionProps = {}> = {
 } & ExtensionProps
 
 
-export function defineTemplate<ExtensionProps>() {
+export function defineTemplate<TypeParams, ReturnParams>() {
 
-    return defineUtility<any, any>(
+    return defineUtility<any, EffectorType<string>, TemplateUtilityProps>(
 
-        (params?: any): string => {
+        (params: { strTemplate: any, data: any, delimiter: any }): string => {
 
             let { strTemplate, data, delimiter } = params
 
-            const startDelimiter = delimiter.slice(0, delimiter.length / 2);
-            const endDelimiter = delimiter.slice(delimiter.length / 2);
+            const startDelimiter: string = delimiter.slice(0, delimiter.length / 2);
+            const endDelimiter: string = delimiter.slice(delimiter.length / 2);
 
-            let result = "";
-            let startDelimiterIndex = strTemplate.indexOf(startDelimiter);
+            let result: string = "";
+            let startDelimiterIndex: number = strTemplate.indexOf(startDelimiter);
 
-            while (startDelimiterIndex !== -1) {
+            while (startDelimiterIndex as number !== -1) {
                 let endDelimiterIndex = strTemplate.indexOf(endDelimiter, startDelimiterIndex + startDelimiter.length);
                 if (endDelimiterIndex === -1) {
                     throw new Error(`No matching end delimiter for start delimiter at index ${startDelimiterIndex}`);
@@ -36,7 +37,7 @@ export function defineTemplate<ExtensionProps>() {
                 startDelimiterIndex = strTemplate.indexOf(startDelimiter);
             }
 
-            return result + strTemplate;
+            return result + strTemplate as string;
         }
 
     )

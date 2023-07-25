@@ -6,6 +6,8 @@
 (load:docs/CLASSES.md)
 (load:docs/FEEDBACK.md)
 (load:docs/DEPENDENCIES.md)
+(load:docs/CONTRIBUTIONS.md)
+(load:docs/SUPPORT.md)
 (load:docs/AUTHORS.md)
 (load:docs/CHANGELOG.md)
 (load:docs/COPYRIGHT.md)

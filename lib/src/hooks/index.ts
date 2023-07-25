@@ -1,1 +1,2 @@
-export * from "./hooks"
+export { defineHook } from "./hooks"
+export { defineUsePages } from "./pages"

@@ -1,1 +1,1 @@
-export * from "./components"
+export { defineComponent } from "./components"

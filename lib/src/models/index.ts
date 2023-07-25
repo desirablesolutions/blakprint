@@ -1,1 +1,1 @@
-export * from "./models"
+export { defineModel } from "./models"

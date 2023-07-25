@@ -1,29 +1,36 @@
-import { ValidClosure, define } from "blakprint-utils-ts"
-import type { LibraryType } from "src/typings/library"
-import type { MetaDataType } from "src/typings/meta"
-
+import type { AssetType } from "src/typings/models";
+import type { MetaDataType } from "src/typings/meta";
+import { ValidClosure, define } from "blakprint-utils-ts";
 
 /**
- * Defines a library and returns a model of a specified type.
+ * Defines an asset with optional metadata.
  *
- * @param {ReturnParams} closure - The closure that defines the library.
- * @param {any} meta - Optional metadata for the library.
- * @return {ModelType<ExtensionParams, ReturnParams>} The model of the specified type.
+ * @param {ReturnParams} closure - The closure to define the asset.
+ * @param {unknown} meta - Optional metadata for the asset.
+ * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
-export function defineLibrary<ReturnParams = {}, ExtensionParams = {}>
-    (closure: ReturnParams,
-        meta?: any):
-    LibraryType<ExtensionParams, ReturnParams> {
+export function defineLibrary<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>(
+  closure: ReturnParams | TypeParams | ValidClosure,
+  meta?: MetaDataType<any>
+): AssetType<TypeParams, ReturnParams, MetaParams> {
 
-    const metaData: MetaDataType<typeof meta> = {
-        ...meta,
-        type: "library",
-        version: 1,
-        hierachy: "primary"
-    } as const
+    
+  const metaData: MetaParams = {
+    ...(meta as any),
+    type: "asset",
+    version: 1,
+    primary: "model",
+    secondary: "data",
+    hierachy: "tertiary",
+  } as const;
 
-    return define<ExtensionParams, ReturnParams, typeof metaData>
-        (closure as ValidClosure, metaData)
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ValidClosure,
+    metaData
+  );
 }
-
