@@ -38,7 +38,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "prepublishOnly": "npm run build",
+
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",

@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { PageType } from "src/typings/models";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,13 +17,13 @@ export function definePage<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): PageType<TypeParams, ReturnParams, MetaParams> {
 
 
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
-    version: 1,
+    type: "page",
+    version: Math.round(Date.now() as number / 100000),
     primary: "model",
     secondary: "data",
     hierachy: "tertiary",
@@ -50,12 +50,12 @@ export function definePages<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): PageType<TypeParams, ReturnParams, MetaParams> {
 
 
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
+    type: "page",
     version: 1,
     primary: "model",
     secondary: "data",

@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { LayoutType } from "src/typings/views";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,12 +17,12 @@ export function defineLayout<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): LayoutType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
+    type: "layout",
     version: 1,
     primary: "model",
     secondary: "data",

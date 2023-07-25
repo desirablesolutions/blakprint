@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { HookType } from "src/typings/controllers";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,16 +17,15 @@ export function defineHook<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): HookType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
+    type: "hook",
     version: 1,
-    primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
+    primary: "controller",
+    hierachy: "secondary",
   } as const;
 
   return define<TypeParams, ReturnParams, MetaParams>(

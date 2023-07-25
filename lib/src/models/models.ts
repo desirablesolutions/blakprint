@@ -1,4 +1,4 @@
-import type { AssetType } from "src/typings/models";
+import type { ModelType } from "src/typings/models";
 import type { MetaDataType } from "src/typings/meta";
 import { ValidClosure, define } from "blakprint-utils-ts";
 
@@ -17,16 +17,14 @@ export function defineModel<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): ModelType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
-    version: 1,
-    primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
+    type: "model",
+    version: Math.round(Date.now() as number / 100000),
+    hierachy: "primary",
   } as const;
 
   return define<TypeParams, ReturnParams, MetaParams>(
