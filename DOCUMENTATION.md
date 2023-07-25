@@ -3,6 +3,7 @@
 (load:docs/USAGE.md)
 (load:docs/DEFINE.md)
 (load:docs/FAQS.md)
+(load:docs/CLASSES.md)
 (load:docs/FEEDBACK.md)
 (load:docs/DEPENDENCIES.md)
 (load:docs/AUTHORS.md)

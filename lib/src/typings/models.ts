@@ -1,18 +1,20 @@
 import { Definition } from "blakprint-utils-ts"
 
-export type ModelType<ExtensionParams = {}, ReturnParams = {}, MetaParams = {}> =
-    Definition<ExtensionParams, ReturnParams, MetaParams>
+export type ModelType<TypeParams = any, ReturnParams = any, MetaParams = any> =
+    Definition<TypeParams, ReturnParams, MetaParams>
 
-export type DataType<T, R> = ModelType<T, R>
+export type DataType<T, R, M> = ModelType<T, R, M>
 
-export type DatabaseType<T, R> = DataType<T,R>
+export type DatabaseType<T, R, M> = DataType<T, R, M>
 
-export type ConfigType<T,R> = ModelType<T,R>
-export type ServiceType<T,R> = ModelType<T,R>
-export type PageType<T,R> = ModelType<T,R>
+export type ConfigType<T, R, M> = ModelType<T, R, M>
 
-export type RouteType<T,R> = ModelType<T,R>
-export type TestType<T,R> = ModelType<T,R>
+export type ServiceType<T, R, M> = ModelType<T, R, M>
 
+export type PageType<T, R, M> = ModelType<T, R, M>
 
-export type AssetType<T,R> = ModelType<T,R>
+export type RouteType<T, R, M> = ModelType<T, R, M>
+
+export type TestType<T, R, M> = ModelType<T, R, M>
+
+export type AssetType<T, R, M> = ModelType<T, R, M>

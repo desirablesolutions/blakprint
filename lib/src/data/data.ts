@@ -15,7 +15,7 @@ import { defineModel } from "src/models/models"
 export function defineData<ReturnParams = {}, ExtensionParams = {}>
     (closure: ReturnParams,
         meta?: unknown):
-    DataType<ExtensionParams, ReturnParams> {
+    DataType<ReturnParams, ExtensionParams> {
 
     const metaData: MetaDataType<typeof meta> = {
         ...meta as any,
