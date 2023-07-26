@@ -2,8 +2,8 @@ import { Image } from "@/views/components/Image";
 import Container from "./Container";
 
 export type HeroProps = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 };
 
 export function defaultProps(): HeroProps {
