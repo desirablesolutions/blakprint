@@ -1,7 +1,5 @@
 import { Image } from "@/views/components/Image";
-
-
-
+import Container from "./Container";
 
 export type HeroProps = {
   title?: string,
@@ -9,23 +7,21 @@ export type HeroProps = {
 }
 
 
-
 export function defaultProps():HeroProps {
   return {
     title: "Blakprint",
+    description: "a"
+
   }
 }
 
-
 export default function Hero(props?: HeroProps) {
 
-  const { title } = props ?? defaultProps();
+  const { title, description } = props ?? defaultProps();
 
   return (
-    <div className="relative bg-transparent pt-[120px] pb-[110px] lg:pt-[150px]">
-      <div className="container">
-        <div className="flex flex-wrap -mx-4">
-          <div className="w-full px-4 lg:w-5/12">
+    <Container>
+<div className="w-full px-4 lg:w-5/12">
             <div className="hero-content">
               <h1 className="mb-3 text-4xl text-white font-bold leading-snug text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]">
                 {title}
@@ -152,8 +148,8 @@ export default function Hero(props?: HeroProps) {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+    </Container>
   );
 }
+
+
