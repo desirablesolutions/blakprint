@@ -19,12 +19,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-attachment: fixed;
+  overflow-x: hidden;
+  background:conic-gradient(at right center, rgb(235, 241, 238), #008000, rgb(126, 34, 206)) !important;
 }
 
 
