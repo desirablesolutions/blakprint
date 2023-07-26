@@ -1,7 +1,25 @@
 import { Image } from "@/views/components/Image";
 
-export default function Hero(props?: any) {
-  const { title } = props;
+
+
+
+export type HeroProps = {
+  title?: string,
+  description?: string
+}
+
+
+
+export function defaultProps():HeroProps {
+  return {
+    title: "Blakprint",
+  }
+}
+
+
+export default function Hero(props?: HeroProps) {
+
+  const { title } = props ?? defaultProps();
 
   return (
     <div className="relative bg-transparent pt-[120px] pb-[110px] lg:pt-[150px]">
@@ -10,12 +28,10 @@ export default function Hero(props?: any) {
           <div className="w-full px-4 lg:w-5/12">
             <div className="hero-content">
               <h1 className="mb-3 text-4xl text-white font-bold leading-snug text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]">
-                Blakprint
+                {title}
               </h1>
               <p className="mb-8 max-w-[480px] text-base text-body-color">
-                With TailGrids, business and students thrive together. Business
-                can perfectly match their staffing to changing demand throughout
-                the dayed.
+               {description}
               </p>
               <ul className="flex flex-wrap items-center">
                 <li>
