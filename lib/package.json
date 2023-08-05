@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "12.5.2",
+  "version": "12.5.322",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.",
@@ -38,7 +38,6 @@
   },
   "scripts": {
     "build": "vite build",
-
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json",
@@ -72,7 +71,7 @@
     "@dao-xyz/borsh": "^5.1.5",
     "@types/react": "^18.0.37",
     "@vitejs/plugin-react": "^4.0.0",
-    "blakprint-utils-ts": "^12.5.0",
+    "blakprint-utils-ts": "^12.5.98",
     "boxen": "^7.0.2",
     "chalk": "^5.2.0",
     "class-variance-authority": "^0.6.1",
