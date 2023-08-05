@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/views/includes/NavBar";
 import { Footer } from "@/views/includes/Footer";
-
+import  {  FooterType}from "blakprint"
 const web_font = IBM_Plex_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
