@@ -1,13 +1,11 @@
 import { TypeFactory } from "interface-forge";
-import { Factory, FactoryInterface } from "./factory";
+import { Effector } from "./effector";
 import { isFunction } from "./predicates";
-import { Definition, EffectorType } from "./types";
 import {
   DEFAULT_META_PARAMS_TYPES,
   DEFAULT_RETURN_PARAMS_TYPES,
-  DEFAULT_TYPE_PARAMS_TYPES,
-  ValidClosure
-} from "./utils";
+  DEFAULT_TYPE_PARAMS_TYPES, Definition, ValidClosure
+} from "./types";
 
 
 
@@ -30,14 +28,14 @@ export function define<
 
 
   const instance: Definition<TypeParams, ReturnParams, MetaParams> = {
-    meta: (): MetaParams => {
-      return meta ?? null;
+    meta: (): MetaParams | undefined => {
+      return meta;
     },
     redefine: (
       newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure,
       newMeta?: MetaParams
     ) => {
-      return define(newClosure, newMeta);
+      return define<TypeParams, ReturnParams, MetaParams>(newClosure, newMeta);
     },
     closure: (): string => {
       return `${closure}`;
@@ -51,13 +49,7 @@ export function define<
         return closure as ReturnParams;
       }
     },
-    generate: (blakprint?: EffectorType<TypeParams> | TypeParams): FactoryInterface<TypeParams> => {
-      if (!isFunction(blakprint)) {
-        return Factory<TypeParams>(TypeFactory, blakprint);
-      } else {
-        return Factory<TypeParams>(TypeFactory, blakprint());
-      }
-    },
+ 
     log: (): void => {
       console.log(`${closure}::${meta} `)
     },
@@ -66,10 +58,12 @@ export function define<
   return instance;
 }
 
-//[to-do]: implement useEffect hook for adding third party parameters.
 export function useEffect<TypeParams = unknown>() {
-  return null
+  return Effector()
 }
 
+export function useTypeFactory(params: any) {
+  return new TypeFactory(params)
+}
 
 

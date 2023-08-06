@@ -1,6 +1,5 @@
-import type { ComponentType } from "src/typings/views";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "blakprint-utils-ts";
+import type { ComponentType, MetaDataType } from "@typings/index";
+import { ValidClosure, define } from "src/utils/index";
 
 /**
  * Defines an asset with optional metadata.

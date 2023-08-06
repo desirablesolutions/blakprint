@@ -1,4 +1,0 @@
-def blakprint():
-    return ["blakprint!"]
-
-

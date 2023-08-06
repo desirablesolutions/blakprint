@@ -1,4 +1,4 @@
-import { Definition } from "blakprint-utils-ts";
+import { Definition } from "src/utils/index";
 
 export type Colors = "red" | "blue" | "yellow" | "green" | "black" | "white";
 
@@ -66,7 +66,10 @@ export type HeroType<
   TypeParams = unknown,
   ReturnParams = unknown,
   MetaParams = unknown
-> = ComponentType<TypeParams, ReturnParams, MetaParams>;
+> = ComponentType<TypeParams & {
+  title?: string,
+  subtitle?: string
+}, ReturnParams, MetaParams>;
 
 export type StatsGridType<
   TypeParams = {},

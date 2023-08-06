@@ -1,5 +1,5 @@
 import type { EffectorType } from "./types"
-import { Weak } from "./utils"
+import { Weak } from "src/utils/index"
 
 
 export type EffectorInterface<TypeParams = unknown> = {
@@ -10,11 +10,11 @@ export type EffectorInterface<TypeParams = unknown> = {
     readonly compose: EffectorType<any, any>,
 }
 
-export function SELF<TypeParams>(a: Weak<TypeParams>): TypeParams {
-    return a
+export function SELF<TypeParams=unknown>(identity: TypeParams): TypeParams {
+    return identity
 }
 
-const DEFAULT_EFFECTOR_INTERFACE_DEFINITION: EffectorInterface = {
+const DEFAULT_EFFECTOR_INTERFACE_DEFINITION = {
     success: SELF,
     failure: SELF,
     sync: SELF,
@@ -25,7 +25,7 @@ const DEFAULT_EFFECTOR_INTERFACE_DEFINITION: EffectorInterface = {
 
 export function Effector<TypeParams = unknown>(module = DEFAULT_EFFECTOR_INTERFACE_DEFINITION):
     EffectorInterface {
-    return module
+    return module as EffectorInterface<TypeParams>
 }
 
 export function success<TypeParams>(value: Weak<TypeParams>) {
@@ -44,7 +44,7 @@ export function execute<ReturnParams>(value: any): ReturnParams {
     return Effector().execute(value)
 }
 
-export function compose(a, b) {
+export function compose(a: any, b: any):any {
 
     return [a, b]
 }

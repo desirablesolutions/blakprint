@@ -1,4 +1,4 @@
-import { Definition } from "blakprint-utils-ts"
+import { Definition } from "src/utils/index"
 
 export type ModelType<TypeParams = any, ReturnParams = any, MetaParams = any> =
     Definition<TypeParams, ReturnParams, MetaParams>

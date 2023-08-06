@@ -11,35 +11,6 @@ npm i blakprint@latest
 ```
 ---
 
-_coming soon..._
-
-**python**
-
-```bash
-pip install blakprint
-```
----
-
-
-
-**rust**
-
-```bash
-cargo install blakprint
-```
----
-
-**clojure**
-
-```bash
-lein install blakprint
-```
----
-
-
-
-
-
 <h2>🔨Usage</h2>
 
 <h3>creating a definition of a closure.</h3>
@@ -298,8 +269,14 @@ _* M-E: Memory-Execution space_
 * [**🤖Open A.I GPT-4**](https://chat.openai.com)
 <h2>⏳Changelog</h2>
 
+### 🎉v13.0.0
 
-### 🎉v12.5.0
+**lib**
+- **removed** `Definition` utility package in favor of dependecy injection from the core library.
+- **corrected** Identity closures for definitions. Simplified interface abstraction to dependecy injection.
+
+
+### v12.5.0
 
 **lib**
 - **corrected** type query definition errors with `Definition`

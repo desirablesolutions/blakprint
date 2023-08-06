@@ -1,6 +1,6 @@
-import type { DataType } from "src/typings/models";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "blakprint-utils-ts";
+import type { DataType } from "@typings/models";
+import type { MetaDataType } from "@typings/meta";
+import { ValidClosure, define } from "src/utils/index";
 
 /**
  * Defines an asset with optional metadata.

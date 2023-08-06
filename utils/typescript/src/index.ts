@@ -1,6 +1,0 @@
-export { define } from "./define"
-export * from "./effector"
-export * from "./predicates"
-export * from "./utils"
-export type * from "./types"
-export * from "./factory"

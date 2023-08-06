@@ -1,6 +1,6 @@
 {
   "name": "blakprint-master",
-  "version": "12.5.0",
+  "version": "13.0.0",
   "main": "bin/index.js",
   "private": false,
   "scripts": {

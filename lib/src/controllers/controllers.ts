@@ -1,6 +1,6 @@
-import type { ControllerType } from "src/typings/controllers";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "blakprint-utils-ts";
+import type { ControllerType } from "@typings/controllers";
+import type { MetaDataType } from "@typings/meta";
+import { ValidClosure, define } from "src/utils/index";
 
 /**
  * Defines an asset with optional metadata.

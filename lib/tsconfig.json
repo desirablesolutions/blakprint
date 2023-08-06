@@ -19,6 +19,12 @@
       "src/*": [
         "./src/*"
       ],
+      "@utils/*":[
+        "./src/utils/*"
+      ],
+      "@typings/*":[
+        "./src/typings/*"
+      ],
       "src/views/*": [
         "./src/views/*"
       ],

@@ -1,6 +1,6 @@
 import type { ViewType } from "src/typings/views";
 import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "blakprint-utils-ts";
+import { ValidClosure, define } from "src/utils/index";
 
 /**
  * Defines an asset with optional metadata.
@@ -24,9 +24,8 @@ export function defineView<
     ...(meta as any),
     type: "asset",
     version: 1,
-    primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
+    primary: "view",
+    hierachy: "primary",
   } as const;
 
   return define<TypeParams, ReturnParams, MetaParams>(

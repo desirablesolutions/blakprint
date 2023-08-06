@@ -1,5 +1,5 @@
 import { defineUtility } from "./utils"
-import type { EffectorType } from "blakprint-utils-ts"
+import type { EffectorType } from "src/utils/index"
 
 export type TemplateUtilityProps<ExtensionProps = {}> = {
     strTemplate: string,
