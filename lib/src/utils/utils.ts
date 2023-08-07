@@ -1,6 +1,5 @@
-import type { UtilityType } from "src/typings/controllers";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { MetaDataType, UtilityType } from "../typings";
+import { ValidClosure, define } from "../utils";
 
 /**
  * Defines an asset with optional metadata.

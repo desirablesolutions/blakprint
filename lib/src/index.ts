@@ -1,4 +1,6 @@
+export type * from "./typings"
 export * from "./assets"
+
 export * from "./configs"
 export * from "./controllers"
 export * from "./hooks"
@@ -24,5 +26,5 @@ export * from "./build"
 
 
 
-export type * from "./typings"
+
 

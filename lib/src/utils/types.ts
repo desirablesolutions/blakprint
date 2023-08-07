@@ -40,3 +40,4 @@ export type DEFAULT_TYPE_PARAMS_TYPES = {
   version?: number | string
 } | any
 
+export type DefinitionParams<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>

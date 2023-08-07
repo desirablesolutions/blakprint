@@ -1,6 +1,13 @@
 <h2>⏳Changelog</h2>
 
-### 🎉v13.0.0
+### 🎉v13.2.0
+
+**lib**
+- **stable** `Definition` utility package in favor of dependecy injection from the core library.
+- **corrected** Identity closures for definitions. Simplified interface abstraction to dependecy injection.
+
+
+### v13.0.0
 
 **lib**
 - **removed** `Definition` utility package in favor of dependecy injection from the core library.

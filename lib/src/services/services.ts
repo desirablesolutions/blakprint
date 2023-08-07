@@ -1,6 +1,5 @@
-import type { AssetType } from "@typings/models";
-import type { MetaDataType } from "@typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { MetaDataType, ServiceType } from "../typings";
+import { ValidClosure, define } from "../utils";
 
 /**
  * Defines an asset with optional metadata.
@@ -17,7 +16,7 @@ export function defineService<
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
-): AssetType<TypeParams, ReturnParams, MetaParams> {
+): ServiceType<TypeParams, ReturnParams, MetaParams> {
 
     
   const metaData: MetaParams = {

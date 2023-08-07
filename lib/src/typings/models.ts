@@ -1,4 +1,4 @@
-import { Definition } from "src/utils/index"
+import { Definition } from "../utils"
 
 export type ModelType<TypeParams = any, ReturnParams = any, MetaParams = any> =
     Definition<TypeParams, ReturnParams, MetaParams>

@@ -1,4 +1,4 @@
-import { Definition } from "src/utils/index"
+import { Definition } from "../utils"
 
 export type ControllerType<ExtensionParams = {}, ReturnParams = {}, MetaParams = {}> =
     Definition<ExtensionParams, ReturnParams, MetaParams>

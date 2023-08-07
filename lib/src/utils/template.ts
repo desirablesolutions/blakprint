@@ -1,5 +1,5 @@
-import { defineUtility } from "./utils"
-import type { EffectorType } from "src/utils/index"
+import { EffectorType, defineUtility } from "../utils";
+
 
 export type TemplateUtilityProps<ExtensionProps = {}> = {
     strTemplate: string,

@@ -1,6 +1,6 @@
-import type { LayoutType } from "src/typings/views";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { LayoutType, MetaDataType } from "../typings";
+import { ValidClosure, define } from "../utils";
+
 
 /**
  * Defines an asset with optional metadata.

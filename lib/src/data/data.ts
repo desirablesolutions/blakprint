@@ -1,6 +1,6 @@
-import type { DataType } from "@typings/models";
-import type { MetaDataType } from "@typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { DataType, MetaDataType } from "../typings";
+import { ValidClosure, define } from "../utils";
+
 
 /**
  * Defines an asset with optional metadata.

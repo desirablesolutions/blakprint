@@ -1,6 +1,6 @@
-import type { ControllerType } from "@typings/controllers";
-import type { MetaDataType } from "@typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { ControllerType, MetaDataType } from "../typings";
+import { ValidClosure, define } from "../utils";
+
 
 /**
  * Defines an asset with optional metadata.

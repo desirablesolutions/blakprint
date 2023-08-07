@@ -34,3 +34,4 @@ export function defineAsset<
   ) as AssetType<TypeParams, ReturnParams, MetaParams>;
 }
 
+

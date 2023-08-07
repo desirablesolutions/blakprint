@@ -1,6 +1,5 @@
-import type { TestType } from "@typings/models";
-import type { MetaDataType } from "@typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { MetaDataType, TestType } from "../typings";
+import { ValidClosure, define } from "../utils";
 
 /**
  * Defines an asset with optional metadata.

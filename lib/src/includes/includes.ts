@@ -1,6 +1,5 @@
-import type { IncludeType } from "src/typings/views";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { IncludeType, MetaDataType } from "../typings";
+import { ValidClosure, define } from "../utils";
 
 /**
  * Defines an asset with optional metadata.
