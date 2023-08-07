@@ -1,4 +1,5 @@
 (load:docs/TITLE.md)
+(load:docs/LOGO.md)
 (load:docs/INSTALLATION.md)
 (load:docs/USAGE.md)
 (load:docs/DEFINE.md)

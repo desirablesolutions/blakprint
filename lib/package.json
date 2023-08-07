@@ -40,7 +40,7 @@
     "build": "vite build",
     "publish": "npm run node:publish",
     "dev": "tsup src --watch",
-    "readme:g": "npx @appnest/readme generate --config=docs.config.json",
+    "readme:g": "cd .. && npx @appnest/readme generate --config=docs.config.json",
     "node:publish": "npm publish --access=public",
     "test": "vitest",
     "test:watch": "vitest watch",

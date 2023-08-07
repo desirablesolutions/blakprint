@@ -2,6 +2,11 @@
 
 <h4 align="center">our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.</h4>
 
+<h1 align="center">
+
+<img src="https://github.com/desirablesolutions/blakprint/blob/main/docs/logo.png?raw=true" height="230" width="230" alt="blackprint-logo-desirable-solutions"/>
+
+</h1>
 <h2>⚒️Installation</h2>
 
 **node**
@@ -269,7 +274,7 @@ _* M-E: Memory-Execution space_
 * [**🤖Open A.I GPT-4**](https://chat.openai.com)
 <h2>⏳Changelog</h2>
 
-### 🎉v13.1.0
+### 🎉v13.2.0
 
 **lib**
 - **stable** `Definition` utility package in favor of dependecy injection from the core library.
