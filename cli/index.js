@@ -34,3 +34,15 @@ export const data = [
     }`
     }
 ]
+
+const presets = {
+    mvc: {
+      models: {},
+      views: {},
+      controllers: {}
+    },
+    docs: {
+  
+    }
+  }
+  

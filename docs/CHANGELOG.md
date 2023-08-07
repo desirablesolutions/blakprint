@@ -3,8 +3,9 @@
 ### 🎉v13.2.0
 
 **lib**
-- **stable** `Definition` utility package in favor of dependecy injection from the core library.
-- **corrected** Identity closures for definitions. Simplified interface abstraction to dependecy injection.
+- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+- **stable** Adding dependecy injections for definitions & extensions is corrected & stable.
+- **stable** Type & Type helpers for generating definitions. 
 
 
 ### v13.0.0

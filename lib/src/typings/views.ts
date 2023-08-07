@@ -1,4 +1,4 @@
-import { Definition } from "../utils";
+import { Definition, DefinitionParams } from "../utils";
 
 export type Colors = "red" | "blue" | "yellow" | "green" | "black" | "white";
 
@@ -66,10 +66,14 @@ export type HeroType<
   TypeParams = unknown,
   ReturnParams = unknown,
   MetaParams = unknown
-> = ComponentType<TypeParams & {
-  title?: string,
-  subtitle?: string
-}, ReturnParams, MetaParams>;
+> = ComponentType<
+  TypeParams & {
+    title?: string;
+    subtitle?: string;
+  },
+  ReturnParams,
+  MetaParams
+>;
 
 export type StatsGridType<
   TypeParams = {},
@@ -118,7 +122,8 @@ export type FaviconType<
   ReturnParams = unknown
 > = ComponentType<
   TypeParams & {
-    [href: string]: string;
+    url: string;
+    image: ImageType | DefinitionParams<ImageType>;
   },
   ReturnParams
 >;

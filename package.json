@@ -1,16 +1,13 @@
 {
   "name": "blakprint-master",
-  "version": "13.0.0",
+  "version": "13.2.0",
   "main": "bin/index.js",
   "private": false,
   "scripts": {
-    "build": "pnpm -F lib build",
     "app:build": "cd app && npm run build",
-    "build:fast": "pnpm -F lib build:fast",
-    "dev": "pnpm -F lib dev",
     "test": "pnpm -F lib test",
     "test:watch": "pnpm -F lib test:watch",
-    "readme:g": "npx @appnest/readme generate --config=docs.config.json",
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json && copy README.md lib",
 
     "coverage": "pnpm -F lib coverage",
     "size": "size-limit",
@@ -47,11 +44,11 @@
   "size-limit": [
     {
       "path": "./lib/dist/index.js",
-      "limit": "500 kb"
+      "limit": "50 kb"
     },
     {
       "path": "./lib/dist/index.mjs",
-      "limit": "500 kb"
+      "limit": "50 kb"
     }
   ]
 }
