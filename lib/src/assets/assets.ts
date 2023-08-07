@@ -1,6 +1,6 @@
-import type { AssetType } from "@typings/models";
-import type { MetaDataType } from "@typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { AssetType, MetaDataType } from "../typings";
+import { ValidClosure, define } from "../utils";
+
 
 /**
  * Defines an asset with optional metadata.
@@ -31,5 +31,6 @@ export function defineAsset<
   return define<TypeParams, ReturnParams, MetaParams>(
     closure as ValidClosure,
     metaData
-  );
+  ) as AssetType<TypeParams, ReturnParams, MetaParams>;
 }
+

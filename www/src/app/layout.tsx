@@ -3,8 +3,14 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/views/includes/NavBar";
 import { Footer } from "@/views/includes/Footer";
-import  {  FooterType}from "blakprint"
+import Contact from "@includes/Contact"
+
+
+
+
 const web_font = IBM_Plex_Mono({ subsets: ["latin"], weight: "400" });
+
+
 
 export const metadata: Metadata = {
   title: "Blakprint",
@@ -21,6 +27,7 @@ export default function RootLayout({
       <body className={web_font.className}>
         <NavBar />
         {children}
+        <Contact/>
         <Footer/>
       </body>
     </html>

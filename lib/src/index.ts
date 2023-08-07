@@ -14,6 +14,15 @@ export * from "./pages"
 export * from "./styles"
 export * from "./tests"
 export * from "./utils"
+export * from "./views"
+export * from "./tests"
+export * from "./layouts"
+export * from "./hooks"
+export * from "./data"
+export * from "./components"
+export * from "./build"
+
+
 
 export type * from "./typings"
 
