@@ -145,5 +145,5 @@ export default function Hero(props: HeroProps):React.ReactElement {
     </section>
   ));
 
-  return Component.value();
+  return Component.value() as React.ReactElement;
 }
