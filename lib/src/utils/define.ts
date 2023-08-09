@@ -37,23 +37,22 @@ export function define<
     ) => {
       return define<TypeParams, ReturnParams, MetaParams>(newClosure, newMeta);
     },
-    closure: (): string => {
-      return `${closure}`;
+    closure: (): TypeParams => {
+      return `${closure}` as TypeParams;
     },
     value: (...args: any[]): ReturnParams | TypeParams => {
       if (isFunction(closure)) {
         const result = closure(...args) as ReturnParams;
-
         return result;
       } else {
         return closure as TypeParams;
       }
     },
- 
+
     log: (): void => {
-      console.log(`${closure}::${meta} `)
+      console.log(`${closure}: ${meta}: `)
     },
-  } as const
+  } 
 
   return instance;
 }

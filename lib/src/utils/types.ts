@@ -4,11 +4,11 @@ export interface Definition<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
   ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
   MetaParams = DEFAULT_META_PARAMS_TYPES> {
 
-  closure: EffectorType<ValidClosure>,
+  closure: EffectorType<TypeParams | ValidClosure>,
   meta?: EffectorType<Weak<MetaParams>>,
-  redefine?: EffectorType<any,Definition<TypeParams, ReturnParams, MetaParams>, Error>,
-  value: EffectorType<TypeParams, ReturnParams, MetaParams>,
-  log: EffectorType<unknown, void, MetaParams>,
+  redefine?: EffectorType<any,Definition<TypeParams, ReturnParams, MetaParams>, MetaParams>,
+  value: EffectorType<TypeParams, ReturnParams | TypeParams, MetaParams>,
+  log: EffectorType<MetaParams, void, MetaParams>,
 
 }
 
@@ -41,4 +41,5 @@ export type DEFAULT_TYPE_PARAMS_TYPES = {
 } | any
 
 export type DefinitionParams<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>
-export type DefinitionType<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>
+
+export type DefinitionType<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["closure"] : DefinitionType>

@@ -16,10 +16,8 @@ const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
-        <ReactFlow nodes={initialNodes} edges={initialEdges} />
-      </div>
-    </main>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <ReactFlow nodes={initialNodes} edges={initialEdges} />
+  </div>
   )
 }

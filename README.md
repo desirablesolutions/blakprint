@@ -274,7 +274,14 @@ _* M-E: Memory-Execution space_
 * [**🤖Open A.I GPT-4**](https://chat.openai.com)
 <h2>⏳Changelog</h2>
 
-### 🎉v13.2.1
+### 🎉v13.2.2
+
+**lib**
+- **cursed** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+
+
+
+### v13.2.1
 
 **lib**
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
@@ -282,7 +289,7 @@ _* M-E: Memory-Execution space_
 - **stable** Type & Type helpers for generating definitions. 
 
 
-### 🎉v13.2.0
+### v13.2.0
 
 **lib**
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
