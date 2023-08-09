@@ -8,20 +8,19 @@ import type { PageProps } from "@typings/index";
 import { definePage } from "blakprint";
 import { usePage } from "@hooks/usePage";
 
-
-
-export default  async function Home(): Promise<PageProps>
- {
-
-  const Component = definePage<never, PageProps, Error>(
+export default async function Home(): Promise<PageProps> {
+  
+  const Component = definePage<never, PageProps, Error>(() => (
     <>
-      <Hero />
-      <FeaturedDisplay />
-      <FeaturedBanner />
-      <StatsRow />
-      <PricingTable />
-      <DetailSummary />
-    </>
+    <Hero />
+    <FeaturedDisplay />
+    <FeaturedBanner />
+    <StatsRow />
+    <PricingTable />
+    <DetailSummary />
+  </>
+  )
+
   );
 
   return Component.value();
