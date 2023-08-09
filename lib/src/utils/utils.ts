@@ -21,11 +21,10 @@ export function defineUtility<
 
   const metaData: MetaParams = {
     ...(meta as any),
-    type: "asset",
+    type: "utility",
     version: 1,
     primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
+    hierachy: "primary",
   } as const;
 
   return define<TypeParams, ReturnParams, MetaParams>(

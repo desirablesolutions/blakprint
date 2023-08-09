@@ -40,13 +40,13 @@ export function define<
     closure: (): string => {
       return `${closure}`;
     },
-    value: (...args: any[]): ReturnParams => {
+    value: (...args: any[]): ReturnParams | TypeParams => {
       if (isFunction(closure)) {
         const result = closure(...args) as ReturnParams;
 
         return result;
       } else {
-        return closure as ReturnParams;
+        return closure as TypeParams;
       }
     },
  

@@ -53,8 +53,8 @@ export type ImageType<
   {
     src?: string;
     alt?: string;
-    height?: string;
-    width?: string;
+    height?: string | number;
+    width?: string  | number;
     loading?: "lazy" | "eager";
     class?: string;
     className?: string;

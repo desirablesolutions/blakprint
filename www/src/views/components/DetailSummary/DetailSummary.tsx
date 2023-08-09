@@ -1,6 +1,6 @@
 export default function DetailSummary() {
     return (
-        <section className="relative py-20 overflow-hidden bg-gray-50">
+        <section className="relative py-20 overflow-hidden ">
   <img
     className="absolute top-0 left-0 mt-44"
     src="saturn-assets/images/faq/light-blue-left.png"

@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@libs/globals.css";
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/views/includes/NavBar";

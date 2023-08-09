@@ -1,6 +1,4 @@
-import type { EffectorType } from "./types"
-import { Weak } from "src/utils/index"
-
+import type { EffectorType, Weak } from "./types"
 
 export type EffectorInterface<TypeParams = unknown> = {
     readonly success: EffectorType<TypeParams, unknown>,

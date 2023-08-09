@@ -21,6 +21,10 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@typings/*": ["./src/models/typings/*"],
+      "@components/*": ["./src/views/components/*"],
+      "@hooks/*": ["./src/controllers/hooks/*"],
+      "@libs/*": ["./src/views/libs/*"],
       "@includes/*": ["./src/views/includes/*"]
     }
   },

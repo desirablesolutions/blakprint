@@ -1,12 +1,7 @@
 
-import ListItem from "./ListItem";
-  
 export default function NavBar() {
-
-
-    
-    return (
-      <nav className="relative py-6 bg-transparent mb-12 md:mb-24 z-50">
+  return (
+    <nav className="sticky backdrop-blur-lg top-0 left-0 w-full py-6 bg-transparent mb-12 md:mb-24 z-50">
       <div className="container px-4 mx-auto">
         <div className="flex items-center relative">
           <a
@@ -14,8 +9,8 @@ export default function NavBar() {
             href="#"
           >
             <img
-              className="h-10"
-              src="saturn-assets/logos/logo-saturn-dark.svg"
+              className="h-16"
+              src="https://github.com/desirablesolutions/blakprint/raw/main/docs/logo.png?raw=true"
               alt=""
               width="auto"
             />
@@ -191,5 +186,5 @@ export default function NavBar() {
         </div>
       </div>
     </nav>
-      );
+  );
 }

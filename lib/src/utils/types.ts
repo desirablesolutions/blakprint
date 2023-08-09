@@ -14,7 +14,7 @@ export interface Definition<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
 
 export type EffectorType<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
   ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
-  ErrorParams = DEFAULT_ERROR_PARAMS_TYPES> = (...args: TypeParams[] | any[]) => Weak<ReturnParams | ErrorParams>
+  ErrorParams = DEFAULT_ERROR_PARAMS_TYPES> = (...args: TypeParams[] | any[]) => ReturnParams | ErrorParams
 
 
 export type TypeFactoryInterface<TypeParams> = TypeFactory<TypeParams> 
@@ -41,3 +41,4 @@ export type DEFAULT_TYPE_PARAMS_TYPES = {
 } | any
 
 export type DefinitionParams<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>
+export type DefinitionType<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>

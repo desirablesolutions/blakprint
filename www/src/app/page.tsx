@@ -1,14 +1,28 @@
-import { Hero } from "@/views/components/Hero";
-import { Container } from "@/views/includes/Container";
-import FeaturedDisplay from "@/views/components/FeaturedDisplay";
-import DetailSummary from "@/views/components/DetailSummary";
+import DetailSummary from "@components/DetailSummary";
+import FeaturedBanner from "@components/FeaturedBanner";
+import FeaturedDisplay from "@components/FeaturedDisplay";
+import Hero from "@components/Hero";
+import PricingTable from "@components/PricingTable";
+import StatsRow from "@components/StatsRow";
+import type { PageProps } from "@typings/index";
+import { definePage } from "blakprint";
+import { usePage } from "@hooks/usePage";
 
-export default function Home() {
-  return (
+
+
+export default  async function Home(): Promise<PageProps>
+ {
+
+  const Component = definePage<never, PageProps, Error>(
     <>
-    <Hero />
-    <FeaturedDisplay/>
-    <DetailSummary/>
+      <Hero />
+      <FeaturedDisplay />
+      <FeaturedBanner />
+      <StatsRow />
+      <PricingTable />
+      <DetailSummary />
     </>
   );
+
+  return Component.value();
 }

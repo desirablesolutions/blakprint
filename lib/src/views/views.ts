@@ -1,6 +1,5 @@
-import type { ViewType } from "src/typings/views";
-import type { MetaDataType } from "src/typings/meta";
-import { ValidClosure, define } from "src/utils/index";
+import type { MetaDataType, ViewType } from "../typings";
+import { ValidClosure, define } from "../utils";
 
 /**
  * Defines an asset with optional metadata.
@@ -18,8 +17,6 @@ export function defineView<
   closure: ReturnParams | TypeParams | ValidClosure,
   meta?: MetaDataType<any>
 ): ViewType<TypeParams, ReturnParams, MetaParams> {
-
-    
   const metaData: MetaParams = {
     ...(meta as any),
     type: "asset",
