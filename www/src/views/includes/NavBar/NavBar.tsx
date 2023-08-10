@@ -1,5 +1,5 @@
 import { NavBarProps } from "@typings/index";
-import { defineInclude } from "blakprint";
+import { defineInclude, Weak } from "blakprint";
 import { default as Burger } from "./Burger";
 import { default as CallToAction } from "./CallToAction";
 import { default as Container } from "./Container";
@@ -39,9 +39,9 @@ export function defaultProps(): NavBarProps {
   };
 }
 
-export default function NavBar(props: NavBarProps) {
+export default function NavBar(props: Weak<NavBarProps>) {
 
-  const { links, favicon, burger, cta } = props;
+  const { links, favicon, burger, cta } = props as NavBarProps;
 
   const Component = defineInclude<NavBarProps, React.ReactElement, Error>(
     () => (

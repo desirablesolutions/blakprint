@@ -1,5 +1,5 @@
 import type { HeroProps } from "@typings/index";
-import { defineComponent } from "blakprint";
+import { defineComponent, Weak } from "blakprint";
 import { default as Banner } from "./Banner";
 import { default as Container } from "./Container";
 import { default as Header } from "./Header";
@@ -21,9 +21,9 @@ export function defaultProps(): HeroProps {
   };
 }
 
-export default function Hero(props: HeroProps): React.ReactNode {
+export default function Hero(props: Weak<HeroProps>): React.ReactNode {
 
-  const { banner, header } = props;
+  const { banner, header } = props as HeroProps;
 
   const Component = defineComponent<HeroProps, React.ReactNode, Error>(() => (
     <Container>
