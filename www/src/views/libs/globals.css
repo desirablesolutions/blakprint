@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --low-poly-grid-svg: url("../../../public/low-poly-grid-haikei.svg");
+
+
   --foreground-rgb: 0, 0, 0;
   --color-primary: black;
   --background-start-rgb: 214, 219, 220;
@@ -19,7 +22,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-image: url("../../../public/low-poly-grid-haikei.svg");
+  background-image: var(--low-poly-grid-svg);
   background-attachment: fixed;
   background-size: cover;
   object-fit: cover;
@@ -28,6 +31,7 @@ body {
 
 /* Firefox */
 * {
+  user-select: none;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary);
 }

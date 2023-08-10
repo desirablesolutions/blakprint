@@ -1,35 +1,33 @@
-export default function NavBarLinks({ links }: any) {
+import { LinkProps, NavBarProps } from "@typings/index";
 
-    function Link(link: any) {
-      return (
-        <li className="group relative">
-        <a
-          className="inline-block text-sm text-gray-900 hover:text-orange-900 font-medium"
-          href={link.url}
-        >
-          {link.name}
-        </a>
-       
-      </li>
-      )
-    }
+export function Link(link: LinkProps) {
+  return (
+    <li className="group relative">
+      <a
+        className="inline-block text-sm text-gray-900 hover:text-orange-900 font-medium"
+        href={link.url}
+      >
+        {link.name}
+      </a>
+    </li>
+  );
+}
 
-    function Container({ children }: any) {
-      return (
-        <ul className="hidden lg:flex lg:w-auto lg:space-x-12">
-        {children}
-       
-      </ul>
-      )
-    }
+export function Container({ children }: any) {
+  return <ul className="hidden lg:flex lg:w-auto lg:space-x-12">{children}</ul>;
+}
 
-    return (
-       <Container>
-          {
-            links.map((link: any) => {
-              return (<Link {...link} key={Date.now()}/>)
-            })
-          }
-       </Container>
-    )
+export default function NavBarLinks({
+  links,
+}: {
+  links: NavBarProps["links"];
+}) {
+  return (
+    <Container>
+      {Array.from(links).map((link: LinkProps) => (
+        <Link {...link} key={Date.now()} />
+      ))}
+      <Link name="Get Started" url="/" />
+    </Container>
+  );
 }

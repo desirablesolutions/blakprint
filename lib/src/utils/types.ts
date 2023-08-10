@@ -1,3 +1,4 @@
+import { ReturnType } from './types';
 import type { TypeFactory } from 'interface-forge';
 
 export interface Definition<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
@@ -6,7 +7,7 @@ export interface Definition<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
 
   closure: EffectorType<TypeParams | ValidClosure>,
   meta?: EffectorType<Weak<MetaParams>>,
-  redefine?: EffectorType<any,Definition<TypeParams, ReturnParams, MetaParams>, MetaParams>,
+  redefine?: EffectorType<any, Definition<TypeParams, ReturnParams, MetaParams>, MetaParams>,
   value: EffectorType<TypeParams, ReturnParams | TypeParams, MetaParams>,
   log: EffectorType<MetaParams, void, MetaParams>,
 
@@ -17,7 +18,9 @@ export type EffectorType<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
   ErrorParams = DEFAULT_ERROR_PARAMS_TYPES> = (...args: TypeParams[] | any[]) => ReturnParams | ErrorParams
 
 
-export type TypeFactoryInterface<TypeParams> = TypeFactory<TypeParams> 
+export type FutureType<ReturnType> = Promise<ReturnType>
+
+export type TypeFactoryInterface<TypeParams> = TypeFactory<TypeParams>
 
 
 export type PrimativeTypes = string | number | String | Number | boolean | bigint | Array<any> | Object

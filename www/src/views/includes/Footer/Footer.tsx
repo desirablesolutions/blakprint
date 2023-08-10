@@ -2,7 +2,13 @@ import { default as Container } from "./Container";
 import { defineInclude } from "blakprint";
 
 export type FooterProps = {
-  copyright?: string;
+  bottom?: {
+    copyright: string
+  },
+  header: {
+    title: string;
+    description: string;
+  }
 };
 
 export default function Footer(props: FooterProps) {
