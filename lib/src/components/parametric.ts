@@ -1,5 +1,5 @@
-import type { ComponentType, MetaDataType } from "../typings";
-import { ValidClosure, define } from "../utils";
+import { ComponentType, ParametricComponentProps } from "../typings";
+import { ValidClosure } from "../utils";
 import { defineComponent } from "./components";
 
 /**
@@ -7,37 +7,70 @@ import { defineComponent } from "./components";
  *
  * @param {ReturnParams} closure - The closure to define the asset.
  * @param {unknown} meta - Optional metadata for the asset.
- * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
+ * @return {ComponentType<ReturnParams, ExtensionParams>} The defined asset type.
  */
 
 
-export const DEFAULT_RENDERS = {
-    
+
+export function generateClassNames(sx: any): string {
+  const mapper = (sx: any) => ({
+    bgColor: ParametricComponentColorLevels,
+  });
+
+  const data = mapper(sx);
+
+  return `${data}`;
 }
-export function defineParametricComponent<
-    TypeParams = any,
-    ReturnParams = any,
-    MetaParams = unknown
+
+export const createParametricComponentPresets = <
+  PresetType extends ParametricComponentProps["presets"]
 >(
-    {
-        templates,
-        presets,
-        renderer
-    }: any
-): ComponentType<TypeParams, ReturnParams, MetaParams> {
+  data: PresetType
+) => data;
 
+export const createParametricComponentViews = <
+  ViewType extends ParametricComponentProps["views"]
+>(
+  data: ViewType
+) => data;
 
-    const metaData = {
+export function defineParametricComponent<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
+>({
+  presets,
+  views,
+}: ParametricComponentProps<TypeParams>): ComponentType<
+  TypeParams,
+  ReturnParams,
+  MetaParams
+> {
+  const metaData = {
+    type: "parametricComponent",
+    version: Math.round(Date.now() / 1000000) + 1,
+    primary: "view",
+    hierachy: "tertiary",
+  } as const;
 
-        type: "component",
-        version: Math.round(Date.now() / 1000000) + 1,
-        primary: "view",
-        hierachy: "secondary",
-    } as const;
+  function renderDefaults() {
+    const { renderer, sx } = presets.default;
 
+    const { container, component } = views.default;
 
+    const Component = (...args: TypeParams[]) => {
+      return renderer.render`${container({
+        children: component(...args),
+        sx: sx,
+      })}`;
+    };
 
-    return defineComponent<TypeParams, ReturnParams, MetaParams>(
-        templates as ValidClosure,
-    );
+    return Component;
+  }
+
+  return  defineComponent<TypeParams, ReturnParams, MetaParams>(
+    renderDefaults() as ValidClosure,
+    metaData
+  );
 }
+

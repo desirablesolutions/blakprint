@@ -1,5 +1,14 @@
 <h2>⏳Changelog</h2>
 
+
+
+### 🎉v13.3.0
+
+**lib**
+- **cursed** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+
+
+
 ### 🎉v13.2.2
 
 **lib**

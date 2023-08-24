@@ -1,4 +1,3 @@
-import { ReturnType } from './types';
 import type { TypeFactory } from 'interface-forge';
 
 export interface Definition<TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
@@ -46,3 +45,11 @@ export type DEFAULT_TYPE_PARAMS_TYPES = {
 export type DefinitionParams<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType>
 
 export type DefinitionType<DefinitionType> = ReturnType<DefinitionType extends Definition ? DefinitionType["closure"] : DefinitionType>
+
+
+
+export type DefinitionPresetsType = {
+  [name: symbol | string]: any;
+} & {
+  default: any;
+};

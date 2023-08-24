@@ -40,12 +40,12 @@ export function define<
     closure: (): TypeParams => {
       return `${closure}` as TypeParams;
     },
-    value: (...args: any[]): ReturnParams | TypeParams => {
+    value: (...args: any[]): ReturnParams  => {
       if (isFunction(closure)) {
         const result = closure(...args) as ReturnParams;
         return result;
       } else {
-        return closure as TypeParams;
+        return closure as ReturnParams;
       }
     },
 
@@ -57,11 +57,11 @@ export function define<
   return instance;
 }
 
-export function useEffect<TypeParams = unknown>() {
+export function withEffectIO<TypeParams = unknown>() {
   return Effector()
 }
 
-export function useTypeFactory(params: any) {
+export function withTypeFactory(params: any) {
   return new TypeFactory(params)
 }
 

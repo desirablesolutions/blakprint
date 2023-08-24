@@ -1,2 +1,3 @@
 export { defineComponent } from "./components"
-export { defineParametricComponent } from "./parametric"
+export { defineParametricComponent, createParametricComponentPresets, createParametricComponentViews } from "./parametric"
+export { defineVariadicComponent } from "./variadic"
