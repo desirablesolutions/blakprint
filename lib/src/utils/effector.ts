@@ -1,29 +1,21 @@
-import type { EffectorType, Weak } from "./types"
+import type { EffectorType, Weak, EffectorInterface } from "./types"
 
-export type EffectorInterface<TypeParams = unknown> = {
-    readonly success: EffectorType<TypeParams, unknown>,
-    readonly failure: EffectorType<any, any>,
-    readonly sync: EffectorType<any, any>,
-    readonly execute: EffectorType<any, any>,
-    readonly compose: EffectorType<any, any>,
-}
 
-export function SELF<TypeParams=unknown>(identity: TypeParams): TypeParams {
+export function self<TypeParams=unknown>(identity: TypeParams): TypeParams {
     return identity
 }
 
-const DEFAULT_EFFECTOR_INTERFACE_DEFINITION = {
-    success: SELF,
-    failure: SELF,
-    sync: SELF,
-    execute: SELF,
-    compose: SELF
+export const EffectorPreset = {
+    success: self,
+    failure: self,
+    sync: self,
+    execute: self,
+    compose: self
 } as const
 
 
-export function Effector<TypeParams = unknown>(module = DEFAULT_EFFECTOR_INTERFACE_DEFINITION):
-    EffectorInterface {
-    return module as EffectorInterface<TypeParams>
+export function Effector<TypeParams = unknown>(module = EffectorPreset): EffectorInterface<TypeParams> {
+    return module
 }
 
 export function success<TypeParams>(value: Weak<TypeParams>) {

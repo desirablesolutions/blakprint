@@ -1,8 +1,20 @@
+const MetaDataHiearchy = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "quaternary",
+  "quinary",
+  "senary",
+  "octary",
+  "nonary",
+  "decenary",
+  "undecenary",
+  "duodecenary",
+] as const;
 
-export type MetaDataHiearchyType = "primary" | "secondary" | "tertiary" | "quaternary" | "quinary" | "senary" | "octary" | "nonary" | "decenary" | "undecenary" | "duodecenary"
+export type MetaDataHiearchyType = Record<
+  keyof typeof MetaDataHiearchy,
+  typeof MetaDataHiearchy
+>;
 
-export type MetaDataType<MetaTypeParams> = {
-    hierachy: MetaDataHiearchyType,
-    type: string | number,
-    meta?: MetaTypeParams
-}
+export type MetaDataType<T=any> = T;

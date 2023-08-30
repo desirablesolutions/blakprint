@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "13.3.31",
+  "version": "13.4.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.",
@@ -54,6 +54,7 @@
     "meta-framework"
   ],
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@rollup/plugin-alias": "^5.0.0",
     "@types/yargs": "^17.0.22",
     "@vitest/coverage-c8": "^0.24.5",
@@ -77,6 +78,7 @@
     "cli-table3": "^0.6.3",
     "clsx": "^2.0.0",
     "cva": "npm:class-variance-authority@^0.6.1",
+    "effect": "^2.0.0-next.29",
     "htm": "^3.1.1",
     "interface-forge": "^1.5.1",
     "link-module-alias": "^1.2.0",

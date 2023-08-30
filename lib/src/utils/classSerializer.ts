@@ -7,6 +7,8 @@ export const ClassSerializerPresetTypesPresets: DefinitionPresetsType = {
 } as const;
 
 export type ClassSerializerPresetTypes = typeof ClassSerializerPresetTypesPresets;
+
+
 export function defineClassSerializer<
   TypeParams = any,
   ReturnParams = any,

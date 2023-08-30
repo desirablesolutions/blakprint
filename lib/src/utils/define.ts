@@ -1,13 +1,6 @@
-import { TypeFactory } from "interface-forge";
-import { Effector } from "./effector";
-import { isFunction } from "./predicates";
-import {
-  DEFAULT_META_PARAMS_TYPES,
-  DEFAULT_RETURN_PARAMS_TYPES,
-  DEFAULT_TYPE_PARAMS_TYPES, Definition, ValidClosure
-} from "./types";
-
-
+import { withTypeFactory } from "./dependencies";
+import { isEffector } from "./predicates";
+import { Definition, ValidClosure } from "./types";
 
 /**
  * Create a definition with optional metadata.
@@ -18,18 +11,25 @@ import {
  */
 
 export function define<
-  TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
-  ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
-  MetaParams = DEFAULT_META_PARAMS_TYPES
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown
 >(
-  closure: ValidClosure,
+  closure: ReturnParams | ValidClosure,
   meta?: MetaParams
 ): Definition<TypeParams, ReturnParams, MetaParams> {
-
-
   const instance: Definition<TypeParams, ReturnParams, MetaParams> = {
     meta: (): MetaParams | undefined => {
       return meta;
+    },
+    version: (): string => {
+      return `${Date.now()}`;
+    },
+    generate: (instance: TypeParams): TypeParams => {
+      const generator = withTypeFactory<TypeParams>(
+        (): TypeParams => ({ ...instance })
+      );
+      return generator.buildSync();
     },
     redefine: (
       newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure,
@@ -37,32 +37,28 @@ export function define<
     ) => {
       return define<TypeParams, ReturnParams, MetaParams>(newClosure, newMeta);
     },
-    closure: (): TypeParams => {
-      return `${closure}` as TypeParams;
+    closure: (): string => {
+      return `${closure}` as string;
     },
-    value: (...args: any[]): ReturnParams  => {
-      if (isFunction(closure)) {
-        const result = closure(...args) as ReturnParams;
-        return result;
-      } else {
+    value: (...args: TypeParams[]): ReturnParams => {
+      if (!isEffector(closure)) {
         return closure as ReturnParams;
+      } else {
+        try {
+          const result = closure(...args) as ReturnParams;
+          return result;
+        } catch (ErrorReponse) {
+          return ErrorReponse as ReturnParams;
+        }
       }
     },
-
     log: (): void => {
-      console.log(`${closure}: ${meta}: `)
+      console.log(`[Definition]: ${instance.meta()}
+                   [Closure]: ${instance.closure()}
+                   [Value]: ${instance.value()}
+                   [Version]: ${instance.version()}`);
     },
-  } 
+  } as const;
 
   return instance;
 }
-
-export function withEffectIO<TypeParams = unknown>() {
-  return Effector()
-}
-
-export function withTypeFactory(params: any) {
-  return new TypeFactory(params)
-}
-
-

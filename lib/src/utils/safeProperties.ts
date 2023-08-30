@@ -1,19 +1,28 @@
 import { defineUtility } from "./utils";
-import { isFunction } from "./predicates";
+import { isEffector } from "./predicates";
 
-
-export type SafePropertiesProps = {
-  props?: any;
-  defaults: any;
+export type SafePropertiesProps<TypeParams> = {
+  props?: Partial<TypeParams>;
+  defaults: (...args: any[]) => TypeParams;
 };
 
-export const preset = <TypeParams = any>({
+export const SafePropertiesPreset = <TypeParams = any>({
   props,
   defaults,
-}: SafePropertiesProps): TypeParams => {
-   return !props && !isFunction(defaults) ? defaults : !props ? defaults() : { ...defaults(), ...props };
-}
+}: SafePropertiesProps<TypeParams>): TypeParams => {
+  return !props && !isEffector(defaults)
+    ? defaults
+    : !props
+    ? defaults()
+    : ({ ...defaults(), ...props } as TypeParams);
+};
 
-export function defineSafeProperties(closure: any, meta: any) {
-  return defineUtility(!closure ? preset : closure, meta);
+export function defineSafeProperties<TypeParams=any, ReturnParams=any, MetaParams=unknown>(
+  closure?: any,
+  meta?: any
+) {
+  return defineUtility<TypeParams, ReturnParams, MetaParams>(
+    !closure ? SafePropertiesPreset : closure,
+    meta
+  );
 }

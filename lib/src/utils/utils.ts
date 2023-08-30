@@ -1,4 +1,4 @@
-import type { MetaDataType, UtilityType } from "../typings";
+import type { UtilityType } from "../typings";
 import { ValidClosure, define } from "../utils";
 
 /**
@@ -15,7 +15,7 @@ export function defineUtility<
   MetaParams = unknown
 >(
   closure: ReturnParams | TypeParams | ValidClosure,
-  meta?: MetaDataType<any>
+  meta?:any
 ): UtilityType<TypeParams, ReturnParams, MetaParams> {
 
 
