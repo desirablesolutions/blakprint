@@ -56,6 +56,7 @@ export type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
 
 export type ArrayType<T> = T extends (infer Item)[] ? Item : T;
 
+
 export type Weak<Type> = Type | null | undefined;
 
 export type DEFAULT_ERROR_PARAMS_TYPES =
