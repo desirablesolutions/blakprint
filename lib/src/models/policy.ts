@@ -1,3 +1,5 @@
+import { defineModel } from ".."
+
 export default function definePolicy() {
-    return {}
+    return defineModel(null)
 }

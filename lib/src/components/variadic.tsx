@@ -14,9 +14,9 @@ import * as React from "react";
 export type variadicComponent = {
   views: {
     default: {
-      component: Function;
+      component?: Function;
       container: Function;
-    };
+    },
   };
   presets: {
     default: {
@@ -25,7 +25,7 @@ export type variadicComponent = {
   };
 };
 
-export default function defineVariadicComponent<
+export  function defineVariadicComponent<
   TypeParams = any,
   ReturnParams = any,
   MetaParams = Error
@@ -46,8 +46,8 @@ export default function defineVariadicComponent<
   const { sx } = presets.default;
 
   const render = (...args: any[]) => (
-    <ContainerView sx={sx}>
-      <ComponentView {...args} />
+    <ContainerView className={sx}>
+
     </ContainerView>
   );
 
@@ -57,12 +57,16 @@ export default function defineVariadicComponent<
   );
 }
 
-const test = defineVariadicComponent({
+const TesteMe = defineVariadicComponent({
   views: {
     default: {
-      container: ({ children }: any) => <div>{children}</div>,
-      component: ({ props }: any) => {
-        return <></>;
+      container: ({ children, sx }: any) => <div className={`${sx.container.base}`}>{children}</div>,
+      component: ({ props, sx }: any) => {
+        return <>
+          <a className={`${sx.borders.base}`} href="">
+
+          </a>
+        </>;
       },
     },
   },

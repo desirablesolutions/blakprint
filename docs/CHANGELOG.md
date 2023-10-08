@@ -1,7 +1,15 @@
 <h2>⏳Changelog</h2>
 
 
-## 🎉v13.4.0
+## 🎉v14.0.X
+
+**lib**
+- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
+
+
+## 🎉v13.4.X
 
 **lib**
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
@@ -25,16 +33,6 @@
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 
-
-**tests**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-**www**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 
 
 ### v13.3.0

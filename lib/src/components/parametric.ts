@@ -1,3 +1,3 @@
-export default function defineParametricComponent() {
+export  function defineParametricComponent() {
   return null
 }
