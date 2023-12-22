@@ -1,5 +1,5 @@
 import type { ComponentType, MetaDataType } from "../typings";
-import { ValidClosure, define } from "../utils";
+import { ValidClosure, define } from "..";
 
 /**
  * Defines an asset with optional metadata.
