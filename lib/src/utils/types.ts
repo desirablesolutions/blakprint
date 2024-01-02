@@ -1,6 +1,6 @@
 import type { TypeFactory } from "interface-forge";
 
-export interface Definition<
+export interface IDefinition<
   TypeParams = DEFAULT_TYPE_PARAMS_TYPES,
   ReturnParams = DEFAULT_RETURN_PARAMS_TYPES,
   MetaParams = DEFAULT_META_PARAMS_TYPES
@@ -9,7 +9,7 @@ export interface Definition<
   meta: EffectorType<Weak<MetaParams>>;
   version: EffectorType<null, string>;
   pipe: EffectorType<any,any>
-  redefine: EffectorType<any, Definition<TypeParams, ReturnParams, MetaParams>>;
+  redefine: EffectorType<any, IDefinition<TypeParams, ReturnParams, MetaParams>>;
   value: EffectorType<TypeParams, ReturnParams>;
   generate: EffectorType<any, TypeParams | EffectorType<any, TypeParams>>;
   log: EffectorType<MetaParams, void>;
@@ -76,11 +76,11 @@ export type DEFAULT_TYPE_PARAMS_TYPES =
   | any;
 
 export type DefinitionParams<DefinitionType> = ReturnType<
-  DefinitionType extends Definition ? DefinitionType["value"] : DefinitionType
+  DefinitionType extends IDefinition ? DefinitionType["value"] : DefinitionType
 >;
 
 export type DefinitionType<DefinitionType> = ReturnType<
-  DefinitionType extends Definition ? DefinitionType["closure"] : DefinitionType
+  DefinitionType extends IDefinition ? DefinitionType["closure"] : DefinitionType
 >;
 
 export type DefinitionPresetsType = {

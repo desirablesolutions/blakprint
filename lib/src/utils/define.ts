@@ -1,6 +1,6 @@
 import { withTypeFactory } from "./dependencies";
 import { isEffector } from "./predicates";
-import { Definition, ValidClosure } from "./types";
+import { IDefinition, ValidClosure } from "./types";
 
 /**
  * Create a definition with optional metadata.
@@ -10,58 +10,62 @@ import { Definition, ValidClosure } from "./types";
  * @returns {Definition<TypeParams, ReturnParams,  MetaParams>} The created definition.
  */
 
-export function define<
+export class Definition<
   TypeParams = any,
   ReturnParams = any,
   MetaParams = unknown
->(
-  closure: ReturnParams | ValidClosure,
-  meta?: MetaParams
-): Definition<TypeParams, ReturnParams, MetaParams> {
+> {
+  closure: ReturnParams | ValidClosure;
+  meta?: MetaParams;
 
-  const instance: Definition<TypeParams, ReturnParams, MetaParams> =
-    Object.create(null);
+  constructor(closure: ReturnParams | ValidClosure, meta?: MetaParams) {
+    this.closure = closure;
+    this.meta = meta;
+  }
 
-  instance.meta = function (): MetaParams {
-    return meta as MetaParams;
-  };
+  metaFunc(): MetaParams {
+    return this.meta as MetaParams;
+  }
 
-  instance.version = function () {
+  version(): string {
     return `${Date.now()}`;
-  };
+  }
 
-  instance.generate = function (instance: TypeParams): TypeParams {
+  generate(instance: TypeParams): TypeParams {
     const generator = withTypeFactory<TypeParams>(
       (): TypeParams => ({ ...instance })
     );
     return generator.buildSync();
-  };
+  }
 
-  instance.redefine = function (
+  redefine(
     newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure,
     newMeta?: MetaParams
   ): Definition<TypeParams, ReturnParams, MetaParams> {
-    return define<TypeParams, ReturnParams, MetaParams>(newClosure, newMeta);
-  };
+    return new Definition<TypeParams, ReturnParams, MetaParams>(
+      newClosure,
+      newMeta
+    );
+  }
 
-  instance.closure = function () {
-    return `${closure}` as string;
-  };
+  closureFunc(): string {
+    return `${this.closure}` as string;
+  }
 
-  instance.value = function (...args: TypeParams[]): ReturnParams {
-    if (!isEffector(closure)) {
-      return closure as ReturnParams;
+  value(...args: TypeParams[]): ReturnParams {
+    if (!isEffector(this.closure)) {
+      return this.closure as ReturnParams;
     } else {
       try {
-        const result = closure(...args) as ReturnParams;
+        const result = this.closure(...args) as ReturnParams;
         return result;
       } catch (ErrorReponse) {
         return ErrorReponse as ReturnParams;
       }
     }
-  };
+  }
 
-  instance.pipe = function (
+  pipe(
     definitions: Definition<TypeParams, ReturnParams, MetaParams>[]
   ): Definition<TypeParams, ReturnParams, MetaParams> {
     return define((...args: TypeParams[]) => {
@@ -70,14 +74,24 @@ export function define<
         return Array.isArray(result) ? result : [result];
       }, args);
     });
-  };
+  }
 
-  instance.log = function (): void {
-    console.log(`[Definition]: ${this.meta()}
-                 [Closure]: ${this.closure()}
+  log(): void {
+    console.log(`[Definition]: ${this.metaFunc()}
+                 [Closure]: ${this.closureFunc()}
                  [Value]: ${this.value()}
                  [Version]: ${this.version()}`);
-  };
+  }
 
-  return instance;
+ 
 }
+
+export const define = function <TypeParams, ReturnParams, MetaParams>(
+  closure: ReturnParams | ValidClosure,
+  meta?: MetaParams
+): Definition<TypeParams, ReturnParams, MetaParams> {
+  return new Definition<TypeParams, ReturnParams, MetaParams>(
+    closure,
+    meta
+  );
+};

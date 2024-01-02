@@ -2,7 +2,7 @@ export * from "./template";
 export * from "./utils";
 export * from "./classSet";
 export * from "./hypertextTransformer";
-export * from "./classInvariance";
+export * from "./classVariance";
 export * from "./define";
 export * from "./safeProperties";
 export * from "./uniqueIdentifier";

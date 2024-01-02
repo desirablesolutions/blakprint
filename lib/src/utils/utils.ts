@@ -25,7 +25,7 @@ export function defineUtility<
     version: 1,
     primary: "model",
     hierachy: "primary",
-  } as const;
+  } satisfies MetaParams;
 
   return define<TypeParams, ReturnParams, MetaParams>(
     closure as ValidClosure,

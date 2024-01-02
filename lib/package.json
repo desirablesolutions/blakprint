@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "private": false,
   "homepage": "https://github.com/desirablesolutions/blakprint#readme",
   "description": "📐 our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.",
@@ -10,7 +10,7 @@
   },
   "license": "GPL-3.0-or-later",
   "outDir": "dist",
-  "author": "Jeffrey Desir <jeffrey@desir.tech>",
+  "author": "Jeffrey Desir <jeffrey@desirtecj.pro>",
   "main": "./dist/index.es.js",
   "module": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
