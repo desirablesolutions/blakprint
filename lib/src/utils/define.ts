@@ -13,7 +13,7 @@ import { IDefinition, ValidClosure } from "./types";
 export class Definition<
   TypeParams = any,
   ReturnParams = any,
-  MetaParams = unknown
+  MetaParams = unknown,
 > {
   closure: ReturnParams | ValidClosure;
   meta?: MetaParams;
@@ -82,16 +82,16 @@ export class Definition<
                  [Value]: ${this.value()}
                  [Version]: ${this.version()}`);
   }
-
- 
 }
 
-export const define = function <TypeParams, ReturnParams, MetaParams>(
+export const define = function <
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown,
+>(
   closure: ReturnParams | ValidClosure,
   meta?: MetaParams
 ): Definition<TypeParams, ReturnParams, MetaParams> {
-  return new Definition<TypeParams, ReturnParams, MetaParams>(
-    closure,
-    meta
-  );
+  return new Definition<TypeParams, ReturnParams, MetaParams>(closure, meta);
 };
+
