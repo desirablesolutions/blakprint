@@ -23,7 +23,7 @@ export class Definition<
     this.meta = meta;
   }
 
-  metaFunc(): MetaParams {
+  getMeta(): MetaParams {
     return this.meta as MetaParams;
   }
 
@@ -48,7 +48,7 @@ export class Definition<
     );
   }
 
-  closureFunc(): string {
+  getClosure(): string {
     return `${this.closure}` as string;
   }
 
@@ -65,7 +65,7 @@ export class Definition<
     }
   }
 
-  pipe(
+  compose(
     definitions: Definition<TypeParams, ReturnParams, MetaParams>[]
   ): Definition<TypeParams, ReturnParams, MetaParams> {
     return define((...args: TypeParams[]) => {
@@ -77,8 +77,8 @@ export class Definition<
   }
 
   log(): void {
-    console.log(`[Definition]: ${this.metaFunc()}
-                 [Closure]: ${this.closureFunc()}
+    console.log(`[Definition]: ${this.getMeta()}
+                 [Closure]: ${this.getClosure()}
                  [Value]: ${this.value()}
                  [Version]: ${this.version()}`);
   }

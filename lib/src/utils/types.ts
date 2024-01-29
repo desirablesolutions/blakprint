@@ -8,7 +8,7 @@ export interface IDefinition<
   closure: EffectorType<TypeParams | ValidClosure, string>;
   meta: EffectorType<Weak<MetaParams>>;
   version: EffectorType<null, string>;
-  pipe: EffectorType<any,any>
+  compose: EffectorType<any,any>
   redefine: EffectorType<any, IDefinition<TypeParams, ReturnParams, MetaParams>>;
   value: EffectorType<TypeParams, ReturnParams>;
   generate: EffectorType<any, TypeParams | EffectorType<any, TypeParams>>;
