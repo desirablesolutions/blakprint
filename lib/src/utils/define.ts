@@ -67,7 +67,7 @@ export class Definition<
 
   compose(
     definitions: Definition<TypeParams, ReturnParams, MetaParams>[]
-  ): Definition<TypeParams, ReturnParams, MetaParams> {
+  ): IDefinition {
     return define((...args: TypeParams[]) => {
       return definitions.reduce((acc, def) => {
         const result = def.value(...acc);
