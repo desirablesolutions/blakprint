@@ -7,7 +7,6 @@ export * from "./define";
 export * from "./safeProperties";
 export * from "./uniqueIdentifier";
 export * from "./classSerializer";
-export * from "./effector";
 export * from "./predicates";
 export * from "./utils";
 export * from "./factory";

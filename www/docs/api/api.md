@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "API"
 ---
 
-#  Intro
+#  API (Application Programming Interface)
 
 Let's discover **Docusaurus in less than 5 minutes**.
 

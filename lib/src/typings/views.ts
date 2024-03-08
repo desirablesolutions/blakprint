@@ -1,10 +1,7 @@
-import { Definition } from "../utils";
 
-export type ViewType<TypeParams, ReturnParams, MetaParams> = Definition<
-  TypeParams,
-  ReturnParams,
-  MetaParams
->;
+export type ViewType<TypeParams, ReturnParams, MetaParams> = 
+
+
 
 export type LayoutType<TypeParams, ReturnParams, MetaParams> = Definition<
   TypeParams,
@@ -260,24 +257,3 @@ export type ParametricComponentTailwindClassSetProps = Partial<{
   opacity: {};
 }>;
 
-export type ParametricComponentStylizerProps = {
-  container: Partial<ParametricComponentTailwindClassSetProps>;
-  component: Partial<ParametricComponentTailwindClassSetProps>;
-};
-
-export type ParametricComponentProps<TypeProps = any> = {
-  views: {
-    [identifier: symbol | string]: {
-      component: (...args: TypeProps[] | any[]) => any;
-      container: ({ children, sx }: any) => any;
-      props?: TypeProps;
-    };
-  };
-
-  presets: {
-    [identifier: symbol | string]: {
-      sx: ParametricComponentStylizerProps;
-      renderer: ParametricComponentRendererType;
-    };
-  };
-};

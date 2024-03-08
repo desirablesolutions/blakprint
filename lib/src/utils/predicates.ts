@@ -1,7 +1,7 @@
 import { isBoolean as TypeGuardsIsBoolean, isFunction as TypeGuardsIsFunction, isNull as TypeGuardsIsNull } from "type-guards";
 import { EffectorType } from "./types";
 
-export function isEffector(x: unknown): x is Function {
+export function isFunction(x: unknown): x is Function {
   return TypeGuardsIsFunction(x);
 }
 

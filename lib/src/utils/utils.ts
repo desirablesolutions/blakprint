@@ -1,14 +1,6 @@
 import type { UtilityType } from "../typings";
 import { ValidClosure, define } from "../utils";
 
-/**
- * Defines an asset with optional metadata.
- *
- * @param {ReturnParams | TypeParams} closure - The closure to define the asset.
- * @param {MetaParams} meta - Optional metadata for the asset.
- * @return {UtilityType<TypeParams, ReturnParams, ExtensionParams>} The defined asset type.
- */
-
 export function defineUtility<
   TypeParams = any,
   ReturnParams = any,
@@ -28,7 +20,7 @@ export function defineUtility<
   } satisfies MetaParams;
 
   return define<TypeParams, ReturnParams, MetaParams>(
-    closure as ValidClosure,
+    closure as ReturnParams,
     metaData
   );
 }

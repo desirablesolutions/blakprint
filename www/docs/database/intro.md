@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-#  Intro
+#  Database
 
 Let's discover **Docusaurus in less than 5 minutes**.
 

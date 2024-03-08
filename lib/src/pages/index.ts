@@ -1,1 +1,2 @@
-export { definePage, definePages } from "./pages"
+export * from "./pages"
+export * from "./definePages"

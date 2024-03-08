@@ -1,7 +1,13 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+
+
+* {
+  font-family: "Kode Mono", monospace !important;
+}
+
+
+
 
 .heroBanner {
   padding: 4rem 0;

@@ -1,24 +1,17 @@
-import { withTypeFactory } from "./dependencies";
-import { isEffector } from "./predicates";
-import { IDefinition, ValidClosure } from "./types";
 
-/**
- * Create a definition with optional metadata.
- *
- * @param {ValidClosure} closure - The closure to be stored in the definition.
- * @param {MetaParams} meta - Optional metadata for the definition.
- * @returns {Definition<TypeParams, ReturnParams,  MetaParams>} The created definition.
- */
+import { isEffector } from "./predicates";
+import { DefinitionInterface, ValidCallableClosure, ValidClosure } from "./types";
+
 
 export class Definition<
   TypeParams = any,
   ReturnParams = any,
   MetaParams = unknown,
 > {
-  closure: ReturnParams | ValidClosure;
+  closure: ReturnParams | ValidCallableClosure | ValidClosure;
   meta?: MetaParams;
 
-  constructor(closure: ReturnParams | ValidClosure, meta?: MetaParams) {
+  constructor(closure: ReturnParams | ValidCallableClosure, meta?: MetaParams) {
     this.closure = closure;
     this.meta = meta;
   }
@@ -31,15 +24,10 @@ export class Definition<
     return `${Date.now()}`;
   }
 
-  generate(instance: TypeParams): TypeParams {
-    const generator = withTypeFactory<TypeParams>(
-      (): TypeParams => ({ ...instance })
-    );
-    return generator.buildSync();
-  }
+
 
   redefine(
-    newClosure: TypeParams extends ValidClosure ? TypeParams : ValidClosure,
+    newClosure: TypeParams extends ValidCallableClosure ? TypeParams : ValidCallableClosure,
     newMeta?: MetaParams
   ): Definition<TypeParams, ReturnParams, MetaParams> {
     return new Definition<TypeParams, ReturnParams, MetaParams>(
@@ -48,6 +36,10 @@ export class Definition<
     );
   }
 
+
+  test(): boolean {
+    return true
+  }
   getClosure(): string {
     return `${this.closure}` as string;
   }
@@ -65,19 +57,9 @@ export class Definition<
     }
   }
 
-  compose(
-    definitions: Definition<TypeParams, ReturnParams, MetaParams>[]
-  ): IDefinition {
-    return define((...args: TypeParams[]) => {
-      return definitions.reduce((acc, def) => {
-        const result = def.value(...acc);
-        return Array.isArray(result) ? result : [result];
-      }, args);
-    });
-  }
 
   log(): void {
-    console.log(`[Definition]: ${this.getMeta()}
+    console.warn(`[Definition]: ${this.getMeta()}
                  [Closure]: ${this.getClosure()}
                  [Value]: ${this.value()}
                  [Version]: ${this.version()}`);
@@ -89,7 +71,7 @@ export const define = function <
   ReturnParams = any,
   MetaParams = unknown,
 >(
-  closure: ReturnParams | ValidClosure,
+  closure: ReturnParams | ValidCallableClosure,
   meta?: MetaParams
 ): Definition<TypeParams, ReturnParams, MetaParams> {
   return new Definition<TypeParams, ReturnParams, MetaParams>(closure, meta);
