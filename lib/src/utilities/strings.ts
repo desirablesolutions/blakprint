@@ -1,4 +1,4 @@
-import { EffectorType, defineUtility } from "../utils";
+import {  defineUtility, Effector } from ".";
 
 
 export type TemplateUtilityProps<ExtensionProps = {}> = {
@@ -10,7 +10,7 @@ export type TemplateUtilityProps<ExtensionProps = {}> = {
 
 export function defineTemplate<TypeParams, ReturnParams>() {
 
-    return defineUtility<any, EffectorType<string>, TemplateUtilityProps>(
+    return defineUtility<any, Effector<string>, TemplateUtilityProps>(
 
         (params: { strTemplate: any, data: any, delimiter: any }): string => {
 

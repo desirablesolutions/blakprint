@@ -1,4 +1,4 @@
-import { defineUtility } from "./utils";
+import { defineUtility } from "./utilities";
 import { isFunction } from "./predicates"
 
 export default function defineSafely() {

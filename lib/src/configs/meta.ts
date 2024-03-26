@@ -1,8 +1,10 @@
+import { define } from "..";
 
-import { defineConfiguration } from "./configs";
 
-export function defineMetaConfiguration() {
-  return defineConfiguration((closure, meta) => {
-    return { closure, meta }
-  });
+export function defineMetaConfiguration<
+  TypeParams = any,
+  ReturnParams = any,
+  MetaParams = unknown,
+>(closure: ReturnParams, meta?: any) {
+  return define(closure as ReturnParams, meta);
 }

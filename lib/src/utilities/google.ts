@@ -1,4 +1,4 @@
-import { defineUtility } from "./utils"
+import { defineUtility } from "./utilities"
 
 
 export const GoogleMapsBaseURL: string = "https://maps.google.com/maps" as const 

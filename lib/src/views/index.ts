@@ -1,1 +1,1 @@
-export { defineView } from "./views"
+export * from "./views"

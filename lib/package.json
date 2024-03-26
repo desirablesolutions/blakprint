@@ -10,11 +10,12 @@
   },
   "license": "GPL-3.0-or-later",
   "outDir": "dist",
-  "author": "Jeffrey Desir <jeffrey@desirtecj.pro>",
+  "author": "Jeffrey Desir <jeffrey@desirablesolutions.org>",
   "main": "./dist/index.es.js",
   "module": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
   "exports": {
+    
     ".": {
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.js"

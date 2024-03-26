@@ -1,36 +1,10 @@
-import type { LayoutType, MetaDataType } from "../typings";
-import { ValidClosure, define } from "../utils";
+import { define } from ".";
+import type { Definition } from ".";
 
-
-/**
- * Defines an asset with optional metadata.
- *
- * @param {ReturnParams} closure - The closure to define the asset.
- * @param {unknown} meta - Optional metadata for the asset.
- * @return {AssetType<ReturnParams, ExtensionParams>} The defined asset type.
- */
-
-export function defineLayout<
+export function defineUtility<
   TypeParams = any,
   ReturnParams = any,
-  MetaParams = unknown
->(
-  closure: ReturnParams | TypeParams | ValidClosure,
-  meta?: MetaDataType<any>
-): LayoutType<TypeParams, ReturnParams, MetaParams> {
-
-    
-  const metaData: MetaParams = {
-    ...(meta as any),
-    type: "layout",
-    version: 1,
-    primary: "model",
-    secondary: "data",
-    hierachy: "tertiary",
-  } as const;
-
-  return define<TypeParams, ReturnParams, MetaParams>(
-    closure as ValidClosure,
-    metaData
-  );
+  MetaParams = unknown,
+>(closure: ReturnParams, meta?: any): Definition {
+  return define(closure as ReturnParams, meta);
 }
