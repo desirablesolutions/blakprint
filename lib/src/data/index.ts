@@ -1,1 +1,1 @@
-export { defineData } from "./data"
+export * from "./data"

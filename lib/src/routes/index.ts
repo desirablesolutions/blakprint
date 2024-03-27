@@ -1,1 +1,1 @@
-export { defineRoute } from "./routes"
+export * from "./routes"

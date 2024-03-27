@@ -9,8 +9,6 @@ export function define<
   closure: ValidClosure | ValidCallableClosure,
   meta?: MetaParameters
 ): Definition<ReturnParameters, TypeParameters, MetaParameters> {
-
-
   const definition: Definition<
     ReturnParameters,
     TypeParameters,
@@ -33,7 +31,7 @@ export function define<
     return `${Date.now()}`;
   };
 
-  definition.value = function <ReturnParameters, TypeParameters = unknown>(
+  definition.value = function <ReturnParameters, TypeParameters = any>(
     ...args: TypeParameters[]
   ): ReturnParameters {
     switch (true) {
@@ -41,8 +39,10 @@ export function define<
         return closure as ReturnParameters;
       default:
         try {
-          const result = closure(...args) as ReturnParameters;
-          return result satisfies  ReturnParameters;
+          const result = isFunction(closure)
+            ? (closure(...args) as ReturnParameters)
+            : (undefined as ReturnParameters);
+          return result satisfies ReturnParameters;
         } catch (ErrorReponse) {
           return ErrorReponse as ReturnParameters;
         }

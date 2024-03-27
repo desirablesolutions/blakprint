@@ -10,9 +10,8 @@
 <details>
 <summary><em>Is this stable to use in production?</em></summary>
 
-<em>Yes && No.</em> The library is just a collection of small typescript modules, types, and plugins commonly used for making M.V.C and generalized for.
-It is very extensible, and is extremely high-level. There is no fancy-shmancy engine or compiler (technically,
-the default effector functor uses <a href="">Effect</a> but its not required, the simplified option uses a generically typed identity function to abstract definition methods.
+<em>No. -- however</em> The library is just a collection of small typescript modules, types, and plugins commonly used for making M.V.C and generalized for.
+It is very extensible, and is extremely high-level. There is no fancy-shmancy engine or compiler. Just logic.
 
 </details>
 

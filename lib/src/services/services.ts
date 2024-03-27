@@ -1,12 +1,12 @@
 import { define } from "..";
 
 export function defineService<
-  TypeParams = unknown,
-  ReturnParams = unknown,
-  MetaParams = unknown,
->(closure: ReturnParams, meta?: any) {
-  return define<TypeParams, ReturnParams, MetaParams>(
-    closure as ReturnParams,
+  TypeParameters = unknown,
+  ReturnParameters = unknown,
+  MetaParameters = unknown,
+>(closure: ReturnParameters, meta?: MetaParameters) {
+  return define<TypeParameters, ReturnParameters, MetaParameters>(
+    closure as ReturnParameters,
     meta
   );
 }

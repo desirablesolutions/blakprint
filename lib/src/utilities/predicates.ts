@@ -5,7 +5,7 @@ export function isFunction<ClosureType>(
 }
 
 export function isAsynchronousFunction<ClosureType = any>(
-  x: unknown
-): x is (...args: unknown[]) => Promise<ClosureType> {
-  return x && (x.constructor.name === "AsyncFunction" || x instanceof Promise);
+  closure: unknown
+): closure is (...args: unknown[]) => Promise<ClosureType> {
+  return closure as boolean && (closure?.constructor.name === "AsyncFunction" || closure instanceof Promise) as boolean;
 }

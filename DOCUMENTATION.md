@@ -2,7 +2,6 @@
 (load:docs/LOGO.md)
 (load:docs/INSTALLATION.md)
 (load:docs/USAGE.md)
-(load:docs/DEFINE.md)
 (load:docs/FAQS.md)
 (load:docs/DEPENDENCIES.md)
 (load:docs/CONTRIBUTIONS.md)

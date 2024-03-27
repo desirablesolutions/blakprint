@@ -1,10 +1,15 @@
 import { define } from "..";
 
-
-export function defineAssets<
-  TypeParams = any,
-  ReturnParams = any,
-  MetaParams = unknown,
->(closure: ReturnParams, meta?: any) {
-  return define(closure as ReturnParams, meta);
+export function defineData<
+  ReturnParameters = any,
+  TypeParameters = any,
+  MetaParameters = unknown,
+>(closure: ReturnParameters, meta?: MetaParameters) {
+  return define<ReturnParameters, TypeParameters, MetaParameters>(
+    closure,
+    meta
+  );
 }
+
+
+

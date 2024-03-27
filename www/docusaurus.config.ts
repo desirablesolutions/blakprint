@@ -61,6 +61,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+           {to: '/about', label: 'About', position: 'left'},
         {
           href: 'https://github.com/desirablesolutions/blakprint',
           label: 'GitHub',
@@ -72,26 +73,23 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Information',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Documentation',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Support',
           items: [
 
             {
-              label: 'Discord',
+              label: 'Ko-fi',
               href: 'https://discordapp.com/invite/docusaurus',
             },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+      
           ],
         },
         {

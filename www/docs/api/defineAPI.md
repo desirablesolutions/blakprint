@@ -4,7 +4,7 @@ title: "defineAPI"
 
 ```ts
 
-import { defineApplicationProgrammingInterface } from "blakprint"
+import { defineAPI } from "blakprint"
 
 
 export const appAPI = defineApplicationProgrammingInterface({})

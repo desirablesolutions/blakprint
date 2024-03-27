@@ -1,10 +1,15 @@
-import { define } from ".";
-import type { Definition } from ".";
+import { define } from "..";
 
-export function defineUtility<
-  TypeParams = any,
-  ReturnParams = any,
-  MetaParams = unknown,
->(closure: ReturnParams, meta?: any): Definition {
-  return define(closure as ReturnParams, meta);
+export function defineHook<
+  ReturnParameters = any,
+  TypeParameters = any,
+  MetaParameters = unknown,
+>(closure: ReturnParameters, meta?: MetaParameters) {
+  return define<ReturnParameters, TypeParameters, MetaParameters>(
+    closure,
+    meta
+  );
 }
+
+
+
