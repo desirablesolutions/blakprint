@@ -1,6 +1,6 @@
 <!-- ⚠️ This README has been generated from the file(s) "DOCUMENTATION.md" ⚠️--><h1 align="center">Blakprint</h1>
 
-<h4 align="center">our workbox of redefinable, composable, model, view, and controller meta-modules for architecting software.</h4>
+<h4 align="center">a closure evaluator & composer for architecting software.</h4>
 
 <h1 align="center">
 
@@ -75,7 +75,6 @@ const Header = defineComponent({
 
 > An extensible meta-module for authoring arbituary closures through Definitions.
 
-<h3>TL;DR</h3>
 
 
 <h4>Definition & define</h4>
@@ -155,9 +154,6 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 </details>
 
-<h2>➰Feedback</h2>
-
-[Email us | dev@desirable.solutions](mailto:dev@desirable.solutions)
 <h2>⚙️Dependencies</h2>
 
 - [**meta-types**](https://npm.com/meta-types) _(thank you)_
@@ -173,14 +169,14 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 **coming soon**...
 <h2>❣️Support</h2>
 
-[Email us | dev@desirable.solutions](mailto:dev@desirable.solutions)
+[Email us | dev@desirablesolution.org](mailto:dev@desirable.solutions)
 
 [Fund us | Buy us a coffee!](https://ko-fi.com/desirablesolutions)
 <h2>✒️Authors</h2>
 
-* [**👩🏿‍💻Jeffrey Desir**](https://desirable.solutions/team/jeffreydesir)
+* [**👩🏿‍💻Jeffrey Desir**](https://desirablesolutions.org/team/jeffreydesir)
   
-* [**🤖Open A.I GPT-4**](https://chat.openai.com)
+
 <h2>⏳Changelog</h2>
 
 

@@ -1,6 +1,6 @@
 import { define } from "..";
 
-export function defineUtility<
+export function defineModel<
   ReturnParameters = any,
   TypeParameters = any,
   MetaParameters = unknown,

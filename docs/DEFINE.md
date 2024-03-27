@@ -3,7 +3,6 @@
 
 > An extensible meta-module for authoring arbituary closures through Definitions.
 
-<h3>TL;DR</h3>
 
 
 <h4>Definition & define</h4>

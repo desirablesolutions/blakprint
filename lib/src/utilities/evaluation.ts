@@ -1,4 +1,4 @@
-import { defineUtility } from "./utilities";
+import { defineUtility } from "..";
 import { isFunction, isAsynchronousFunction } from "./predicates";
 
 
