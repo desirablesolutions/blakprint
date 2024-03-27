@@ -15,7 +15,6 @@ const config: Config = {
   organizationName: 'desirablesolutions', // Usually your GitHub org/user name.
   projectName: 'blakprint', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
 
