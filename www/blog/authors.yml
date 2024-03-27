@@ -1,17 +1,12 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+jeffrey:
+  name: Jeffrey Desir
+  title: Technomancer
+  url: https://github.com/desirtech
+  image_url: https://avatars.githubusercontent.com/u/8616589?v=4
 
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
+jarveis:
+  name: J.A.R.V.E.I.S
+  title: Intelligence System
+  url: https://github.com/desirablesolutions/jarveis
   image_url: https://github.com/yangshun.png
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png

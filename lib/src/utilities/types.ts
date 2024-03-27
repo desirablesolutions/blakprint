@@ -1,4 +1,3 @@
-import type { Weakly } from "../typings/utilities";
 
 export type Effector<ReturnParams = unknown, TypeParams = unknown> = (
   ...args: TypeParams[]
@@ -44,3 +43,38 @@ export type ValidClosure =
   | bigint;
 
 export type ValidCallableClosure = (...args: unknown[]) => ValidClosure;
+
+
+
+export type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
+
+export type ArrayType<T> = T extends (infer Item)[] ? Item : T;
+
+export type Weakly<TypeParameters> =
+  | TypeParameters
+  | { [Parameter in keyof TypeParameters]?: never }
+  | undefined;
+
+
+
+  const MetaDataHiearchy = [
+    "primary",
+    "secondary",
+    "tertiary",
+    "quaternary",
+    "quinary",
+    "senary",
+    "octary",
+    "nonary",
+    "decenary",
+    "undecenary",
+    "duodecenary",
+  ] as const;
+  
+  export type MetaDataHiearchyType = Record<
+    keyof typeof MetaDataHiearchy,
+    typeof MetaDataHiearchy
+  >;
+  
+  export type MetaDataType<T=any> = T;
+  

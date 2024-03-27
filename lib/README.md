@@ -185,86 +185,28 @@ the default effector functor uses <a href="">Effect</a> but its not required, th
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#v140x
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#v17xy
 
-## 🎉v14.0.X
-
-**lib**
+## 🎉v17.X.Y
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#v134x
-
-## 🎉v13.4.X
-
-**lib**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-
-**cli**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-
-**app**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-**templates**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
-
-
-### v13.3.0
-
-**lib**
-- **cursed** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-
 
 
 ### v13.2.2
-
-**lib**
 - **cursed** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 
 
 
 ### v13.2.1
-
-**lib**
 - **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
 - **stable** Adding dependecy injections for definitions & extensions is corrected & stable.
 - **stable** Type & Type helpers for generating definitions. 
-
-
-### v13.2.0
-
-**lib**
-- **stable** `Definition` library had long-standing NPM alias issue with vite, making it unusable. This has been fixed.
-- **stable** Adding dependecy injections for definitions & extensions is corrected & stable.
-- **stable** Type & Type helpers for generating definitions. 
-
-
-### v13.0.0
-
-**lib**
-- **removed** `Definition` utility package in favor of dependecy injection from the core library.
-- **corrected** Identity closures for definitions. Simplified interface abstraction to dependecy injection.
-
 
 
 <h2>©️Copyright</h2>
 
-> ©️ Desirable Solutions 2023. All Rights Reserved. 
+> ©️ Desirable Solutions 2024. All Rights Reserved. 
 <h2>📜License</h2>
 
 > **This project is under the GPL version 3.0 (the "License").** ☂️

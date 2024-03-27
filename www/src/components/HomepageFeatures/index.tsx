@@ -10,7 +10,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Metatype-safe',
+    title: 'Explicitly Type-sensitive',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Functional & Terse',
+    title: 'Functional by definition',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Unopinionated',
+    title: 'Hyper-opininonated',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>

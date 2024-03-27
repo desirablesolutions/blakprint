@@ -1,7 +1,7 @@
 import { define } from "..";
 
 
-export function defineAssets<
+export function defineComponent<
   TypeParams = any,
   ReturnParams = any,
   MetaParams = unknown,

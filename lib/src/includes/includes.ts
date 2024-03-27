@@ -1,10 +1,12 @@
-import { define } from ".";
-import type { Definition } from ".";
+import { define } from "..";
 
-export function defineUtility<
-  TypeParams = any,
-  ReturnParams = any,
+export function defineInclude<
+  TypeParams = unknown,
+  ReturnParams = unknown,
   MetaParams = unknown,
->(closure: ReturnParams, meta?: any): Definition {
-  return define(closure as ReturnParams, meta);
+>(closure: ReturnParams, meta?: any) {
+  return define<TypeParams, ReturnParams, MetaParams>(
+    closure as ReturnParams,
+    meta
+  );
 }

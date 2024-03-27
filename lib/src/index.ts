@@ -1,7 +1,7 @@
 export type * from "./typings"
 export * from "./assets"
 export * from "./api"
-export * from "./configs"
+export * from "./configurations"
 export * from "./controllers"
 export * from "./hooks"
 export * from "./db"

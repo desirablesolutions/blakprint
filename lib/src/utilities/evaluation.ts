@@ -4,7 +4,7 @@ import { isFunction, isAsynchronousFunction } from "./predicates";
 
 
 export function defineSafely<ReturnType, ClosureType>() {
-
+ 
    const { meta, closure } = {
 
     closure: {

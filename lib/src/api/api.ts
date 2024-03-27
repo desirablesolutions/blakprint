@@ -27,7 +27,7 @@
    }
   };
 
-  export function defineApplicationProgrammingInterface<
+  export function defineAPI<
     ReturnParameters = any,
     TypeParameters = any,
     MetaParameters = unknown,

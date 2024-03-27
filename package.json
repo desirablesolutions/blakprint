@@ -1,6 +1,6 @@
 {
   "name": "blakprint",
-  "version": "15.0.0",
+  "version": "17.0.0",
   "main": "bin/index.js",
   "private": false,
   "scripts": {
@@ -8,7 +8,6 @@
     "test": "pnpm -F lib test",
     "test:watch": "pnpm -F lib test:watch",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json && copy README.md lib",
-
     "coverage": "pnpm -F lib coverage",
     "size": "size-limit",
     "lint": "eslint ./lib",
@@ -35,12 +34,11 @@
     "lint-staged": "^13.1.0",
     "size-limit": "^8.1.0",
     "tsup": "^6.5.0",
-    "turbo": "^1.6.3",
     "typescript": "^4.9.4",
     "vite": "^3.2.5",
     "vitest": "^0.24.5"
   },
-  "packageManager": "pnpm@7.9.0",
+
   "size-limit": [
     {
       "path": "./lib/dist/index.js",
