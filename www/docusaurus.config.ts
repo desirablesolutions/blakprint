@@ -16,6 +16,7 @@ const config: Config = {
   projectName: 'blakprint', // Usually your repo name.
 
   onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "ignore",
 
 
   i18n: {

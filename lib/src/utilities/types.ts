@@ -1,7 +1,13 @@
-
 export type Effector<ReturnParams = unknown, TypeParams = unknown> = (
   ...args: TypeParams[]
-) => ReturnParams;
+) =>
+  | ReturnParams
+  | Effector<ReturnParams, TypeParams>
+  | Effector<Effector<ReturnParams, TypeParams>, TypeParams>
+  | Effector<
+      Effector<Effector<ReturnParams, TypeParams>, TypeParams>,
+      TypeParams
+    >;
 
 export interface Definition<
   ReturnParameters = unknown,
@@ -30,7 +36,7 @@ export type PlatformPrimativeTypes =
   | Number
   | boolean
   | bigint
-  | Array<any>
+  | Array<PlatformPrimativeTypes>
   | Object;
 
 export type ValidClosure =
@@ -44,8 +50,6 @@ export type ValidClosure =
 
 export type ValidCallableClosure = (...args: unknown[]) => ValidClosure;
 
-
-
 export type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
 
 export type ArrayType<T> = T extends (infer Item)[] ? Item : T;
@@ -55,26 +59,22 @@ export type Weakly<TypeParameters> =
   | { [Parameter in keyof TypeParameters]?: never }
   | undefined;
 
+const MetaDataHiearchy = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "quaternary",
+  "quinary",
+  "senary",
+  "octary",
+  "nonary",
+  "decenary",
+  "undecenary",
+  "duodecenary",
+] as const;
 
+export type MetaDataHiearchyType = Record<
+  keyof typeof MetaDataHiearchy,
+  typeof MetaDataHiearchy
+>;
 
-  const MetaDataHiearchy = [
-    "primary",
-    "secondary",
-    "tertiary",
-    "quaternary",
-    "quinary",
-    "senary",
-    "octary",
-    "nonary",
-    "decenary",
-    "undecenary",
-    "duodecenary",
-  ] as const;
-  
-  export type MetaDataHiearchyType = Record<
-    keyof typeof MetaDataHiearchy,
-    typeof MetaDataHiearchy
-  >;
-  
-  export type MetaDataType<T=any> = T;
-  
